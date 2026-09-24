@@ -67,6 +67,133 @@ const normalizeImage = value => {
   return `/${value.replace(/^\.\//, '')}`;
 };
 
+
+const escapeXml = (value = '') => String(value)
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;')
+  .replaceAll("'", '&apos;');
+
+const wrapCoverTitle = (title = '') => {
+  const words = String(title).trim().split(/\s+/).filter(Boolean);
+  const targetChars = title.length > 72 ? 18 : title.length > 55 ? 20 : 22;
+  const lines = [];
+  let line = '';
+  for (const word of words) {
+    const next = line ? `${line} ${word}` : word;
+    if (next.length > targetChars && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = next;
+    }
+  }
+  if (line) lines.push(line);
+  while (lines.length > 6) {
+    lines[lines.length - 2] = `${lines[lines.length - 2]} ${lines.at(-1)}`;
+    lines.pop();
+  }
+  return lines;
+};
+
+const categoryIconSvg = (slug, x = 0, y = 0) => {
+  const common = `transform="translate(${x} ${y})" stroke="#1264f5" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"`;
+  const icons = {
+    'google-ads': `<g ${common}><path d="M20 108 L74 22 L128 108"/><circle cx="20" cy="108" r="15" fill="#23a455" stroke="none"/><circle cx="128" cy="108" r="15" fill="#f7b529" stroke="none"/><path d="M75 22 L128 108" stroke="#4c79ff" stroke-width="26"/></g>`,
+    'meta-ads': `<g ${common}><path d="M16 92 C42 34 66 32 84 76 C102 120 128 118 148 62"/><path d="M16 92 C42 150 66 150 84 106 C102 62 128 62 148 118"/></g>`,
+    'seo': `<g ${common}><circle cx="66" cy="66" r="42"/><path d="M98 98 L146 146"/><path d="M48 68 L64 84 L91 49"/></g>`,
+    'social-media': `<g ${common}><path d="M22 32 h122 v86 H76 l-34 26 8-26 H22z"/><path d="M52 76 h62"/><path d="M52 50 h76"/></g>`,
+    'linkedin-ads': `<g ${common}><rect x="18" y="18" width="126" height="126" rx="20"/><circle cx="51" cy="53" r="10" fill="#1264f5" stroke="none"/><path d="M50 79 v42"/><path d="M80 79 v42 M80 98 c0-24 38-24 38 0 v23"/></g>`,
+    'tiktok-ads': `<g ${common}><path d="M92 26 v72 a30 30 0 1 1-24-29"/><path d="M92 26 c12 25 30 35 50 36"/></g>`,
+    'email-marketing': `<g ${common}><rect x="18" y="34" width="128" height="92" rx="14"/><path d="M22 46 l60 48 60-48"/></g>`,
+    'content-writing': `<g ${common}><path d="M35 18 h75 l26 26 v104 H35z"/><path d="M110 18 v32 h30"/><path d="M58 76 h54 M58 101 h54 M58 126 h34"/></g>`,
+    'website-design': `<g ${common}><rect x="15" y="28" width="136" height="112" rx="14"/><path d="M15 58 h136"/><circle cx="36" cy="43" r="5" fill="#1264f5" stroke="none"/><circle cx="54" cy="43" r="5" fill="#4c79ff" stroke="none"/><rect x="35" y="79" width="44" height="38" rx="6"/><path d="M94 80 h34 M94 98 h34 M94 116 h20"/></g>`,
+    'website-development': `<g ${common}><path d="M58 48 L22 82 L58 116"/><path d="M106 48 L142 82 L106 116"/><path d="M92 28 L72 136"/></g>`,
+    'digital-marketing': `<g ${common}><path d="M20 122 V84 h26 v38 M64 122 V60 h26 v62 M108 122 V34 h26 v88"/><path d="M18 44 C52 58 92 34 140 18"/><path d="M122 18 h18 v18"/></g>`
+  };
+  return icons[slug] || icons['digital-marketing'];
+};
+
+const getAuthorAvatarData = () => {
+  const candidates = [
+    path.join(root, 'assets', 'images', 'palkin-hero.jpg'),
+    path.join(root, 'assets', 'images', 'palkin-office.jpg')
+  ];
+  const file = candidates.find(candidate => fs.existsSync(candidate));
+  if (!file) return '';
+  const ext = path.extname(file).toLowerCase();
+  const mime = ext === '.png' ? 'image/png' : 'image/jpeg';
+  return `data:${mime};base64,${fs.readFileSync(file).toString('base64')}`;
+};
+
+const authorAvatarData = getAuthorAvatarData();
+
+const generateAutoCover = post => {
+  const coversDir = path.join(root, 'assets', 'blog-covers');
+  fs.mkdirSync(coversDir, { recursive: true });
+  const outputFile = path.join(coversDir, `${post.slug}.svg`);
+  const lines = wrapCoverTitle(post.title);
+  const fontSize = lines.length >= 6 ? 50 : lines.length === 5 ? 54 : lines.length === 4 ? 62 : lines.length === 3 ? 74 : 86;
+  const lineHeight = Math.round(fontSize * 1.08);
+  const startY = lines.length >= 6 ? 205 : lines.length === 5 ? 214 : lines.length === 4 ? 228 : 248;
+  const titleSvg = lines.map((line, index) => {
+    const fill = index === 1 ? '#1165f4' : '#0a214d';
+    return `<text x="80" y="${startY + index * lineHeight}" font-family="Georgia, 'Times New Roman', serif" font-size="${fontSize}" font-weight="700" fill="${fill}">${escapeXml(line)}</text>`;
+  }).join('');
+  const category = escapeXml(post.category.toUpperCase());
+  const avatar = authorAvatarData
+    ? `<clipPath id="avatarClip"><circle cx="112" cy="790" r="38"/></clipPath><image href="${authorAvatarData}" x="74" y="752" width="76" height="76" preserveAspectRatio="xMidYMid slice" clip-path="url(#avatarClip)"/>`
+    : `<circle cx="112" cy="790" r="38" fill="#1165f4"/><text x="112" y="800" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#fff">PS</text>`;
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">${escapeXml(post.title)}</title>
+  <desc id="desc">${escapeXml(post.category)} article by Palkin Singla</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.52" stop-color="#f8fbff"/><stop offset="1" stop-color="#d7e9ff"/></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d57f0"/><stop offset="1" stop-color="#69a8ff"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#0d2b5e" flood-opacity="0.16"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1250" cy="180" r="390" fill="#b8d6ff" opacity="0.62"/>
+  <circle cx="1410" cy="660" r="360" fill="#6faeff" opacity="0.50"/>
+  <circle cx="980" cy="820" r="260" fill="#d3e7ff" opacity="0.85"/>
+  <g opacity="0.7">${Array.from({length: 24}, (_,i)=>`<circle cx="${1435 + (i%6)*24}" cy="${45 + Math.floor(i/6)*24}" r="5" fill="#77aaf4"/>`).join('')}</g>
+  <rect x="80" y="96" width="${Math.max(236, category.length * 16 + 76)}" height="58" rx="29" fill="#dfeeff"/>
+  <text x="112" y="134" font-family="Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="3" fill="#123a77">${category}</text>
+  ${titleSvg}
+  <rect x="82" y="675" width="140" height="6" rx="3" fill="#1165f4"/>
+  ${avatar}
+  <text x="176" y="786" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#0a214d">By Palkin Singla</text>
+  <text x="176" y="820" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#6e7c98">DIGITAL GROWTH STRATEGIST</text>
+
+  <g filter="url(#shadow)">
+    <rect x="840" y="250" width="610" height="420" rx="30" fill="#0d2449"/>
+    <rect x="866" y="278" width="558" height="342" rx="18" fill="#f8fbff"/>
+    <rect x="930" y="332" width="430" height="188" rx="18" fill="#ffffff" stroke="#dbe8fa" stroke-width="3"/>
+    <path d="M972 486 C1030 448 1078 464 1122 420 C1170 372 1222 426 1288 354" fill="none" stroke="#1264f5" stroke-width="10" stroke-linecap="round"/>
+    <g fill="#1264f5">${[0,1,2,3,4,5].map((n)=>`<circle cx="${972+n*63}" cy="${[486,458,464,420,425,354][n]}" r="9"/>`).join('')}</g>
+    <g fill="#dfeaff">${[0,1,2,3,4].map((n)=>`<rect x="${975+n*78}" y="${540-n*16}" width="40" height="${48+n*16}" rx="6"/>`).join('')}</g>
+    <path d="M780 676 H1510 L1430 752 H860 Z" fill="#cad9ea"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1110" y="120" width="270" height="160" rx="34" fill="#ffffff"/>
+    ${categoryIconSvg(post.categorySlug, 1162, 132)}
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1260" y="555" width="255" height="205" rx="34" fill="#ffffff"/>
+    <path d="M1310 607 H1465 L1416 665 V713" fill="none" stroke="#1264f5" stroke-width="18" stroke-linejoin="round"/>
+    <circle cx="1325" cy="722" r="18" fill="#1264f5"/><circle cx="1387" cy="722" r="24" fill="#1264f5"/><circle cx="1450" cy="722" r="18" fill="#1264f5"/>
+  </g>
+  <path d="M1410 420 C1488 394 1516 330 1540 270" fill="none" stroke="#3e8fff" stroke-width="16" stroke-linecap="round"/>
+  <path d="M1516 284 L1542 266 L1546 300" fill="none" stroke="#3e8fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
+  fs.writeFileSync(outputFile, svg);
+  return `/assets/blog-covers/${post.slug}.svg`;
+};
+
 const toIsoDate = value => {
   if (!value) return '';
   const d = new Date(value);
@@ -196,11 +323,13 @@ const posts = files.map(file => {
   const body = getBody(html);
   const title = getTitle(html) || stripTags(body).slice(0, 70) || 'Untitled article';
   const description = getMeta(html, 'description') || stripTags(body).slice(0, 165);
-  const image = normalizeImage(getMeta(html, 'og:image', 'property') || getMeta(html, 'feature-image') || getFirstImage(body));
+  const customImage = normalizeImage(getMeta(html, 'og:image', 'property') || getMeta(html, 'feature-image') || getFirstImage(body));
   const date = toIsoDate(getMeta(html, 'date') || stat.mtime.toISOString());
   const modified = toIsoDate(getMeta(html, 'modified') || getMeta(html, 'date-modified') || date || stat.mtime.toISOString());
   const category = inferCategory(html, file, title);
-  return { file, slug, title, description, image, date, modified, category: category.name, categorySlug: category.slug, body, url: `/blog/${slug}/` };
+  const post = { file, slug, title, description, image: customImage, date, modified, category: category.name, categorySlug: category.slug, body, url: `/blog/${slug}/` };
+  if (!post.image) post.image = generateAutoCover(post);
+  return post;
 }).sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.title.localeCompare(b.title));
 
 // Remove old generated post/category directories but keep the blog root files.

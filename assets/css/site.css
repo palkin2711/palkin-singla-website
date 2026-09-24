@@ -802,3 +802,30 @@ body.reviews-page .review-card blockquote { font-size: 15.5px; line-height: 1.62
   body.about-page .about-small { width: 58%; max-height: 190px; }
   body.portfolio-page .portfolio-grid { grid-template-columns: 1fr; }
 }
+
+/* 2026-09-24 image proportion fix: keep the certificate photo natural on homepage/about. */
+.about-small {
+  width: 50%;
+  height: auto !important;
+  max-height: 220px;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+  right: 0;
+  bottom: 0;
+}
+body.about-page .about-small {
+  width: 50%;
+  height: auto !important;
+  max-height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 700px) {
+  .about-small,
+  body.about-page .about-small {
+    width: 56%;
+    height: auto !important;
+    max-height: 175px;
+  }
+}
