@@ -9,7 +9,7 @@ const outputDir = path.join(root, 'blog');
 const indexPath = path.join(root, 'index.html');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const siteUrl = 'https://palkin-singla.netlify.app';
-const assetVersion = '20260924-blog3';
+const assetVersion = '20260924-seo1';
 
 const START = '<!-- BLOG-LATEST-START -->';
 const END = '<!-- BLOG-LATEST-END -->';
@@ -97,6 +97,8 @@ const safeArticleBody = value => String(value)
   .replace(/<style[\s\S]*?<\/style>/gi, '')
   .replace(/<link[^>]+rel=["']?stylesheet["']?[^>]*>/gi, '')
   .replace(/\son\w+\s*=\s*["'][^"']*["']/gi, '')
+  // The article shell creates the only H1. Remove any H1 supplied by a designer/template.
+  .replace(/<h1\b[^>]*>[\s\S]*?<\/h1>/gi, '')
   // Remove designer inline colours/fonts so every uploaded post inherits the portfolio theme.
   .replace(/\sstyle\s*=\s*["'][^"']*["']/gi, '');
 
@@ -128,16 +130,42 @@ const categoriesHtml = (posts, activeSlug = '') => {
   </nav>`;
 };
 
-function pageShell({ title, description, canonical, content, image = '', ogType = 'website', robots = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }) {
+function pageShell({ title, description, canonical, content, image = '', ogType = 'website', robots = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1', schema = null, published = '', modified = '', section = '' }) {
+  const socialImage = image ? (image.startsWith('http') ? image : siteUrl + image) : `${siteUrl}/assets/images/palkin-hero.jpg`;
+  const schemaHtml = schema ? `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script>` : '';
   return `<!doctype html>
 <html lang="en-IN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
+  <meta name="author" content="Palkin Singla">
   <meta name="robots" content="${robots}">
-  <meta name="theme-color" content="#0d0d18"><link rel="canonical" href="${canonical}">
-  <meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:type" content="${ogType}"><meta property="og:url" content="${canonical}">${image ? `<meta property="og:image" content="${escapeHtml(image.startsWith('http') ? image : siteUrl + image)}">` : ''}
+  <meta name="theme-color" content="#0d0d18">
+  <link rel="canonical" href="${canonical}">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="application-name" content="Palkin Singla">
+  <meta name="apple-mobile-web-app-title" content="Palkin Singla">
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:type" content="${ogType}">
+  <meta property="og:url" content="${canonical}">
+  <meta property="og:image" content="${escapeHtml(socialImage)}">
+  <meta property="og:image:alt" content="${escapeHtml(title)}">
+  <meta property="og:site_name" content="Palkin Singla">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(title)}">
+  <meta name="twitter:description" content="${escapeHtml(description)}">
+  <meta name="twitter:image" content="${escapeHtml(socialImage)}">
+  ${published ? `<meta property="article:published_time" content="${published}">` : ''}
+  ${modified ? `<meta property="article:modified_time" content="${modified}">` : ''}
+  ${section ? `<meta property="article:section" content="${escapeHtml(section)}">` : ''}
+  ${schemaHtml}
   <link rel="stylesheet" href="/assets/css/site.css?v=${assetVersion}">
 </head>
 <body>
@@ -149,6 +177,7 @@ function pageShell({ title, description, canonical, content, image = '', ogType 
   ${content}
   <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Palkin Singla. Built for meaningful growth.</span><nav class="footer-links"><a href="/assets/docs/Palkin_Singla_Resume_2026.pdf">Résumé</a><a href="/blog/">Blog</a><a href="/#portfolio">Portfolio</a><a href="/#contact">Contact</a></nav></div></footer>
   <script src="/assets/js/site.js?v=${assetVersion}" defer></script>
+  <script src="/assets/js/analytics.js" defer></script>
 </body>
 </html>`;
 }
@@ -169,14 +198,49 @@ const posts = files.map(file => {
   const description = getMeta(html, 'description') || stripTags(body).slice(0, 165);
   const image = normalizeImage(getMeta(html, 'og:image', 'property') || getMeta(html, 'feature-image') || getFirstImage(body));
   const date = toIsoDate(getMeta(html, 'date') || stat.mtime.toISOString());
+  const modified = toIsoDate(getMeta(html, 'modified') || getMeta(html, 'date-modified') || date || stat.mtime.toISOString());
   const category = inferCategory(html, file, title);
-  return { file, slug, title, description, image, date, category: category.name, categorySlug: category.slug, body, url: `/blog/${slug}/` };
+  return { file, slug, title, description, image, date, modified, category: category.name, categorySlug: category.slug, body, url: `/blog/${slug}/` };
 }).sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.title.localeCompare(b.title));
 
 // Remove old generated post/category directories but keep the blog root files.
 for (const entry of fs.readdirSync(outputDir, { withFileTypes: true })) {
   if (entry.isDirectory()) fs.rmSync(path.join(outputDir, entry.name), { recursive: true, force: true });
 }
+
+const personId = `${siteUrl}/#person`;
+const websiteId = `${siteUrl}/#website`;
+
+const articleSchemaFor = post => ({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      '@id': `${siteUrl}${post.url}#article`,
+      headline: post.title,
+      description: post.description,
+      image: post.image ? (post.image.startsWith('http') ? post.image : siteUrl + post.image) : `${siteUrl}/assets/images/palkin-hero.jpg`,
+      datePublished: post.date,
+      dateModified: post.modified || post.date,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}${post.url}` },
+      author: { '@type': 'Person', '@id': personId, name: 'Palkin Singla', url: siteUrl },
+      publisher: { '@type': 'Person', '@id': personId, name: 'Palkin Singla', url: siteUrl },
+      articleSection: post.category,
+      inLanguage: 'en-IN',
+      isPartOf: { '@id': websiteId }
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${siteUrl}${post.url}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog/` },
+        { '@type': 'ListItem', position: 3, name: post.category, item: `${siteUrl}${categoryLink({ slug: post.categorySlug })}` },
+        { '@type': 'ListItem', position: 4, name: post.title, item: `${siteUrl}${post.url}` }
+      ]
+    }
+  ]
+});
 
 for (const post of posts) {
   const dir = path.join(outputDir, post.slug);
@@ -203,6 +267,10 @@ for (const post of posts) {
     canonical: `${siteUrl}${post.url}`,
     image: post.image,
     ogType: 'article',
+    published: post.date,
+    modified: post.modified || post.date,
+    section: post.category,
+    schema: articleSchemaFor(post),
     content: article
   }));
 }
@@ -215,6 +283,7 @@ const blogPage = pageShell({
   title: 'Digital Marketing Insights | Palkin Singla',
   description: 'Practical insights on Google Ads, Meta Ads, SEO, social media, LinkedIn Ads, TikTok Ads, email marketing, content and websites from Palkin Singla.',
   canonical: `${siteUrl}/blog/`,
+  schema: { '@context': 'https://schema.org', '@type': 'Blog', '@id': `${siteUrl}/blog/#blog`, url: `${siteUrl}/blog/`, name: 'Digital Marketing Insights | Palkin Singla', description: 'Practical insights on Google Ads, Meta Ads, SEO, social media, email marketing, content and websites.', inLanguage: 'en-IN', author: { '@type': 'Person', '@id': personId, name: 'Palkin Singla', url: siteUrl } },
   content: `<main class="blog-main">
     <section class="section blog-hero"><div class="container"><span class="eyebrow">Blog & insights</span><h1 class="section-title">Practical ideas for better digital growth.</h1><p class="section-lead">Browse insights by the same specialist areas featured across my portfolio.</p>${categoriesHtml(posts)}</div></section>
     <section class="section white"><div class="container"><div class="blog-list-head"><div><span class="eyebrow">All articles</span><h2>Latest from the blog</h2></div><p>${posts.length} published article${posts.length === 1 ? '' : 's'}</p></div>${blogCards}</div></section>
@@ -236,6 +305,7 @@ for (const category of CATEGORY_DEFS) {
     title: `${category.name} Insights | Palkin Singla`,
     description: `Articles and practical insights about ${category.name} from Palkin Singla.`,
     canonical: `${siteUrl}${categoryLink(category)}`,
+    schema: { '@context': 'https://schema.org', '@graph': [ { '@type': 'CollectionPage', '@id': `${siteUrl}${categoryLink(category)}#collection`, url: `${siteUrl}${categoryLink(category)}`, name: `${category.name} Insights | Palkin Singla`, description: `Articles and practical insights about ${category.name} from Palkin Singla.`, inLanguage: 'en-IN' }, { '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog/` }, { '@type': 'ListItem', position: 3, name: category.name, item: `${siteUrl}${categoryLink(category)}` } ] } ] },
     robots: categoryPosts.length ? 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' : 'noindex,follow',
     content: `<main class="blog-main">
       <section class="section blog-hero blog-category-hero"><div class="container"><div class="blog-breadcrumbs"><a href="/blog/">Blog</a><span>›</span><span>${escapeHtml(category.name)}</span></div><span class="eyebrow">Blog category</span><h1 class="section-title">${escapeHtml(category.name)}</h1><p class="section-lead">Articles, tests and practical lessons focused on ${escapeHtml(category.name)}.</p>${categoriesHtml(posts, category.slug)}</div></section>

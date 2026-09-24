@@ -1,15 +1,4 @@
 User-agent: *
 Allow: /
 
-# Allow all major crawlers
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-# Sitemap location
 Sitemap: https://palkin-singla.netlify.app/sitemap.xml

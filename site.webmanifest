@@ -1,0 +1,25 @@
+{
+  "name": "Palkin Singla | Digital Marketing Specialist",
+  "short_name": "Palkin Singla",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d18",
+  "theme_color": "#0d0d18",
+  "icons": [
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+DIRECT NETLIFY BLOG PUBLISHING (NO GITHUB)
+
+ONE-TIME:
+1. Keep this complete website folder on your computer. This is your MASTER folder.
+2. Install Node.js 20+ if it is not already installed.
+
+FOR EVERY NEW BLOG:
+1. Open the blog-posts folder.
+2. Copy _template.html and rename it, e.g. google-ads-lead-quality.html.
+3. Edit title, description, date, category, feature image URL, and article body.
+4. Save the HTML file.
+5. Double-click BUILD_BLOG.bat.
+6. Wait for SUCCESS.
+7. Open Netlify > your site > Deploys.
+8. Choose manual deploy / drag-and-drop deploy.
+9. Upload or drag the COMPLETE website folder (not only the new HTML file).
+10. After Published, check /blog/ and open the new article.
+
+IMPORTANT:
+- Do not edit files inside /blog/ manually. They are generated automatically.
+- Do not delete /assets/, /scripts/, package.json, or netlify.toml.
+- Keep the previous working Netlify deploy available so you can restore if needed.

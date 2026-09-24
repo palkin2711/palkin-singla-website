@@ -1,0 +1,81 @@
+PALKIN SINGLA WEBSITE — SEO UPGRADE STATUS
+Date: 24 Sep 2026
+
+DONE IN THESE FILES
+1. Favicon package added:
+   - /favicon.ico
+   - /favicon.svg
+   - /favicon-48x48.png
+   - /favicon-512.png
+   - /apple-touch-icon.png
+   - /site.webmanifest
+
+2. Favicon + app icon tags added across the website and future blog pages.
+
+3. Clean homepage redirect added:
+   /index.html -> / (301)
+   /home -> / (301)
+
+4. Existing canonical tags, titles and meta descriptions preserved.
+
+5. Portfolio pages enhanced with:
+   - author meta
+   - Open Graph site name/locale
+   - Twitter/X social card metadata
+   - WebPage schema
+   - BreadcrumbList schema
+
+6. Blog automation enhanced with:
+   - exactly one H1 per article (designer-added H1 is automatically removed)
+   - BlogPosting schema
+   - BreadcrumbList schema
+   - article published/modified dates
+   - article category/section metadata
+   - author metadata
+   - canonical URL
+   - Open Graph + Twitter/X cards
+   - favicon/manifest on every generated blog/category page
+
+7. Blog category pages include CollectionPage + BreadcrumbList schema.
+
+8. Blog index includes Blog schema.
+
+9. Sitemap automatically updates with blog + active category URLs.
+
+10. robots.txt simplified for crawlability and points to sitemap.xml.
+
+11. Local image dimensions added where possible to reduce layout shift.
+
+12. Google Ads lead-quality article included at:
+    /blog-posts/google-ads-lead-generation-guide.html
+    Internal links are relative so they continue to work if the domain changes.
+
+13. GA4 implementation is PREPARED in one file:
+    /assets/js/analytics.js
+    It is currently disabled until the real Measurement ID replaces:
+    G-PASTE-YOUR-ID-HERE
+    Once added, it automatically tracks page views plus:
+    - generate_lead (contact form submit)
+    - phone_click
+    - email_click
+    - outbound_click
+
+ONLY MANUAL ITEMS LEFT
+A. GA4: paste your actual Measurement ID (G-XXXXXXXXXX) in /assets/js/analytics.js.
+   If GA4 is already installed another way (for example GTM), do NOT duplicate it.
+
+B. Google Search Console: submit/check this sitemap:
+   https://palkin-singla.netlify.app/sitemap.xml
+   Then inspect/request indexing for the homepage and important new blog URLs.
+
+C. Optional later: connect a custom domain (for example palkinsingla.com) and update canonical/siteUrl references at that time.
+
+HOW TO DEPLOY WITH GITHUB DESKTOP
+1. Extract this ZIP.
+2. Copy ALL files/folders inside it into your local palkin-singla-website repository folder.
+3. Choose Replace files when Windows asks.
+4. Open GitHub Desktop.
+5. Commit: "Technical SEO upgrade".
+6. Push origin.
+7. Netlify will build automatically.
+8. Wait for Published, then check / and /blog/.
