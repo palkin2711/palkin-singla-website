@@ -315,6 +315,8 @@ fs.mkdirSync(outputDir, { recursive: true });
 const files = fs.readdirSync(sourceDir)
   .filter(file => /\.html?$/i.test(file) && !file.startsWith('_'));
 
+const publishDate = process.env.BLOG_PUBLISH_DATE || new Date().toISOString().slice(0, 10);
+
 const posts = files.map(file => {
   const full = path.join(sourceDir, file);
   const html = fs.readFileSync(full, 'utf8');
@@ -327,10 +329,14 @@ const posts = files.map(file => {
   const date = toIsoDate(getMeta(html, 'date') || stat.mtime.toISOString());
   const modified = toIsoDate(getMeta(html, 'modified') || getMeta(html, 'date-modified') || date || stat.mtime.toISOString());
   const category = inferCategory(html, file, title);
+
+  // Future-dated posts remain in /blog-posts but are not published until their date.
+  if (date && date > publishDate) return null;
+
   const post = { file, slug, title, description, image: customImage, date, modified, category: category.name, categorySlug: category.slug, body, url: `/blog/${slug}/` };
   if (!post.image) post.image = generateAutoCover(post);
   return post;
-}).sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.title.localeCompare(b.title));
+}).filter(Boolean).sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.title.localeCompare(b.title));
 
 // Remove old generated post/category directories but keep the blog root files.
 for (const entry of fs.readdirSync(outputDir, { withFileTypes: true })) {

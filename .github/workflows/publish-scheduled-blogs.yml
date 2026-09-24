@@ -1,0 +1,33 @@
+name: Publish scheduled blogs
+
+on:
+  schedule:
+    # 08:05 IST on planned October publishing dates (02:35 UTC)
+    - cron: "35 2 2,5,7,9,12,14,16,19,21,23,26,28,30 10 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  trigger-netlify-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Update scheduled publish marker
+        run: |
+          echo "$(date -u +%F)" > .scheduled-blog-build
+
+      - name: Commit scheduled publish
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .scheduled-blog-build
+          if git diff --cached --quiet; then
+            echo "No scheduled change to commit."
+            exit 0
+          fi
+          git commit -m "Publish scheduled blog $(date -u +%F)"
+          git push
