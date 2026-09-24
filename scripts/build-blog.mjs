@@ -9,6 +9,7 @@ const outputDir = path.join(root, 'blog');
 const indexPath = path.join(root, 'index.html');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const siteUrl = 'https://palkin-singla.netlify.app';
+const assetVersion = '20260924-blog3';
 
 const START = '<!-- BLOG-LATEST-START -->';
 const END = '<!-- BLOG-LATEST-END -->';
@@ -120,9 +121,10 @@ const categoriesHtml = (posts, activeSlug = '') => {
   const counts = new Map(CATEGORY_DEFS.map(category => [category.slug, 0]));
   posts.forEach(post => counts.set(post.categorySlug, (counts.get(post.categorySlug) || 0) + 1));
   const allActive = !activeSlug ? ' is-active' : '';
+  const countBadge = count => count > 0 ? ` <span>${count}</span>` : '';
   return `<nav class="blog-categories" aria-label="Blog categories">
-    <a class="blog-category-chip${allActive}" href="/blog/">All <span>${posts.length}</span></a>
-    ${CATEGORY_DEFS.map(category => `<a class="blog-category-chip${activeSlug === category.slug ? ' is-active' : ''}" href="${categoryLink(category)}">${escapeHtml(category.name)} <span>${counts.get(category.slug) || 0}</span></a>`).join('\n    ')}
+    <a class="blog-category-chip${allActive}" href="/blog/">All${countBadge(posts.length)}</a>
+    ${CATEGORY_DEFS.map(category => `<a class="blog-category-chip${activeSlug === category.slug ? ' is-active' : ''}" href="${categoryLink(category)}">${escapeHtml(category.name)}${countBadge(counts.get(category.slug) || 0)}</a>`).join('\n    ')}
   </nav>`;
 };
 
@@ -136,7 +138,7 @@ function pageShell({ title, description, canonical, content, image = '', ogType 
   <meta name="robots" content="${robots}">
   <meta name="theme-color" content="#0d0d18"><link rel="canonical" href="${canonical}">
   <meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:type" content="${ogType}"><meta property="og:url" content="${canonical}">${image ? `<meta property="og:image" content="${escapeHtml(image.startsWith('http') ? image : siteUrl + image)}">` : ''}
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/site.css?v=${assetVersion}">
 </head>
 <body>
   <header class="site-header"><div class="container nav-wrap">
@@ -146,7 +148,7 @@ function pageShell({ title, description, canonical, content, image = '', ogType 
   </div></header>
   ${content}
   <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Palkin Singla. Built for meaningful growth.</span><nav class="footer-links"><a href="/assets/docs/Palkin_Singla_Resume_2026.pdf">Résumé</a><a href="/blog/">Blog</a><a href="/#portfolio">Portfolio</a><a href="/#contact">Contact</a></nav></div></footer>
-  <script src="/assets/js/site.js" defer></script>
+  <script src="/assets/js/site.js?v=${assetVersion}" defer></script>
 </body>
 </html>`;
 }
@@ -207,7 +209,7 @@ for (const post of posts) {
 
 const blogCards = posts.length
   ? `<div class="blog-grid">${posts.map(post => cardHtml(post)).join('\n')}</div>`
-  : `<div class="blog-empty"><strong>No articles published yet.</strong><p>Add an HTML file inside <code>blog-posts/</code>. The next Netlify build will automatically style it in this website theme and place it in the correct category.</p></div>`;
+  : `<div class="blog-empty"><strong>New articles coming soon.</strong><p>Practical insights on paid media, SEO, social media, content and websites will be published here.</p></div>`;
 
 const blogPage = pageShell({
   title: 'Digital Marketing Insights | Palkin Singla',
@@ -229,7 +231,7 @@ for (const category of CATEGORY_DEFS) {
   fs.mkdirSync(dir, { recursive: true });
   const cards = categoryPosts.length
     ? `<div class="blog-grid">${categoryPosts.map(post => cardHtml(post)).join('\n')}</div>`
-    : `<div class="blog-empty"><strong>No ${escapeHtml(category.name)} articles yet.</strong><p>When you upload a matching HTML post, it will appear here automatically.</p></div>`;
+    : `<div class="blog-empty"><strong>${escapeHtml(category.name)} insights coming soon.</strong><p>New practical articles in this category will be published here.</p></div>`;
   const categoryPage = pageShell({
     title: `${category.name} Insights | Palkin Singla`,
     description: `Articles and practical insights about ${category.name} from Palkin Singla.`,
@@ -247,12 +249,12 @@ for (const category of CATEGORY_DEFS) {
 if (fs.existsSync(indexPath)) {
   let home = fs.readFileSync(indexPath, 'utf8');
   const latest = posts.slice(0, 3);
-  const section = `${START}
+  const section = latest.length ? `${START}
     <section class="section soft" id="insights"><div class="container">
-      <div class="section-head"><div><span class="eyebrow">Latest insights</span><h2 class="section-title">Fresh notes on smarter digital growth.</h2></div><div><p class="section-lead">New HTML articles inherit the website design automatically and are organized into service-based categories.</p><p><a class="btn btn-secondary" href="/blog/">View all articles →</a></p></div></div>
-      ${latest.length ? `<div class="blog-grid blog-grid-home">${latest.map(post => cardHtml(post, true)).join('\n')}</div>` : '<div class="blog-empty"><strong>Blog is ready.</strong><p>Your first article will appear here automatically after you add it to <code>blog-posts/</code>.</p></div>'}
+      <div class="section-head"><div><span class="eyebrow">Latest insights</span><h2 class="section-title">Fresh notes on smarter digital growth.</h2></div><div><p class="section-lead">Practical lessons from paid media, SEO, content and conversion-focused digital work.</p><p><a class="btn btn-secondary" href="/blog/">View all articles →</a></p></div></div>
+      <div class="blog-grid blog-grid-home">${latest.map(post => cardHtml(post, true)).join('\n')}</div>
     </div></section>
-${END}`;
+${END}` : `${START}${END}`;
   const markerRx = new RegExp(`${START.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${END.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`);
   if (markerRx.test(home)) home = home.replace(markerRx, section);
   else home = home.replace(/\s*<section class="section" id="faq">/, `\n${section}\n\n    <section class="section" id="faq">`);
