@@ -9,7 +9,7 @@ const outputDir = path.join(root, 'blog');
 const indexPath = path.join(root, 'index.html');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const siteUrl = 'https://palkin-singla.netlify.app';
-const assetVersion = '20260924-pages1';
+const assetVersion = '20260924-cover2';
 
 const START = '<!-- BLOG-LATEST-START -->';
 const END = '<!-- BLOG-LATEST-END -->';
@@ -323,7 +323,7 @@ const posts = files.map(file => {
   const body = getBody(html);
   const title = getTitle(html) || stripTags(body).slice(0, 70) || 'Untitled article';
   const description = getMeta(html, 'description') || stripTags(body).slice(0, 165);
-  const customImage = normalizeImage(getMeta(html, 'og:image', 'property') || getMeta(html, 'feature-image') || getFirstImage(body));
+  const customImage = normalizeImage(getMeta(html, 'feature-image'));
   const date = toIsoDate(getMeta(html, 'date') || stat.mtime.toISOString());
   const modified = toIsoDate(getMeta(html, 'modified') || getMeta(html, 'date-modified') || date || stat.mtime.toISOString());
   const category = inferCategory(html, file, title);
