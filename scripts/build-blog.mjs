@@ -9,7 +9,7 @@ const outputDir = path.join(root, 'blog');
 const indexPath = path.join(root, 'index.html');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const siteUrl = 'https://palkin-singla.netlify.app';
-const assetVersion = '20260924-seo1';
+const assetVersion = '20260924-pages1';
 
 const START = '<!-- BLOG-LATEST-START -->';
 const END = '<!-- BLOG-LATEST-END -->';
@@ -171,11 +171,11 @@ function pageShell({ title, description, canonical, content, image = '', ogType 
 <body>
   <header class="site-header"><div class="container nav-wrap">
     <a class="brand" href="/" aria-label="Palkin Singla home"><span class="brand-mark">PS</span><span>Palkin Singla<small>Digital growth strategist</small></span></a>
-    <nav class="nav-links" aria-label="Primary navigation"><a href="/#about">About</a><a href="/#services">Services</a><a href="/#work">Case Studies</a><a href="/#portfolio">Portfolio</a><a href="/#testimonials">Reviews</a><a href="/blog/" aria-current="page">Blog</a><a href="/#contact">Contact</a></nav>
-    <a class="nav-cta" href="/#contact">Start a project →</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Primary navigation"><a href="/about/">About</a><a href="/services/">Services</a><a href="/case-studies/">Case Studies</a><a href="/portfolio/">Portfolio</a><a href="/reviews/">Reviews</a><a href="/blog/" aria-current="page">Blog</a><a href="/contact/">Contact</a></nav>
+    <a class="nav-cta" href="/contact/">Start a project →</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
   </div></header>
   ${content}
-  <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Palkin Singla. Built for meaningful growth.</span><nav class="footer-links"><a href="/assets/docs/Palkin_Singla_Resume_2026.pdf">Résumé</a><a href="/blog/">Blog</a><a href="/#portfolio">Portfolio</a><a href="/#contact">Contact</a></nav></div></footer>
+  <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Palkin Singla. Built for meaningful growth.</span><nav class="footer-links" aria-label="Footer navigation"><a href="/about/">About</a><a href="/services/">Services</a><a href="/case-studies/">Case Studies</a><a href="/portfolio/">Portfolio</a><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a><a href="/assets/docs/palkin_singla_resume_2026.pdf">Résumé</a></nav></div></footer>
   <script src="/assets/js/site.js?v=${assetVersion}" defer></script>
   <script src="/assets/js/analytics.js" defer></script>
 </body>
@@ -257,7 +257,7 @@ for (const post of posts) {
       </header>
       ${post.image ? `<figure class="blog-feature"><img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}"></figure>` : ''}
       <div class="blog-content">${safeBody}</div>
-      <aside class="blog-article-cta"><span class="eyebrow">Need help with ${escapeHtml(post.category)}?</span><h2>Turn the strategy into measurable growth.</h2><p>Share your website, target market and current challenge. I’ll review the brief and suggest the most practical next step.</p><a class="btn btn-primary" href="/#contact">Discuss your project →</a></aside>
+      <aside class="blog-article-cta"><span class="eyebrow">Need help with ${escapeHtml(post.category)}?</span><h2>Turn the strategy into measurable growth.</h2><p>Share your website, target market and current challenge. I’ll review the brief and suggest the most practical next step.</p><a class="btn btn-primary" href="/contact/">Discuss your project →</a></aside>
       <div class="blog-author-box"><div class="brand-mark">PS</div><div><strong>Palkin Singla</strong><p>Digital marketing specialist focused on paid media, SEO, content and conversion-led growth.</p></div></div>
     </article>
   </main>`;

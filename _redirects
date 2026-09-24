@@ -1,3 +1,13 @@
 /index.html    /    301!
 /home          /    301!
-/portfolio     /#portfolio    301
+/portfolio     /portfolio/    301!
+
+/about.html /about/ 301!
+/services.html /services/ 301!
+/case-studies.html /case-studies/ 301!
+/portfolio.html /portfolio/ 301!
+/reviews.html /reviews/ 301!
+/contact.html /contact/ 301!
+
+/work /case-studies/ 301!
+/testimonials /reviews/ 301!
