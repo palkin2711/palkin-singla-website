@@ -1,0 +1,38 @@
+PALKIN SINGLA WEBSITE — BLOG QUICK USE
+
+1) Create one HTML blog file from blog-posts/_template.html.
+2) Rename it, for example: google-ads-lead-generation-tips.html
+3) Set title, description, date, category and og:image in the <head>.
+4) Write/paste the article inside <body>.
+5) Upload/commit the HTML file inside blog-posts/.
+6) Netlify runs npm run build and automatically creates:
+   - the styled article page
+   - the feature-image/title card on /blog/
+   - the correct category page
+   - the latest post card on the homepage
+   - posts.json and sitemap entries
+
+IMPORTANT DESIGN RULE
+You do not need to style each blog manually. Inline colours/fonts and <style> blocks in uploaded posts are removed during build so the article inherits the same violet/blue/white design as the main website. Semantic HTML (h2, h3, p, ul, ol, blockquote, table, img, a) is automatically styled.
+
+BLOG CATEGORIES
+Google Ads
+Meta Ads
+SEO
+Social Media
+LinkedIn Ads
+TikTok Ads
+Email Marketing
+Content Writing
+Website Design
+Website Development
+Digital Marketing
+
+CATEGORY META EXAMPLE
+<meta name="category" content="SEO">
+
+If you forget the category meta, the build tries to detect the category from the filename, title and article text.
+
+FEATURE IMAGE
+If you want to upload ONLY the HTML file, use a full https:// image URL in:
+<meta property="og:image" content="https://.../image.jpg">
