@@ -313,8 +313,8 @@
 </style>
 <link href="assets/css/legacy-bridge.css" rel="stylesheet"/>
 <link href="assets/css/legacy-polish.css" rel="stylesheet"/>
-<link href="assets/css/case-library.css" rel="stylesheet"/>
-<link href="assets/css/proof-gallery.css" rel="stylesheet"/>
+<link href="/assets/css/case-library.css?v=20260925-repair2" rel="stylesheet"/>
+<link href="/assets/css/proof-gallery.css?v=20260925-repair2" rel="stylesheet"/>
 <!-- Site icons -->
 <link href="/favicon.ico" rel="icon" sizes="any"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
@@ -331,7 +331,7 @@
 <meta content="Explore Google Ads campaigns managed by Palkin Singla across Search, Performance Max, Display and Video, with 7.2M+ impressions and 14.9K+ conversions." name="twitter:description"/>
 <meta content="https://palkin-singla.netlify.app/assets/images/portfolio/playhaus-google-ads.png" name="twitter:image"/>
 <script data-seo-webpage="true" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://palkin-singla.netlify.app/google_ads_portfolio.html#webpage","url":"https://palkin-singla.netlify.app/google_ads_portfolio.html","name":"Google Ads Expert & PPC Portfolio | Palkin Singla","description":"Explore Google Ads campaigns managed by Palkin Singla across Search, Performance Max, Display and Video, with 7.2M+ impressions and 14.9K+ conversions.","inLanguage":"en-IN","isPartOf":{"@id":"https://palkin-singla.netlify.app/#website"},"about":{"@id":"https://palkin-singla.netlify.app/#person"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://palkin-singla.netlify.app/assets/images/portfolio/playhaus-google-ads.png"}},{"@type":"BreadcrumbList","@id":"https://palkin-singla.netlify.app/google_ads_portfolio.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://palkin-singla.netlify.app/"},{"@type":"ListItem","position":2,"name":"Google Ads Expert & PPC Portfolio","item":"https://palkin-singla.netlify.app/google_ads_portfolio.html"}]}]}</script>
-<link href="/assets/css/site.css?v=20260925-portfolios2" rel="stylesheet"/><link href="/assets/css/portfolio-unified.css?v=20260925-portfolios1" rel="stylesheet"/><script data-portfolio-schema="true" type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Google Ads Portfolio", "url": "https://palkin-singla.netlify.app/google_ads_portfolio.html", "about": "Google Ads", "author": {"@type": "Person", "name": "Palkin Singla", "url": "https://palkin-singla.netlify.app/about/"}, "isPartOf": {"@type": "WebSite", "name": "Palkin Singla | Digital Marketing Specialist", "url": "https://palkin-singla.netlify.app/"}}</script></head>
+<link href="/assets/css/site.css?v=20260925-portfolios2" rel="stylesheet"/><link href="/assets/css/portfolio-unified.css?v=20260925-repair2" rel="stylesheet"/><script data-portfolio-schema="true" type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Google Ads Portfolio", "url": "https://palkin-singla.netlify.app/google_ads_portfolio.html", "about": "Google Ads", "author": {"@type": "Person", "name": "Palkin Singla", "url": "https://palkin-singla.netlify.app/about/"}, "isPartOf": {"@type": "WebSite", "name": "Palkin Singla | Digital Marketing Specialist", "url": "https://palkin-singla.netlify.app/"}}</script></head>
 <body class="portfolio-unified-page portfolio-google-ads" id="top">
 <!-- unified-portfolio-navigation --><header class="site-header"><div class="container nav-wrap">
 <a aria-label="Palkin Singla home" class="brand" href="/"><span class="brand-mark">PS</span><span>Palkin Singla<small>Digital growth strategist</small></span></a>
@@ -349,92 +349,6 @@
 </nav>
 <a class="nav-cta" href="/contact/">Start a project →</a><button aria-expanded="false" aria-label="Open menu" class="menu-toggle" type="button">☰</button>
 </div></header>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-<script>
-const months = ["Sep'21","Oct'21","Nov'21","Dec'21","Jan'22","Feb'22","Mar'22","Apr'22","May'22","Jun'22","Jul'22","Aug'22","Nov'23","Dec'23","Jan'24","Feb'24","Mar'24","Apr'24","May'24","Jun'24","Aug'24","Sep'24","Oct'24","Nov'24","Dec'24","Jan'25","Feb'25","Mar'25","Apr'25","May'25","Jun'25","Jul'25","Aug'25","Sep'25","Oct'25","Nov'25","Dec'25","Jan'26","Feb'26","Mar'26"];
-
-const impressions = [41347,22915,9792,9011,8248,7434,458,8055,110941,2914,1618,961,28542,88491,155695,105563,188577,88346,114915,59927,2991,4496,4535,6793,5694,5923,7800,10601,10531,11660,11855,7687,11101,15218,4429,7749,8675,10006,6188,6156];
-
-const costs = [171.80,201.91,317.04,328.16,297.04,226.97,290.50,614.84,728.71,1060.03,671.99,272.45,45.42,593.99,825.95,1049.09,1179.25,321.27,304.63,180.77,429.69,721.04,710.17,712.64,733.91,829.92,971.32,988.49,977.42,981.89,987.64,669.34,492.81,664.95,391.83,885.83,1205.39,2126.25,2066.91,2494.78];
-
-const conversions = [6,14,16,20,17,5,0,0,0,0,0,0,2,37,65,64,56,31,33,15,3,2,2,5,4,4,2,4,3,2,4,11,2,5,9,13.5,9,16,19,21];
-
-const ctx = document.getElementById('timeChart').getContext('2d');
-new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: months,
-    datasets: [
-      {
-        label: 'Impressions (÷100)',
-        data: impressions.map(v => v/100),
-        borderColor: 'rgba(79,142,247,0.9)',
-        backgroundColor: 'rgba(79,142,247,0.05)',
-        fill: true,
-        tension: 0.4,
-        pointRadius: 2,
-        borderWidth: 2,
-        yAxisID: 'y',
-      },
-      {
-        label: 'Cost ($)',
-        data: costs,
-        borderColor: 'rgba(167,139,250,0.9)',
-        backgroundColor: 'rgba(167,139,250,0.03)',
-        fill: false,
-        tension: 0.4,
-        pointRadius: 2,
-        borderWidth: 2,
-        yAxisID: 'y',
-      },
-      {
-        label: 'Conversions (×20)',
-        data: conversions.map(v => v*20),
-        borderColor: 'rgba(34,211,165,0.9)',
-        backgroundColor: 'rgba(34,211,165,0.03)',
-        fill: false,
-        tension: 0.4,
-        pointRadius: 2,
-        borderWidth: 2,
-        yAxisID: 'y',
-      },
-    ]
-  },
-  options: {
-    responsive: true,
-    interaction: { mode: 'index', intersect: false },
-    plugins: {
-      legend: {
-        labels: { color: '#8888aa', font: { size: 12, family: 'DM Sans' }, boxWidth: 14 }
-      },
-      tooltip: {
-        backgroundColor: '#1c1c26',
-        borderColor: '#2a2a3a',
-        borderWidth: 1,
-        titleColor: '#e8e8f0',
-        bodyColor: '#8888aa',
-        callbacks: {
-          label: ctx => {
-            if(ctx.dataset.label.includes('Impr')) return ` Impr.: ${Math.round(ctx.raw*100).toLocaleString()}`;
-            if(ctx.dataset.label.includes('Cost')) return ` Cost: $${ctx.raw.toFixed(2)}`;
-            return ` Conv.: ${(ctx.raw/20).toFixed(1)}`;
-          }
-        }
-      }
-    },
-    scales: {
-      x: {
-        ticks: { color: '#555570', maxTicksLimit: 20, font: { size: 10 } },
-        grid: { color: 'rgba(42,42,58,0.5)' }
-      },
-      y: {
-        ticks: { color: '#555570', font: { size: 11 } },
-        grid: { color: 'rgba(42,42,58,0.5)' }
-      }
-    }
-  }
-});
-</script>
 <script src="assets/js/proof-gallery.js"></script>
 <script defer="" src="/assets/js/analytics.js"></script>
 <section class="portfolio-switcher-section"><div class="container"><div class="portfolio-switcher"><span>Explore portfolio</span><div><a aria-current="page" href="/google_ads_portfolio.html">Google Ads</a><a href="/meta_ads_portfolio.html">Meta Ads</a><a href="/seo_portfolio.html">SEO</a><a href="/smo_portfolio.html">Social Media</a><a href="/linkedin_ads_portfolio.html">LinkedIn Ads</a><a href="/tiktok_ads_portfolio.html">TikTok Ads</a><a href="/email_portfolio.html">Email Marketing</a><a href="/content_writing_portfolio.html">Content Marketing</a><a href="/website_design_portfolio.html">Website Design</a><a href="/website_development_portfolio.html">Web Development</a></div></div></div></section><main class="portfolio-page-content"><section class="portfolio-v2-hero">
@@ -909,5 +823,89 @@ new Chart(ctx, {
 </section><!-- uploaded-case-library-end --><!-- portfolio-enhancement-start --><section class="portfolio-enhancement"><span class="bridge-eyebrow">New 2026 work · PLAYHAUS</span><h2>Google Ads optimization for a fashion eCommerce brand</h2><p>Two supplied reporting snapshots show the transition from one to two conversions, with the later period recording a $22.13 cost per conversion. Search terms, negatives, targeting, tracking, ad relevance and landing-page recommendations were part of the optimization focus.</p><div class="bridge-metrics"><div class="bridge-metric"><strong>65</strong><span>Later-period clicks</span></div><div class="bridge-metric"><strong>$44.26</strong><span>Later-period spend</span></div><div class="bridge-metric"><strong>2</strong><span>Conversions</span></div><div class="bridge-metric"><strong>$22.13</strong><span>Cost / conversion</span></div></div><a class="bridge-link" href="tiktok_ads_portfolio.html">View full PLAYHAUS case study →</a></section><!-- portfolio-enhancement-end --><!-- portfolio-cta-start --><section class="portfolio-cta"><div class="portfolio-cta-shell"><div class="portfolio-cta-copy"><span class="bridge-eyebrow">Want stronger paid-search performance?</span><h2>Let’s build a clearer Google Ads growth plan.</h2><p>Share your goal and current challenge through the main contact form. I’ll review it and recommend the most practical next step.</p></div><div class="portfolio-cta-actions"><a class="portfolio-cta-button" href="/contact/">Start a Google Ads project →</a><a class="portfolio-cta-button secondary" href="mailto:palkinsingla2711@gmail.com">Email me</a></div></div></section><!-- portfolio-cta-end --><footer>
 <p>Built with real campaign data · <strong>Palkin Singla</strong> · Digital Marketing Specialist</p>
 <p style="margin-top:8px; font-size:11px;">Google Ads · Search · Performance Max · Display · App · Video · 2021–2026</p>
-</footer><!-- CHART.JS --></main><footer class="site-footer"><div class="container footer-row"><span>© <span data-year=""></span> Palkin Singla. Built for meaningful growth.</span><nav aria-label="Footer navigation" class="footer-links"><a href="/about/">About</a><a href="/services/">Services</a><a href="/pricing/">Pricing</a><a href="/case-studies/">Case Studies</a><a href="/portfolio/">Portfolio</a><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a><a href="/assets/docs/palkin_singla_resume_2026.pdf">Résumé</a></nav></div></footer><script src="/assets/js/site.js?v=20260925-portfolios1"></script><script src="/assets/js/portfolio-unified.js?v=20260925-portfolios1"></script></body>
+</footer><!-- CHART.JS --></main><footer class="site-footer"><div class="container footer-row"><span>© <span data-year=""></span> Palkin Singla. Built for meaningful growth.</span><nav aria-label="Footer navigation" class="footer-links"><a href="/about/">About</a><a href="/services/">Services</a><a href="/pricing/">Pricing</a><a href="/case-studies/">Case Studies</a><a href="/portfolio/">Portfolio</a><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a><a href="/assets/docs/palkin_singla_resume_2026.pdf">Résumé</a></nav></div></footer><script src="/assets/js/site.js?v=20260925-portfolios1"></script><script src="/assets/js/portfolio-unified.js?v=20260925-portfolios1"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script><script>
+const months = ["Sep'21","Oct'21","Nov'21","Dec'21","Jan'22","Feb'22","Mar'22","Apr'22","May'22","Jun'22","Jul'22","Aug'22","Nov'23","Dec'23","Jan'24","Feb'24","Mar'24","Apr'24","May'24","Jun'24","Aug'24","Sep'24","Oct'24","Nov'24","Dec'24","Jan'25","Feb'25","Mar'25","Apr'25","May'25","Jun'25","Jul'25","Aug'25","Sep'25","Oct'25","Nov'25","Dec'25","Jan'26","Feb'26","Mar'26"];
+
+const impressions = [41347,22915,9792,9011,8248,7434,458,8055,110941,2914,1618,961,28542,88491,155695,105563,188577,88346,114915,59927,2991,4496,4535,6793,5694,5923,7800,10601,10531,11660,11855,7687,11101,15218,4429,7749,8675,10006,6188,6156];
+
+const costs = [171.80,201.91,317.04,328.16,297.04,226.97,290.50,614.84,728.71,1060.03,671.99,272.45,45.42,593.99,825.95,1049.09,1179.25,321.27,304.63,180.77,429.69,721.04,710.17,712.64,733.91,829.92,971.32,988.49,977.42,981.89,987.64,669.34,492.81,664.95,391.83,885.83,1205.39,2126.25,2066.91,2494.78];
+
+const conversions = [6,14,16,20,17,5,0,0,0,0,0,0,2,37,65,64,56,31,33,15,3,2,2,5,4,4,2,4,3,2,4,11,2,5,9,13.5,9,16,19,21];
+
+const ctx = document.getElementById('timeChart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: [
+      {
+        label: 'Impressions (÷100)',
+        data: impressions.map(v => v/100),
+        borderColor: 'rgba(79,142,247,0.9)',
+        backgroundColor: 'rgba(79,142,247,0.05)',
+        fill: true,
+        tension: 0.4,
+        pointRadius: 2,
+        borderWidth: 2,
+        yAxisID: 'y',
+      },
+      {
+        label: 'Cost ($)',
+        data: costs,
+        borderColor: 'rgba(167,139,250,0.9)',
+        backgroundColor: 'rgba(167,139,250,0.03)',
+        fill: false,
+        tension: 0.4,
+        pointRadius: 2,
+        borderWidth: 2,
+        yAxisID: 'y',
+      },
+      {
+        label: 'Conversions (×20)',
+        data: conversions.map(v => v*20),
+        borderColor: 'rgba(34,211,165,0.9)',
+        backgroundColor: 'rgba(34,211,165,0.03)',
+        fill: false,
+        tension: 0.4,
+        pointRadius: 2,
+        borderWidth: 2,
+        yAxisID: 'y',
+      },
+    ]
+  },
+  options: {
+    responsive: true,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: {
+        labels: { color: '#8888aa', font: { size: 12, family: 'DM Sans' }, boxWidth: 14 }
+      },
+      tooltip: {
+        backgroundColor: '#1c1c26',
+        borderColor: '#2a2a3a',
+        borderWidth: 1,
+        titleColor: '#e8e8f0',
+        bodyColor: '#8888aa',
+        callbacks: {
+          label: ctx => {
+            if(ctx.dataset.label.includes('Impr')) return ` Impr.: ${Math.round(ctx.raw*100).toLocaleString()}`;
+            if(ctx.dataset.label.includes('Cost')) return ` Cost: $${ctx.raw.toFixed(2)}`;
+            return ` Conv.: ${(ctx.raw/20).toFixed(1)}`;
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: '#555570', maxTicksLimit: 20, font: { size: 10 } },
+        grid: { color: 'rgba(42,42,58,0.5)' }
+      },
+      y: {
+        ticks: { color: '#555570', font: { size: 11 } },
+        grid: { color: 'rgba(42,42,58,0.5)' }
+      }
+    }
+  }
+});
+</script></body>
 </html>

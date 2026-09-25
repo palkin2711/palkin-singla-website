@@ -30,10 +30,11 @@
 .proof-thumb img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: top left;
-  background: #f4f5f8;
+  height: 190px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center top;
+  background: #f7f8fb;
 }
 
 .proof-thumb span {
@@ -208,7 +209,7 @@
 
 @media (max-width: 480px) {
   .proof-strip { grid-template-columns: 1fr; }
-  .proof-thumb img { aspect-ratio: 2 / 1; }
+  .proof-thumb img { height: 210px; aspect-ratio: auto; object-fit: contain; }
   .proof-dialog-title { font-size: 12px; }
   .proof-dialog-counter { display: none; }
   .proof-dialog-stage { height: 68vh; padding: 8px 43px; }

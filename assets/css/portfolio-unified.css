@@ -114,3 +114,178 @@
 .portfolio-index-actions{display:flex;gap:15px;flex-wrap:wrap}.portfolio-index-actions a{color:var(--violet);font-size:11px;font-weight:850;text-decoration:none}.portfolio-index-actions a:last-child{color:var(--muted);}
 .portfolio-index-cta{padding:74px 0;background:var(--ink);color:#fff}.portfolio-index-cta>.container{display:flex;align-items:center;justify-content:space-between;gap:30px}.portfolio-index-cta h2{max-width:760px;margin:12px 0 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(34px,4vw,56px);font-weight:500;line-height:1.04;letter-spacing:-.04em;color:#fff}.portfolio-index-cta .eyebrow{color:var(--violet-2)}
 @media(max-width:760px){.portfolio-index-grid{grid-template-columns:1fr}.portfolio-index-card{grid-template-columns:58px 1fr;padding:20px}.portfolio-index-icon{width:52px;height:52px;border-radius:16px}.portfolio-index-hero{padding:135px 0 68px}.portfolio-index-cta>.container{display:block}.portfolio-index-cta .btn{margin-top:24px}}
+
+
+/* ===== Portfolio full repair: preserve the website shell without breaking portfolio data ===== */
+
+/* Restore the original variables inside each detailed portfolio.
+   Main site header/footer still use the website palette. */
+.portfolio-google-ads .portfolio-page-content{
+  --bg:#0a0a0f;--bg2:#111118;--bg3:#18181f;--card:#1c1c26;--border:#2a2a3a;
+  --accent:#4f8ef7;--accent2:#a78bfa;--green:#22d3a5;--yellow:#f9c74f;--red:#f87171;
+  --text:#e8e8f0;--muted:#8888aa;--dim:#555570;
+}
+.portfolio-meta-ads .portfolio-page-content{
+  --bg:#f7f4ef;--bg2:#efe9e0;--white:#fdfcfa;--card:#fff;--border:#e4ddd4;
+  --meta:#1877F2;--meta2:#0a5ec0;--accent:#e8501a;--green:#0e7a4e;--yellow:#d4820a;
+  --text:#1a1612;--muted:#7a6f65;--dim:#b0a496;--ink:#2d2520;
+}
+.portfolio-seo .portfolio-page-content{
+  --bg:#f9f7f4;--dark:#0f0d0b;--card:#fff;--border:#e8e3dc;--green:#1a7a4a;
+  --green-light:#d4edda;--accent:#e8501a;--accent2:#f5a623;--blue:#1a56db;--blue-light:#dbeafe;
+  --text:#1a1612;--muted:#7a6f65;--dim:#b0a496;--teal:#0d6e6e;
+}
+.portfolio-social-media .portfolio-page-content{
+  --bg:#faf8f5;--dark:#0d0b09;--card:#fff;--border:#eae5de;--ig:#e1306c;--fb:#1877f2;
+  --li:#0077b5;--yt:#ff0000;--tw:#1da1f2;--accent:#ff6b35;--accent2:#ffd166;--green:#06d6a0;
+  --text:#1a1714;--muted:#7a7068;--dim:#b5aca0;
+}
+.portfolio-email-marketing .portfolio-page-content{
+  --bg:#f5f3ff;--dark:#0c0a1e;--navy:#1a1560;--card:#fff;--border:#e4e0f5;
+  --accent:#6c47ff;--accent2:#ff6b6b;--green:#00c896;--yellow:#ffd166;--cyan:#00d4ff;
+  --text:#1a1714;--muted:#6b6584;--dim:#a8a0c0;
+}
+.portfolio-content-marketing .portfolio-page-content{
+  --ink:#111009;--paper:#faf7f2;--cream:#f3ede3;--mid:#e8dfd0;--accent:#c8391a;--gold:#b8862a;
+  --teal:#1a6b6b;--slate:#2d4a5a;--green:#1a5c2e;--violet:#3d2a6b;--text:#1e1b16;
+  --muted:#7a7060;--dim:#b0a898;--card:#fff;--border:#e0d8cc;
+}
+
+/* Fix dark KPI cards whose figures became nearly invisible after the redesign. */
+.portfolio-google-ads .portfolio-page-content .kpi-value,
+.portfolio-google-ads .portfolio-page-content .kpi-val,
+.portfolio-google-ads .portfolio-page-content .stat-value,
+.portfolio-google-ads .portfolio-page-content .stat-val,
+.portfolio-google-ads .portfolio-page-content [class*="metric"] strong{
+  color:var(--text)!important;
+}
+.portfolio-google-ads .portfolio-page-content .kpi-label,
+.portfolio-google-ads .portfolio-page-content .stat-label{
+  color:var(--muted)!important;
+}
+
+/* Charts: stable usable height and no blank giant panels when Chart.js renders. */
+.portfolio-meta-ads .chart-box{
+  min-height:390px;
+  display:flex;
+  flex-direction:column;
+}
+.portfolio-meta-ads .chart-box canvas{
+  width:100%!important;
+  height:300px!important;
+  max-height:300px!important;
+}
+.portfolio-google-ads canvas{
+  width:100%!important;
+  max-height:340px!important;
+}
+
+/* Screenshot/proof images: show the full screenshot rather than cropping it. */
+.portfolio-unified-page .proof-thumb{
+  background:#fff!important;
+}
+.portfolio-unified-page .proof-thumb img{
+  width:100%!important;
+  height:190px!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center top!important;
+  background:#f7f8fb!important;
+}
+.portfolio-unified-page .evidence-proof img{
+  width:100%!important;
+  height:240px!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center top!important;
+  background:#f7f8fb!important;
+}
+.portfolio-google-ads .screenshot-card .sc-img,
+.portfolio-meta-ads .ss-card .ss-visual{
+  width:100%!important;
+  height:340px!important;
+  object-fit:contain!important;
+  object-position:center top!important;
+  background:#f6f7fa!important;
+}
+
+/* Existing portfolio project/client images were being cropped by legacy cover rules.
+   Keep their natural proportions in a clean framed area. */
+.portfolio-seo .pc-img,
+.portfolio-social-media .cc-img,
+.portfolio-email-marketing .cs-img{
+  width:100%!important;
+  height:300px!important;
+  max-height:300px!important;
+  object-fit:contain!important;
+  object-position:center top!important;
+  background:#f7f8fb!important;
+  padding:6px;
+}
+.portfolio-unified-page .case-proof img,
+.portfolio-unified-page .enhance-card img,
+.portfolio-unified-page .strategy-img-wrap img,
+.portfolio-unified-page .gsc-big img,
+.portfolio-unified-page .ec-right img{
+  width:100%!important;
+  height:auto!important;
+  max-height:420px!important;
+  object-fit:contain!important;
+  object-position:center top!important;
+}
+
+/* Keep proof cards balanced instead of allowing one tall image to stretch the entire row. */
+.portfolio-unified-page .proof-strip{
+  align-items:stretch;
+}
+.portfolio-unified-page .proof-thumb{
+  display:flex!important;
+  flex-direction:column;
+}
+.portfolio-unified-page .proof-thumb span{
+  margin-top:auto;
+}
+
+/* Data tables: rows remain readable and horizontally scroll on small screens. */
+.portfolio-unified-page .tbl-wrap,
+.portfolio-unified-page .table-wrap{
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+}
+.portfolio-unified-page .tbl-wrap table,
+.portfolio-unified-page .table-wrap table{
+  min-width:900px;
+}
+
+/* Preserve original dark/light section contrast instead of forcing pale card text everywhere. */
+.portfolio-google-ads .portfolio-page-content .card,
+.portfolio-google-ads .portfolio-page-content .kpi-card{
+  color:var(--text);
+}
+.portfolio-meta-ads .portfolio-page-content td{
+  color:var(--text)!important;
+}
+
+/* Evidence library: consistent card height without clipping its copy. */
+.portfolio-unified-page .case-library .evidence-card{
+  min-height:0!important;
+}
+.portfolio-unified-page .case-library .evidence-card h3{
+  line-height:1.12!important;
+}
+
+/* Mobile/tablet image and chart adjustments. */
+@media(max-width:900px){
+  .portfolio-unified-page .proof-thumb img{height:170px!important;}
+  .portfolio-google-ads .screenshot-card .sc-img,
+  .portfolio-meta-ads .ss-card .ss-visual{height:300px!important;}
+  .portfolio-meta-ads .chart-box canvas{height:270px!important;max-height:270px!important;}
+}
+@media(max-width:640px){
+  .portfolio-unified-page .proof-thumb img{height:210px!important;}
+  .portfolio-seo .pc-img,
+  .portfolio-social-media .cc-img,
+  .portfolio-email-marketing .cs-img{height:240px!important;max-height:240px!important;}
+  .portfolio-google-ads .screenshot-card .sc-img,
+  .portfolio-meta-ads .ss-card .ss-visual{height:260px!important;}
+}

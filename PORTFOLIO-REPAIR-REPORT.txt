@@ -1,0 +1,36 @@
+PORTFOLIO FULL REPAIR — VALIDATION REPORT
+=========================================
+
+Visible issues addressed:
+- Google Ads KPI figures restored to readable contrast.
+- Google/Meta operational JavaScript moved after the DOM so charts/tables can initialize.
+- Meta campaign table population restored.
+- Proof/screenshot thumbnails changed from crop to contain.
+- SEO, Social Media and Email portfolio images changed from cover/crop to contain.
+- Large proof images capped to balanced heights.
+- Tables remain scrollable rather than clipped on smaller screens.
+
+Page-by-page static audit:
+- google_ads_portfolio.html: 24 images, 1 tables, 1 canvases, 24 proof thumbnails, 0 broken image paths
+- meta_ads_portfolio.html: 18 images, 1 tables, 4 canvases, 15 proof thumbnails, 0 broken image paths
+- seo_portfolio.html: 22 images, 14 tables, 0 canvases, 0 proof thumbnails, 0 broken image paths
+- smo_portfolio.html: 5 images, 0 tables, 0 canvases, 0 proof thumbnails, 0 broken image paths
+- linkedin_ads_portfolio.html: 3 images, 0 tables, 0 canvases, 1 proof thumbnails, 0 broken image paths
+- email_portfolio.html: 8 images, 0 tables, 0 canvases, 0 proof thumbnails, 0 broken image paths
+- tiktok_ads_portfolio.html: 1 images, 0 tables, 0 canvases, 0 proof thumbnails, 0 broken image paths
+- content_writing_portfolio.html: 0 images, 0 tables, 0 canvases, 0 proof thumbnails, 0 broken image paths
+- website_design_portfolio.html: 2 images, 0 tables, 0 canvases, 0 proof thumbnails, 0 broken image paths
+- website_development_portfolio.html: 2 images, 0 tables, 0 canvases, 0 proof thumbnails, 0 broken image paths
+
+Script order checks:
+- google_ads_portfolio.html: DOM before operational JS = False
+- meta_ads_portfolio.html: DOM before operational JS = True
+
+Broken local href/src references after overlay: 0
+- None
+
+Deployment:
+1. Extract ZIP.
+2. Paste all files/folders into the local palkin-singla-website repository.
+3. Replace files when prompted.
+4. Commit and push.
