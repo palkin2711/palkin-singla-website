@@ -1,0 +1,33 @@
+SERVICE LINKS + INTERNAL LINK AUDIT
+===================================
+
+Service URLs standardized:
+- /services/google-ads/
+- /services/meta-ads/
+- /services/seo/
+- /services/social-media-marketing/
+- /services/linkedin-marketing/
+- /services/tiktok-marketing/
+- /services/email-marketing/
+- /services/content-marketing/
+- /services/website-design/
+- /services/website-development/
+
+What was corrected:
+- Six legacy portfolio pages now use the full Services dropdown rather than a single generic Services link.
+- Existing homepage, About, Services, Pricing, Case Studies, Portfolio, Reviews, Contact and Blog navigation was checked and already points to the dedicated service URLs.
+- Defensive 301 redirects were added for intuitive/old service URL aliases.
+- The missing Google Business Profile QR PDF target was restored so that link no longer 404s.
+- Future blog navigation is already generated with the same dedicated Services dropdown by scripts/build-blog.mjs.
+
+Audit results:
+- Local href/src references checked: 1930
+- Dedicated service references checked: 527
+- Broken local references after patch: 0
+- Navigation pages without a Services dropdown after patch: 0
+
+Broken references:
+- None
+
+Navigation issues:
+- None

@@ -10,3 +10,25 @@
 
 /work /case-studies/ 301!
 /testimonials /reviews/ 301!
+
+# Service URL aliases
+/google-ads                                /services/google-ads/ 301!
+/meta-ads                                  /services/meta-ads/ 301!
+/seo-services                              /services/seo/ 301!
+/social-media-marketing                    /services/social-media-marketing/ 301!
+/linkedin-marketing                        /services/linkedin-marketing/ 301!
+/tiktok-marketing                          /services/tiktok-marketing/ 301!
+/email-marketing                           /services/email-marketing/ 301!
+/content-marketing                         /services/content-marketing/ 301!
+/website-design                            /services/website-design/ 301!
+/website-development                       /services/website-development/ 301!
+/services/google-ads.html                  /services/google-ads/ 301!
+/services/meta-ads.html                    /services/meta-ads/ 301!
+/services/seo.html                         /services/seo/ 301!
+/services/social-media-marketing.html      /services/social-media-marketing/ 301!
+/services/linkedin-marketing.html          /services/linkedin-marketing/ 301!
+/services/tiktok-marketing.html            /services/tiktok-marketing/ 301!
+/services/email-marketing.html             /services/email-marketing/ 301!
+/services/content-marketing.html           /services/content-marketing/ 301!
+/services/website-design.html              /services/website-design/ 301!
+/services/website-development.html         /services/website-development/ 301!
