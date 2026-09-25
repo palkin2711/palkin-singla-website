@@ -1,0 +1,36 @@
+PORTFOLIO + CASE STUDY LINKS FIX
+================================
+
+CASE STUDIES menu now contains only:
+- All Case Studies
+- PLAYHAUS · TikTok/eCommerce
+- C2 Paint · Meta Ads
+- B2B LinkedIn Lead Gen
+- Organic SEO Growth
+
+PORTFOLIO menu now contains only:
+- All Portfolios
+- Google Ads
+- Meta Ads
+- SEO
+- Social Media
+- LinkedIn Ads
+- TikTok Ads
+- Email Marketing
+- Content Writing
+- Website Design
+- Website Development
+
+Important:
+- Case-study cards still open their related detailed portfolio evidence page.
+- Portfolio cards still open their matching portfolio page.
+- Future blog navigation uses the same menus.
+
+Audit:
+- Local references checked: 2504
+- Portfolio detail references: 443
+- Case-study references: 239
+- Broken local references: 0
+
+Broken refs:
+- None

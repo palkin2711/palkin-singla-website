@@ -118,3 +118,20 @@ contactForm?.addEventListener('submit', event => {
     button.textContent = 'Sending…';
   }
 });
+
+
+// Keep Case Studies / Portfolio dropdowns easy to use.
+const sectionDropdowns = [...document.querySelectorAll('.nav-section-dropdown')];
+sectionDropdowns.forEach(dropdown => {
+  dropdown.addEventListener('toggle', () => {
+    if (!dropdown.open) return;
+    sectionDropdowns.forEach(other => {
+      if (other !== dropdown) other.open = false;
+    });
+  });
+});
+document.addEventListener('click', event => {
+  sectionDropdowns.forEach(dropdown => {
+    if (dropdown.open && !dropdown.contains(event.target)) dropdown.open = false;
+  });
+});

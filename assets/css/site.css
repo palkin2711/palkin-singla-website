@@ -1248,3 +1248,102 @@ body.reviews-page .review-card blockquote { font-size: 15.5px; line-height: 1.62
   .combo-card ul { grid-template-columns:1fr; }
   .combo-card .combo-price { text-align:left; margin-top:16px; }
 }
+
+
+/* ===== Case Studies + Portfolio navigation dropdowns ===== */
+.nav-section-dropdown { position:relative; }
+.nav-section-dropdown summary {
+  list-style:none;
+  cursor:pointer;
+  user-select:none;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  min-height:42px;
+  padding:10px 10px;
+  border-radius:999px;
+  color:var(--ink);
+  font-size:12px;
+  font-weight:800;
+  line-height:1;
+}
+.nav-section-dropdown summary::-webkit-details-marker { display:none; }
+.nav-section-dropdown summary:hover,
+.nav-section-dropdown[open] summary,
+.nav-section-dropdown summary:focus-visible {
+  color:var(--violet);
+  background:rgba(79,70,229,.08);
+  outline:none;
+}
+.nav-section-dropdown summary span { font-size:10px; transition:transform .18s ease; }
+.nav-section-dropdown[open] summary span { transform:rotate(180deg); }
+
+.nav-section-menu {
+  position:absolute;
+  z-index:10040;
+  top:calc(100% + 7px);
+  left:50%;
+  min-width:290px;
+  padding:12px;
+  transform:translateX(-38%);
+  display:grid;
+  grid-template-columns:1fr;
+  gap:5px;
+  border:1px solid rgba(31,35,51,.09);
+  border-radius:18px;
+  background:rgba(255,255,255,.99);
+  box-shadow:0 22px 55px rgba(28,35,75,.16);
+}
+.portfolio-dropdown .nav-section-menu {
+  width:470px;
+  grid-template-columns:1fr 1fr;
+}
+.case-studies-dropdown .nav-section-menu { width:350px; }
+
+.nav-section-menu a {
+  display:flex;
+  align-items:center;
+  min-height:40px;
+  padding:9px 11px;
+  border-radius:11px;
+  color:var(--ink);
+  text-decoration:none;
+  font-size:11px;
+  font-weight:750;
+  line-height:1.25;
+}
+.nav-section-menu a:hover {
+  color:var(--violet);
+  background:#f5f3ff;
+}
+.nav-section-menu .nav-section-all {
+  grid-column:1/-1;
+  display:grid;
+  gap:2px;
+  background:linear-gradient(135deg,#f2efff,#eef8ff);
+}
+.nav-section-all strong { font-size:11px; }
+.nav-section-all small { color:var(--muted); font-size:9px; font-weight:600; }
+
+@media (max-width:1000px) {
+  .nav-section-dropdown { width:100%; }
+  .nav-section-dropdown summary {
+    width:100%;
+    justify-content:space-between;
+    border-radius:12px;
+    padding:11px 12px;
+  }
+  .nav-section-menu,
+  .portfolio-dropdown .nav-section-menu,
+  .case-studies-dropdown .nav-section-menu {
+    position:static;
+    width:100%;
+    min-width:0;
+    transform:none;
+    margin-top:5px;
+    grid-template-columns:1fr;
+    box-shadow:none;
+    border-radius:12px;
+    background:#f8f8ff;
+  }
+}
