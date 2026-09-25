@@ -1,0 +1,25 @@
+HOMEPAGE PORTFOLIO + CASE STUDY LINK FIX
+========================================
+
+Only homepage content-card links were changed.
+
+Case study card links:
+- Organic growth: /services/seo/ -> /case-studies/#seo-growth
+- PLAYHAUS · Fashion eCommerce: /services/tiktok-marketing/ -> /case-studies/#playhaus-tiktok
+- C2 Paint creative and audience optimization: /services/meta-ads/ -> /case-studies/#c2-paint-meta
+- Organic growth: /services/seo/ -> /case-studies/#seo-growth
+
+Portfolio card links:
+- Google Ads: /services/google-ads/ -> /google_ads_portfolio.html
+- Meta Ads: /services/meta-ads/ -> /meta_ads_portfolio.html
+- SEO: /services/seo/ -> /seo_portfolio.html
+- Social Media: /services/social-media-marketing/ -> /smo_portfolio.html
+- LinkedIn: /services/linkedin-marketing/ -> /linkedin_ads_portfolio.html
+- TikTok: /services/tiktok-marketing/ -> /tiktok_ads_portfolio.html
+- Email Marketing: /services/email-marketing/ -> /email_portfolio.html
+- Content Writing: content_writing_portfolio.html -> /content_writing_portfolio.html
+- Web Development: /services/website-development/ -> /website_development_portfolio.html
+- Website Design: /services/website-design/ -> /website_design_portfolio.html
+
+Portfolio cards still pointing to /services/: 0
+Header/navigation dropdowns were not changed by this patch.
