@@ -6,22 +6,49 @@ const links = document.querySelector('.nav-links');
 const serviceDropdown = document.querySelector('[data-services-menu]');
 const serviceDropdownToggle = serviceDropdown?.querySelector('.nav-dropdown-toggle');
 
-serviceDropdownToggle?.addEventListener('click', event => {
-  event.stopPropagation();
-  const open = serviceDropdown.classList.toggle('open');
+let serviceCloseTimer;
+
+const setServiceMenu = open => {
+  if (!serviceDropdown || !serviceDropdownToggle) return;
+  window.clearTimeout(serviceCloseTimer);
+  serviceDropdown.classList.toggle('open', open);
   serviceDropdownToggle.setAttribute('aria-expanded', String(open));
+};
+
+serviceDropdownToggle?.addEventListener('click', event => {
+  event.preventDefault();
+  event.stopPropagation();
+  setServiceMenu(!serviceDropdown.classList.contains('open'));
 });
+
+serviceDropdownToggle?.addEventListener('keydown', event => {
+  if (event.key === 'ArrowDown') {
+    event.preventDefault();
+    setServiceMenu(true);
+    serviceDropdown?.querySelector('.nav-dropdown-menu a')?.focus();
+  }
+});
+
+serviceDropdown?.addEventListener('mouseenter', () => {
+  if (window.matchMedia('(min-width: 1001px)').matches) setServiceMenu(true);
+});
+
+serviceDropdown?.addEventListener('mouseleave', () => {
+  if (!window.matchMedia('(min-width: 1001px)').matches) return;
+  serviceCloseTimer = window.setTimeout(() => setServiceMenu(false), 260);
+});
+
+serviceDropdown?.addEventListener('focusin', () => setServiceMenu(true));
 
 document.addEventListener('click', event => {
   if (!serviceDropdown || serviceDropdown.contains(event.target)) return;
-  serviceDropdown.classList.remove('open');
-  serviceDropdownToggle?.setAttribute('aria-expanded', 'false');
+  setServiceMenu(false);
 });
 
 document.addEventListener('keydown', event => {
   if (event.key !== 'Escape') return;
-  serviceDropdown?.classList.remove('open');
-  serviceDropdownToggle?.setAttribute('aria-expanded', 'false');
+  setServiceMenu(false);
+  serviceDropdownToggle?.focus();
 });
 
 const currentPath = window.location.pathname;

@@ -1015,3 +1015,236 @@ body.reviews-page .review-card blockquote { font-size: 15.5px; line-height: 1.62
   .service-price-card { padding:18px; }
   .combo-card { padding:22px; }
 }
+
+
+/* ===== India pricing + service-page visual polish v2 ===== */
+
+/* Easier Services dropdown interaction */
+.nav-dropdown-toggle {
+  min-height: 42px;
+  padding: 10px 14px;
+}
+.nav-dropdown-menu {
+  top: 100%;
+  width: 590px;
+  transform: translateX(-34%);
+  gap: 7px;
+  padding: 15px;
+}
+.nav-dropdown-menu a {
+  min-height: 48px;
+  padding: 10px 12px;
+}
+.nav-dropdown-menu::before { top: -6px; }
+@media (min-width:1001px) {
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu,
+  .nav-dropdown.open .nav-dropdown-menu { display:grid; }
+}
+
+/* Less oversized hero typography */
+.service-detail-copy h1 { font-size:clamp(44px,4.8vw,68px); line-height:1.01; max-width:760px; }
+.pricing-hero h1 { font-size:clamp(44px,4.8vw,66px); line-height:1.01; max-width:720px; }
+.service-detail-hero, .pricing-hero { padding:78px 0 66px; }
+
+/* Replace hero pricing cards with service-related visual objects */
+.service-detail-grid { grid-template-columns:minmax(0,1.06fr) minmax(390px,.94fr); align-items:center; }
+.service-visual-panel {
+  --svc-accent:#5b49ff;
+  position:relative;
+  min-height:500px;
+  border:1px solid rgba(75,82,140,.10);
+  border-radius:34px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 80% 18%, color-mix(in srgb, var(--svc-accent) 18%, transparent), transparent 27%),
+    linear-gradient(145deg,#ffffff 0%,#f5f7ff 55%,#edf8ff 100%);
+  box-shadow:0 25px 70px rgba(32,44,95,.10);
+}
+.service-visual-orb { position:absolute; border-radius:50%; filter:blur(1px); opacity:.65; }
+.service-visual-orb-one { width:210px; height:210px; right:-60px; top:-40px; background:color-mix(in srgb,var(--svc-accent) 18%,#fff); }
+.service-visual-orb-two { width:160px; height:160px; left:-55px; bottom:-50px; background:#dff8ff; }
+.service-visual-main {
+  position:absolute;
+  inset:70px 54px 76px 54px;
+  z-index:2;
+  padding:28px;
+  border:1px solid rgba(55,65,115,.11);
+  border-radius:27px;
+  background:rgba(255,255,255,.90);
+  box-shadow:0 18px 50px rgba(32,44,95,.11);
+  backdrop-filter:blur(10px);
+}
+.service-visual-top { display:flex; align-items:center; gap:14px; }
+.service-visual-symbol {
+  width:58px; height:58px; flex:0 0 58px; display:grid; place-items:center;
+  border-radius:18px; background:var(--svc-accent); color:#fff; font-size:18px; font-weight:950;
+  box-shadow:0 10px 25px color-mix(in srgb,var(--svc-accent) 22%,transparent);
+}
+.service-visual-top strong { display:block; font-size:18px; color:var(--ink); }
+.service-visual-top small { display:block; margin-top:3px; color:var(--muted); font-size:11px; }
+.service-visual-chart {
+  height:130px; margin-top:30px; padding:22px 18px 0; border-radius:18px;
+  display:flex; align-items:flex-end; justify-content:space-between; gap:9px;
+  background:linear-gradient(180deg,#f8f9ff,#eef3ff);
+}
+.service-visual-chart i {
+  flex:1; min-width:12px; border-radius:7px 7px 2px 2px;
+  background:linear-gradient(180deg,var(--svc-accent),color-mix(in srgb,var(--svc-accent) 58%,#7dd3fc));
+  opacity:.92;
+}
+.service-visual-line { height:10px; margin:20px 3px 10px; border-bottom:2px solid #edf0f7; position:relative; }
+.service-visual-line span {
+  position:absolute; left:2%; bottom:-2px; width:78%; height:3px; border-radius:999px;
+  background:linear-gradient(90deg,var(--svc-accent),#61c8ff);
+  transform:rotate(-2.5deg); transform-origin:left center;
+}
+.service-visual-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+.service-visual-chips span {
+  padding:7px 10px; border-radius:999px; background:#f3f5fb; color:#4d5265; font-size:10px; font-weight:750;
+}
+.service-floating-card {
+  position:absolute; z-index:3; min-width:145px; padding:13px 14px; border:1px solid rgba(55,65,115,.1);
+  border-radius:16px; background:#fff; box-shadow:0 15px 35px rgba(35,45,90,.12);
+}
+.service-floating-card b { display:block; font-size:11px; color:var(--ink); }
+.service-floating-card span { display:block; margin-top:3px; font-size:9px; color:var(--muted); }
+.service-floating-card-a { right:20px; top:28px; }
+.service-floating-card-b { left:20px; bottom:26px; }
+.service-price-jump { align-self:center; font-size:12px; font-weight:850; color:var(--violet); text-decoration:none; padding:11px 4px; }
+
+/* One-column service price list, moved below the hero */
+.service-pricing-section { border-top:0; }
+.service-pricing-layout {
+  display:grid;
+  grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);
+  gap:68px;
+  align-items:start;
+}
+.service-pricing-intro { position:sticky; top:105px; }
+.service-pricing-intro .section-title { font-size:clamp(38px,4vw,58px); }
+.service-price-stack-single {
+  display:grid;
+  grid-template-columns:1fr !important;
+  gap:16px;
+  max-width:760px;
+}
+.service-price-stack-single .service-price-card {
+  display:grid;
+  grid-template-columns:minmax(155px,.42fr) minmax(0,1fr);
+  column-gap:28px;
+  align-items:start;
+  padding:24px 26px;
+}
+.service-price-stack-single .service-price-top,
+.service-price-stack-single .price-wrap { grid-column:1; }
+.service-price-stack-single .service-price-card ul { grid-column:2; grid-row:1 / span 3; margin:0; align-self:center; }
+.service-price-stack-single .service-price-card .btn { grid-column:1; margin-top:6px; }
+.service-price-stack-single .price-current { font-family:var(--sans); font-size:34px; font-weight:900; letter-spacing:-.04em; }
+.service-price-stack-single .service-price-card.featured {
+  background:linear-gradient(145deg,#fff,#f8f7ff);
+}
+.service-pricing-intro .festive-mini { margin-top:26px; }
+
+/* Pricing page visual */
+.pricing-hero-grid { grid-template-columns:minmax(0,1fr) minmax(400px,.9fr); gap:72px; }
+.pricing-visual-panel {
+  position:relative; min-height:470px; border-radius:34px; overflow:hidden;
+  background:linear-gradient(145deg,#121936,#37308a 60%,#6452e9);
+  box-shadow:0 28px 70px rgba(40,35,110,.22); color:#fff;
+}
+.pricing-visual-glow {
+  position:absolute; width:310px; height:310px; right:-70px; top:-80px; border-radius:50%;
+  background:radial-gradient(circle,rgba(95,203,255,.45),rgba(95,203,255,0));
+}
+.pricing-visual-main {
+  position:absolute; left:44px; right:44px; top:48px; bottom:48px;
+  padding:26px; border-radius:26px; border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.09); backdrop-filter:blur(10px);
+}
+.pricing-visual-rupee {
+  width:72px; height:72px; display:grid; place-items:center; border-radius:22px;
+  background:#fff; color:#4239c8; font-size:42px; font-weight:950;
+  box-shadow:0 16px 35px rgba(0,0,0,.16);
+}
+.pricing-visual-kicker { display:block; margin-top:27px; text-transform:uppercase; letter-spacing:.16em; font-size:10px; opacity:.68; }
+.pricing-visual-main>strong { display:block; margin-top:10px; font-size:31px; line-height:1.08; letter-spacing:-.035em; }
+.pricing-visual-pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:25px; }
+.pricing-visual-pills span { padding:8px 10px; border-radius:999px; background:rgba(255,255,255,.11); font-size:10px; }
+.pricing-mini-card {
+  position:absolute; z-index:3; display:flex; align-items:center; gap:10px; min-width:150px;
+  padding:12px 14px; border-radius:16px; background:#fff; color:#171a2d; box-shadow:0 15px 35px rgba(0,0,0,.16);
+}
+.pricing-mini-card b { font-size:17px; color:#4938da; }
+.pricing-mini-card span { font-size:9px; color:#62667a; }
+.pricing-mini-a { right:20px; top:22px; }
+.pricing-mini-b { right:24px; bottom:24px; }
+.pricing-festival-inline {
+  position:absolute; left:30px; right:30px; bottom:24px; z-index:4; margin:0;
+  background:linear-gradient(135deg,#fff3d6,#ffe3f1); color:#4e2f35;
+  border-radius:18px; padding:14px 16px;
+}
+.pricing-festival-inline strong { font-size:15px; margin:5px 0; color:#823a2f; }
+.pricing-festival-inline p { margin:0; color:#76575b; font-size:10px; }
+
+/* One-column package list on Pricing page */
+.combo-grid {
+  grid-template-columns:1fr !important;
+  gap:16px;
+  max-width:980px;
+  margin:0 auto;
+}
+.combo-card {
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(180px,.42fr);
+  column-gap:30px;
+  padding:25px 28px;
+}
+.combo-card .combo-badge,
+.combo-card h3,
+.combo-card>p,
+.combo-card ul { grid-column:1; }
+.combo-card .combo-badge { grid-row:1; }
+.combo-card h3 { grid-row:2; margin:10px 0 5px; }
+.combo-card>p { grid-row:3; min-height:0; }
+.combo-card ul { grid-row:4; grid-template-columns:1fr 1fr; gap:7px 18px; margin:15px 0 0; }
+.combo-card .combo-price { grid-column:2; grid-row:2 / span 2; align-self:center; justify-self:end; text-align:right; }
+.combo-card .btn { grid-column:2; grid-row:4; align-self:end; margin:15px 0 0; }
+.combo-price .price-current { font-family:var(--sans); font-size:36px; font-weight:900; letter-spacing:-.04em; }
+
+/* Individual service list also one clean column */
+.pricing-service-list {
+  grid-template-columns:1fr !important;
+  max-width:900px;
+  margin:0 auto;
+}
+.pricing-service-list>a { padding:17px 20px; }
+
+/* Indian price typography */
+.price-current { font-family:var(--sans); font-weight:900; letter-spacing:-.04em; }
+.price-original { font-variant-numeric:tabular-nums; }
+
+@media (max-width:1000px) {
+  .service-detail-grid, .pricing-hero-grid, .service-pricing-layout { grid-template-columns:1fr; }
+  .service-visual-panel, .pricing-visual-panel { min-height:440px; max-width:720px; width:100%; }
+  .service-pricing-intro { position:static; }
+  .service-price-stack-single { max-width:none; }
+}
+@media (max-width:700px) {
+  .nav-dropdown-menu { top:auto; width:100%; transform:none; }
+  .service-visual-panel, .pricing-visual-panel { min-height:405px; border-radius:26px; }
+  .service-visual-main { inset:58px 22px 62px; padding:20px; }
+  .service-floating-card { min-width:125px; }
+  .service-floating-card-a { right:10px; top:12px; }
+  .service-floating-card-b { left:10px; bottom:12px; }
+  .service-price-stack-single .service-price-card {
+    display:block;
+    padding:21px;
+  }
+  .service-price-stack-single .service-price-card ul { margin:14px 0 18px; }
+  .pricing-visual-main { left:22px; right:22px; top:34px; bottom:34px; padding:22px; }
+  .pricing-mini-card { display:none; }
+  .combo-card { display:block; padding:22px; }
+  .combo-card ul { grid-template-columns:1fr; }
+  .combo-card .combo-price { text-align:left; margin-top:16px; }
+}

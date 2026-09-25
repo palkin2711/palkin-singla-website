@@ -65,9 +65,10 @@
     const original = el.querySelector('.price-original');
     const current = el.querySelector('.price-current');
     const save = el.querySelector('.price-save');
-    if (original) original.textContent = `$${base.toLocaleString('en-US')}`;
-    if (current) current.textContent = `$${discounted.toLocaleString('en-US')}`;
-    if (save) save.textContent = `20% festive saving · save $${(base-discounted).toLocaleString('en-US')}`;
+    const money = value => `₹${Math.round(value).toLocaleString('en-IN')}`;
+    if (original) original.textContent = money(base);
+    if (current) current.textContent = money(discounted);
+    if (save) save.textContent = `20% festive saving · save ${money(base-discounted)}`;
     el.classList.add('has-discount');
   });
 })();
