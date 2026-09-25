@@ -910,3 +910,108 @@ body.reviews-page .review-card blockquote { font-size: 15.5px; line-height: 1.62
   #about .about-collage { min-height: 430px; }
   #about .about-small { width: 56%; border-width: 5px; }
 }
+
+
+/* ===== Services dropdown, detailed service pages and pricing ===== */
+.nav-wrap { overflow: visible; }
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle { border:0; background:transparent; font:inherit; padding:10px 12px; color:#333544; font-size:13px; font-weight:700; border-radius:999px; cursor:pointer; display:flex; align-items:center; gap:5px; }
+.nav-dropdown-toggle:hover, .nav-dropdown.open .nav-dropdown-toggle, .nav-dropdown.is-current .nav-dropdown-toggle { color:var(--violet); background:rgba(116,87,255,.08); }
+.nav-dropdown-toggle span { font-size:14px; transition:.2s ease; }
+.nav-dropdown.open .nav-dropdown-toggle span { transform:rotate(180deg); }
+.nav-dropdown-menu { position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-38%); width:560px; display:none; grid-template-columns:1fr 1fr; gap:5px; padding:14px; border:1px solid var(--line); border-radius:22px; background:#fff; box-shadow:0 24px 70px rgba(25,28,60,.16); z-index:80; }
+.nav-dropdown.open .nav-dropdown-menu { display:grid; }
+.nav-dropdown-menu::before { content:""; position:absolute; left:38%; top:-7px; width:13px; height:13px; transform:rotate(45deg); background:#fff; border-left:1px solid var(--line); border-top:1px solid var(--line); }
+.nav-dropdown-menu a { display:flex; align-items:center; gap:10px; border-radius:14px; padding:10px 11px; font-size:12px; color:var(--ink); }
+.nav-dropdown-menu a:hover { background:#f5f4ff; color:var(--violet); }
+.nav-dropdown-menu .nav-all-services { grid-column:1/-1; padding:12px; background:linear-gradient(135deg,#f2f5ff,#faf7ff); border:1px solid rgba(116,87,255,.12); }
+.nav-dropdown-menu .nav-all-services small { display:block; margin-top:1px; font-weight:500; color:var(--muted); }
+.nav-service-icon { flex:0 0 31px; width:31px; height:31px; border-radius:10px; display:grid; place-items:center; background:linear-gradient(145deg,#243b78,#6c52ff); color:#fff; font-size:10px; font-weight:900; }
+
+.service-detail-hero, .pricing-hero { padding:96px 0 72px; background:radial-gradient(circle at 85% 15%,rgba(112,178,255,.18),transparent 32%),linear-gradient(135deg,#f8f8ff 0%,#f4f7ff 52%,#eefcff 100%); border-bottom:1px solid var(--line); }
+.service-detail-grid { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(410px,.95fr); gap:60px; align-items:start; }
+.service-detail-copy h1, .pricing-hero h1 { margin:18px 0 24px; font-family:var(--serif); font-size:clamp(46px,5.7vw,82px); line-height:.99; letter-spacing:-.045em; color:var(--ink); max-width:820px; }
+.service-detail-copy>p, .pricing-hero p { color:var(--muted); font-size:18px; line-height:1.75; max-width:760px; }
+.service-why { margin-top:44px; padding:24px 26px; border:1px solid rgba(116,87,255,.12); border-radius:22px; background:rgba(255,255,255,.7); }
+.service-why h2 { margin:0 0 8px; font-size:17px; }
+.service-why p { margin:0; color:var(--muted); font-size:14px; }
+.service-pricing-panel { position:sticky; top:96px; }
+.service-price-stack { display:grid; gap:12px; }
+.service-price-card { position:relative; border:1px solid var(--line); background:#fff; border-radius:22px; padding:20px; box-shadow:0 12px 35px rgba(32,44,95,.07); }
+.service-price-card.featured { border-color:rgba(91,73,255,.35); box-shadow:0 18px 45px rgba(85,74,210,.13); }
+.service-price-top { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.service-price-top>span { font-weight:900; color:var(--ink); }
+.service-price-top b { font-size:9px; text-transform:uppercase; letter-spacing:.12em; border-radius:999px; padding:5px 8px; background:#ece8ff; color:var(--violet); }
+.price-wrap { display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; margin:12px 0; }
+.price-current { font-family:var(--serif); font-size:38px; line-height:1; color:var(--ink); }
+.price-wrap small { color:var(--muted); font-size:11px; }
+.price-original { display:none; color:#9699aa; text-decoration:line-through; font-size:13px; }
+.price-save { display:none; flex-basis:100%; color:#0d8a69; font-size:10px; font-weight:800; }
+.price-wrap.has-discount .price-original, .price-wrap.has-discount .price-save { display:inline; }
+.service-price-card ul, .combo-card ul { margin:14px 0 18px; padding:0; list-style:none; display:grid; gap:7px; }
+.service-price-card li, .combo-card li { color:var(--muted); font-size:12px; padding-left:18px; position:relative; }
+.service-price-card li::before, .combo-card li::before { content:"✓"; position:absolute; left:0; color:#11a783; font-weight:900; }
+.service-price-card .btn { width:100%; justify-content:center; padding:11px 14px; }
+.pricing-note { margin:14px 4px 0; color:var(--muted); font-size:10px; line-height:1.55; }
+.festive-mini { margin-bottom:12px; border-radius:18px; padding:13px 15px; background:linear-gradient(135deg,#fff3d6,#ffe3f1); border:1px solid rgba(255,152,80,.22); }
+.festive-mini strong { display:block; font-size:12px; color:#993d2c; }
+.festive-mini span { display:block; margin-top:2px; color:#895c57; font-size:10px; }
+.service-content-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:70px; align-items:start; }
+.service-check-list { margin:28px 0 0; padding:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:12px 22px; }
+.service-check-list.compact { grid-template-columns:1fr; }
+.service-check-list li { position:relative; padding:14px 16px 14px 42px; border:1px solid var(--line); border-radius:15px; background:#fff; color:#45495a; font-size:13px; }
+.service-check-list li::before { content:"✓"; position:absolute; left:15px; top:13px; width:19px; height:19px; border-radius:50%; display:grid; place-items:center; background:#dff8f3; color:#07896d; font-size:10px; font-weight:900; }
+.service-small-title { margin:18px 0 0; font-family:var(--serif); font-size:32px; line-height:1.08; }
+.benefit-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.benefit-card { padding:24px; border:1px solid var(--line); border-radius:20px; background:#fff; min-height:155px; }
+.benefit-card span { width:33px; height:33px; display:grid; place-items:center; border-radius:50%; background:#dff8f3; color:#07896d; font-weight:900; }
+.benefit-card p { margin:22px 0 0; font-size:14px; font-weight:750; color:var(--ink); }
+
+.pricing-hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; }
+.festival-offer-card { padding:30px; border-radius:28px; background:linear-gradient(145deg,#11182f,#392d88 58%,#6e45e6); color:#fff; box-shadow:0 25px 60px rgba(38,31,104,.22); }
+.festival-offer-card>span { display:inline-block; font-size:10px; letter-spacing:.15em; text-transform:uppercase; opacity:.72; }
+.festival-offer-card strong { display:block; margin:12px 0; font-size:30px; line-height:1.12; }
+.festival-offer-card p { color:rgba(255,255,255,.88); font-size:14px; }
+.festival-offer-card small { display:block; margin-top:12px; color:rgba(255,255,255,.6); font-size:10px; line-height:1.5; }
+.combo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.combo-card { position:relative; display:flex; flex-direction:column; padding:26px; border:1px solid var(--line); border-radius:24px; background:#fff; box-shadow:0 12px 34px rgba(35,46,92,.06); }
+.combo-badge { width:max-content; padding:5px 8px; border-radius:999px; background:#eef0ff; color:var(--violet); font-size:9px; font-weight:900; text-transform:uppercase; letter-spacing:.12em; }
+.combo-card h3 { margin:18px 0 7px; font-size:21px; }
+.combo-card>p { margin:0; min-height:44px; color:var(--muted); font-size:13px; }
+.combo-card .btn { margin-top:auto; width:100%; justify-content:center; }
+.combo-price .price-current { font-size:42px; }
+.pricing-service-list { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.pricing-service-list>a { display:flex; align-items:center; gap:14px; padding:16px 18px; border:1px solid var(--line); border-radius:17px; background:#fff; text-decoration:none; color:var(--ink); transition:.2s ease; }
+.pricing-service-list>a:hover { transform:translateY(-2px); border-color:rgba(116,87,255,.3); box-shadow:0 10px 28px rgba(30,38,80,.07); }
+.pricing-service-list>a>span:nth-child(2) { flex:1; }
+.pricing-service-list strong { display:block; font-size:13px; }
+.pricing-service-list small { display:block; margin-top:2px; color:var(--muted); font-size:10px; }
+.pricing-service-list b { font-size:10px; color:var(--violet); }
+
+@media (min-width:1001px) {
+  .nav-dropdown:hover .nav-dropdown-menu { display:grid; }
+}
+@media (max-width:1200px) {
+  .nav-links { gap:2px; }
+  .nav-links>a, .nav-dropdown-toggle { padding-left:8px; padding-right:8px; font-size:12px; }
+  .service-detail-grid { grid-template-columns:1fr .95fr; gap:34px; }
+  .combo-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:1000px) {
+  .nav-dropdown { width:100%; }
+  .nav-dropdown-toggle { width:100%; justify-content:space-between; padding:13px 15px; }
+  .nav-dropdown-menu, .nav-dropdown.open .nav-dropdown-menu { position:static; transform:none; width:100%; grid-template-columns:1fr 1fr; margin:4px 0 8px; box-shadow:none; border-radius:15px; background:#f8f8ff; }
+  .nav-dropdown-menu::before { display:none; }
+  .nav-dropdown-menu a { padding:9px; }
+  .service-detail-grid, .pricing-hero-grid, .service-content-grid { grid-template-columns:1fr; }
+  .service-pricing-panel { position:static; }
+  .benefit-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:700px) {
+  .service-detail-hero, .pricing-hero { padding:68px 0 52px; }
+  .service-detail-copy h1, .pricing-hero h1 { font-size:clamp(42px,13vw,60px); }
+  .service-check-list, .benefit-grid, .combo-grid, .pricing-service-list, .nav-dropdown-menu, .nav-dropdown.open .nav-dropdown-menu { grid-template-columns:1fr; }
+  .nav-dropdown-menu .nav-all-services { grid-column:auto; }
+  .service-price-card { padding:18px; }
+  .combo-card { padding:22px; }
+}

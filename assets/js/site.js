@@ -3,6 +3,36 @@ document.documentElement.classList.add('js');
 const toggle = document.querySelector('.menu-toggle');
 const links = document.querySelector('.nav-links');
 
+const serviceDropdown = document.querySelector('[data-services-menu]');
+const serviceDropdownToggle = serviceDropdown?.querySelector('.nav-dropdown-toggle');
+
+serviceDropdownToggle?.addEventListener('click', event => {
+  event.stopPropagation();
+  const open = serviceDropdown.classList.toggle('open');
+  serviceDropdownToggle.setAttribute('aria-expanded', String(open));
+});
+
+document.addEventListener('click', event => {
+  if (!serviceDropdown || serviceDropdown.contains(event.target)) return;
+  serviceDropdown.classList.remove('open');
+  serviceDropdownToggle?.setAttribute('aria-expanded', 'false');
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  serviceDropdown?.classList.remove('open');
+  serviceDropdownToggle?.setAttribute('aria-expanded', 'false');
+});
+
+const currentPath = window.location.pathname;
+if (currentPath.startsWith('/services/')) serviceDropdown?.classList.add('is-current');
+document.querySelectorAll('.nav-links > a').forEach(a => {
+  const href = a.getAttribute('href');
+  if (!href || href === '/') return;
+  if (currentPath === href || (href !== '/blog/' && currentPath.startsWith(href) && href.length > 1)) a.setAttribute('aria-current','page');
+});
+
+
 if (toggle && links) {
   toggle.addEventListener('click', () => {
     const open = links.classList.toggle('open');

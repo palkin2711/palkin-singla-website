@@ -298,11 +298,22 @@ function pageShell({ title, description, canonical, content, image = '', ogType 
 <body>
   <header class="site-header"><div class="container nav-wrap">
     <a class="brand" href="/" aria-label="Palkin Singla home"><span class="brand-mark">PS</span><span>Palkin Singla<small>Digital growth strategist</small></span></a>
-    <nav class="nav-links" aria-label="Primary navigation"><a href="/about/">About</a><a href="/services/">Services</a><a href="/case-studies/">Case Studies</a><a href="/portfolio/">Portfolio</a><a href="/reviews/">Reviews</a><a href="/blog/" aria-current="page">Blog</a><a href="/contact/">Contact</a></nav>
+    <nav class="nav-links" aria-label="Primary navigation">
+<a href="/about/">About</a>
+<div class="nav-dropdown" data-services-menu>
+<button class="nav-dropdown-toggle" type="button" aria-expanded="false">Services <span aria-hidden="true">⌄</span></button>
+<div class="nav-dropdown-menu">
+<a class="nav-all-services" href="/services/"><span class="nav-service-icon">✦</span><span><strong>All Services</strong><small>Explore every service</small></span></a>
+<a href="/services/google-ads/"><span class="nav-service-icon">G</span><span>Google Ads</span></a><a href="/services/meta-ads/"><span class="nav-service-icon">M</span><span>Meta Ads</span></a><a href="/services/seo/"><span class="nav-service-icon">S</span><span>SEO</span></a><a href="/services/social-media-marketing/"><span class="nav-service-icon">↗</span><span>Social Media</span></a><a href="/services/linkedin-marketing/"><span class="nav-service-icon">Li</span><span>LinkedIn</span></a><a href="/services/tiktok-marketing/"><span class="nav-service-icon">T</span><span>TikTok</span></a><a href="/services/email-marketing/"><span class="nav-service-icon">@</span><span>Email Marketing</span></a><a href="/services/content-marketing/"><span class="nav-service-icon">✎</span><span>Content</span></a><a href="/services/website-design/"><span class="nav-service-icon">✦</span><span>Website Design</span></a><a href="/services/website-development/"><span class="nav-service-icon">&lt;/&gt;</span><span>Web Development</span></a>
+</div>
+</div>
+<a href="/pricing/">Pricing</a>
+<a href="/case-studies/">Case Studies</a><a href="/portfolio/">Portfolio</a><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>
+</nav>
     <a class="nav-cta" href="/contact/">Start a project →</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
   </div></header>
   ${content}
-  <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Palkin Singla. Built for meaningful growth.</span><nav class="footer-links" aria-label="Footer navigation"><a href="/about/">About</a><a href="/services/">Services</a><a href="/case-studies/">Case Studies</a><a href="/portfolio/">Portfolio</a><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a><a href="/assets/docs/palkin_singla_resume_2026.pdf">Résumé</a></nav></div></footer>
+  <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Palkin Singla. Built for meaningful growth.</span><nav class="footer-links" aria-label="Footer navigation"><a href="/about/">About</a><a href="/services/">Services</a><a href="/pricing/">Pricing</a><a href="/case-studies/">Case Studies</a><a href="/portfolio/">Portfolio</a><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a><a href="/assets/docs/palkin_singla_resume_2026.pdf">Résumé</a></nav></div></footer>
   <script src="/assets/js/site.js?v=${assetVersion}" defer></script>
   <script src="/assets/js/analytics.js" defer></script>
 </body>
