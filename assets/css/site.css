@@ -835,22 +835,34 @@ body.reviews-page .review-card blockquote { font-size: 15.5px; line-height: 1.62
 .credential-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
 
 /* Google Business Profile block */
-.gmb-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; }
+.gmb-grid { display:grid; grid-template-columns:minmax(340px,.82fr) minmax(650px,1.38fr); gap:54px; align-items:center; }
 .gmb-copy .section-title { max-width:620px; }
 .gmb-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
-.gmb-trust-note { margin-top:28px; padding:16px 18px; border-left:3px solid var(--violet); background:rgba(255,255,255,.7); border-radius:0 14px 14px 0; }
+.gmb-trust-note { margin-top:28px; padding:16px 18px; border-left:3px solid var(--violet); background:rgba(255,255,255,.72); border-radius:0 14px 14px 0; }
 .gmb-trust-note strong { display:block; font-size:14px; }
 .gmb-trust-note span { display:block; color:var(--muted); font-size:12px; margin-top:2px; }
-.gmb-qr-card { display:block; max-width:440px; justify-self:end; text-decoration:none; padding:16px; border:1px solid rgba(79,70,229,.14); border-radius:26px; background:#fff; box-shadow:var(--shadow); transition:.25s ease; }
-.gmb-qr-card:hover { transform:translateY(-4px); }
-.gmb-qr-card img { width:100%; max-height:500px; object-fit:contain; border-radius:18px; background:#fff; }
-.gmb-qr-card span { display:block; padding:13px 8px 3px; color:var(--violet); text-align:center; font-size:12px; font-weight:850; }
+
+.gmb-visuals { display:grid; grid-template-columns:minmax(260px,.78fr) minmax(360px,1.22fr); gap:20px; align-items:stretch; }
+.gmb-qr-card, .gmb-map-card { min-width:0; border:1px solid rgba(79,70,229,.13); border-radius:24px; background:#fff; box-shadow:0 18px 48px rgba(32,44,95,.11); overflow:hidden; }
+.gmb-qr-card { display:flex; flex-direction:column; justify-content:center; text-decoration:none; padding:18px; transition:.25s ease; }
+.gmb-qr-card:hover { transform:translateY(-3px); }
+.gmb-qr-card img { display:block; width:100%; max-height:390px; object-fit:contain; border-radius:16px; background:#fff; }
+.gmb-qr-card span { display:block; padding:14px 8px 2px; color:var(--violet); text-align:center; font-size:12px; font-weight:850; }
+
+.gmb-map-card { display:flex; flex-direction:column; }
+.gmb-map-frame { min-height:390px; flex:1; background:#eef4ff; }
+.gmb-map-frame iframe { width:100%; height:100%; min-height:390px; border:0; display:block; }
+.gmb-map-footer { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 18px; border-top:1px solid var(--line); }
+.gmb-map-footer strong { display:block; color:var(--ink); font-size:13px; }
+.gmb-map-footer span { display:block; margin-top:2px; color:var(--muted); font-size:11px; }
+.gmb-map-footer a { flex:0 0 auto; color:var(--violet); font-size:11px; font-weight:850; text-decoration:none; }
 
 @media (max-width: 860px) {
   .credential-arrow { display:none; }
   .credential-card { flex-basis:min(84vw,330px); }
   .gmb-grid { grid-template-columns:1fr; gap:36px; }
-  .gmb-qr-card { justify-self:start; max-width:390px; }
+  .gmb-visuals { grid-template-columns:1fr 1fr; }
+  .gmb-qr-card { max-width:none; }
 }
 @media (max-width: 560px) {
   .credential-card { flex-basis:86vw; min-height:400px; }
@@ -869,4 +881,32 @@ body.reviews-page .review-card blockquote { font-size: 15.5px; line-height: 1.62
 @media (max-width: 700px) {
   .credential-card { flex-basis: min(88vw, 350px); }
   .credential-card-image .credential-image-link { height: 230px; }
+}
+
+
+/* Homepage About image proportion fix — keep the secondary certificate photo natural. */
+#about .about-collage {
+  min-height: 560px;
+}
+#about .about-main {
+  object-fit: cover;
+  object-position: center 35%;
+}
+#about .about-small {
+  width: 54%;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+@media (max-width: 1000px) {
+  #about .about-collage { min-height: 520px; max-width: 650px; width: 100%; margin: 0 auto; }
+  #about .about-small { width: 52%; }
+}
+@media (max-width: 700px) {
+  #about .about-collage { min-height: 430px; }
+  #about .about-small { width: 56%; border-width: 5px; }
 }
