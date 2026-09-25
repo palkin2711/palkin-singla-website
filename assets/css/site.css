@@ -803,29 +803,70 @@ body.reviews-page .review-card blockquote { font-size: 15.5px; line-height: 1.62
   body.portfolio-page .portfolio-grid { grid-template-columns: 1fr; }
 }
 
-/* 2026-09-24 image proportion fix: keep the certificate photo natural on homepage/about. */
-.about-small {
-  width: 50%;
-  height: auto !important;
-  max-height: 220px;
-  aspect-ratio: auto;
-  object-fit: cover;
-  object-position: center;
-  right: 0;
-  bottom: 0;
+
+/* Certifications & achievements */
+.credential-section { overflow: hidden; }
+.credential-heading { align-items: start; }
+.credential-carousel-wrap { position: relative; }
+.credential-carousel { display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding:6px 4px 18px; }
+.credential-carousel::-webkit-scrollbar { display:none; }
+.credential-card { flex:0 0 340px; scroll-snap-align:start; min-height:430px; border:1px solid var(--line); border-radius:24px; background:#fff; box-shadow:0 14px 38px rgba(31,42,84,.08); overflow:hidden; display:flex; flex-direction:column; }
+.credential-card-image .credential-image-link { display:block; height:220px; background:#f2f5fb; overflow:hidden; }
+.credential-card-image img { width:100%; height:100%; object-fit:contain; background:#fff; }
+.credential-body { padding:22px 22px 24px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.credential-source { color:var(--violet); font-size:10px; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+.credential-body h3 { margin:0; color:var(--ink); font-size:20px; line-height:1.25; }
+.credential-body p { margin:0; color:var(--muted); font-size:13px; }
+.credential-body small { margin-top:auto; color:#777b8a; font-size:10px; overflow-wrap:anywhere; }
+.credential-card-brand { padding-top:26px; background:linear-gradient(145deg,#fff 0%,#f7f8ff 70%,#eef8ff 100%); }
+.credential-brand-mark { width:74px; height:74px; margin:0 22px; display:grid; place-items:center; border-radius:22px; color:#fff; background:linear-gradient(135deg,var(--violet),#0ea5e9); font-size:28px; font-weight:900; letter-spacing:-.04em; box-shadow:0 16px 32px rgba(79,70,229,.18); }
+.credential-brand-mark.hubspot { background:linear-gradient(135deg,#ff7a59,#ff9a76); }
+.credential-brand-mark.simplilearn { background:linear-gradient(135deg,#111827,#334155); }
+.credential-brand-mark.ecommerce { background:linear-gradient(135deg,#0f766e,#14b8a6); }
+.credential-brand-mark.linkedin { background:linear-gradient(135deg,#0a66c2,#38a5db); }
+.achievement-card { background:linear-gradient(145deg,#eef2ff,#ffffff 58%,#ecfeff); }
+.credential-arrow { position:absolute; top:48%; z-index:3; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:#fff; box-shadow:0 10px 25px rgba(25,37,73,.12); color:var(--violet); font-weight:900; cursor:pointer; }
+.credential-prev { left:-18px; }
+.credential-next { right:-18px; }
+.learning-strip { margin-top:28px; padding:22px; border:1px solid var(--line); border-radius:20px; background:linear-gradient(135deg,#f8f9ff,#f1fbff); }
+.learning-label { display:block; margin-bottom:13px; color:var(--ink); font-size:12px; font-weight:850; text-transform:uppercase; letter-spacing:.1em; }
+.learning-pills { display:flex; flex-wrap:wrap; gap:9px; }
+.learning-pills span { padding:8px 12px; border:1px solid rgba(79,70,229,.15); border-radius:999px; background:#fff; color:#45495a; font-size:11px; font-weight:750; }
+.credential-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+
+/* Google Business Profile block */
+.gmb-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center; }
+.gmb-copy .section-title { max-width:620px; }
+.gmb-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.gmb-trust-note { margin-top:28px; padding:16px 18px; border-left:3px solid var(--violet); background:rgba(255,255,255,.7); border-radius:0 14px 14px 0; }
+.gmb-trust-note strong { display:block; font-size:14px; }
+.gmb-trust-note span { display:block; color:var(--muted); font-size:12px; margin-top:2px; }
+.gmb-qr-card { display:block; max-width:440px; justify-self:end; text-decoration:none; padding:16px; border:1px solid rgba(79,70,229,.14); border-radius:26px; background:#fff; box-shadow:var(--shadow); transition:.25s ease; }
+.gmb-qr-card:hover { transform:translateY(-4px); }
+.gmb-qr-card img { width:100%; max-height:500px; object-fit:contain; border-radius:18px; background:#fff; }
+.gmb-qr-card span { display:block; padding:13px 8px 3px; color:var(--violet); text-align:center; font-size:12px; font-weight:850; }
+
+@media (max-width: 860px) {
+  .credential-arrow { display:none; }
+  .credential-card { flex-basis:min(84vw,330px); }
+  .gmb-grid { grid-template-columns:1fr; gap:36px; }
+  .gmb-qr-card { justify-self:start; max-width:390px; }
 }
-body.about-page .about-small {
-  width: 50%;
-  height: auto !important;
-  max-height: 220px;
-  object-fit: cover;
-  object-position: center;
+@media (max-width: 560px) {
+  .credential-card { flex-basis:86vw; min-height:400px; }
+  .credential-card-image .credential-image-link { height:200px; }
+  .learning-strip { padding:18px; }
+  .gmb-actions, .credential-actions { flex-direction:column; align-items:stretch; }
+  .gmb-actions .btn, .credential-actions .btn { width:100%; }
 }
+
+
+/* Actual certificate gallery polish */
+.credential-card { flex-basis: 360px; min-height: 455px; }
+.credential-card-image .credential-image-link { height: 250px; padding: 10px; background: #f7f9fc; }
+.credential-card-image img { border-radius: 12px; object-fit: contain; }
+.credential-body h3 { font-size: 18px; }
 @media (max-width: 700px) {
-  .about-small,
-  body.about-page .about-small {
-    width: 56%;
-    height: auto !important;
-    max-height: 175px;
-  }
+  .credential-card { flex-basis: min(88vw, 350px); }
+  .credential-card-image .credential-image-link { height: 230px; }
 }
