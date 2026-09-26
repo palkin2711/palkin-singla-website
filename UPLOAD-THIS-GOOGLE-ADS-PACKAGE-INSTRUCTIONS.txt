@@ -1,0 +1,63 @@
+PALKIN SINGLA — GOOGLE ADS CASE STUDIES FINAL UPLOAD
+====================================================
+
+THIS IS THE FINAL GOOGLE ADS CASE-STUDY PACKAGE.
+It is designed to be merged into the existing website repository root AFTER the Meta Ads case-study package is already present.
+
+WHAT THIS PACKAGE ADDS / UPDATES
+--------------------------------
+1. /case-studies/google-ads/ — new Google Ads Case Studies hub page
+2. 10 individual Google Ads case-study pages
+3. All Google Ads proof screenshots used by those pages
+4. /case-studies/ main page updated with a Google Ads collection block while preserving Meta Ads
+5. /assets/js/site.js updated so the Case Studies dropdown contains:
+   - All Case Studies
+   - Google Ads Case Studies — 10 projects
+   - Meta Ads Case Studies — 5 projects
+6. /assets/css/case-study.css is a merged stylesheet that preserves existing Meta case-study styles and supports all Google pages.
+
+GOOGLE ADS CASE STUDIES INCLUDED
+--------------------------------
+- NestAbroad Immigration
+- The Toby Center
+- KILOGEAR
+- Tinnitus Help App
+- Hope4Families
+- Lucas E Kadi
+- Bulldog Crossing & Langston
+- Balloon Decoration Chandigarh
+- Allo Montessori
+- Wild Roots Creative
+
+HOW TO UPLOAD WITH GITHUB DESKTOP
+---------------------------------
+1. Download this ZIP and extract it.
+2. Open the extracted folder.
+3. Copy the CONTENTS of the extracted folder into the ROOT of your existing palkin-singla-website repository.
+   Do NOT copy the outer folder itself into the repo.
+4. Windows may ask to merge folders / replace files. Choose YES.
+5. In GitHub Desktop review the changed files.
+6. Suggested commit message:
+   Add Google Ads case study hub and 10 client case studies
+7. Commit to main.
+8. Push origin.
+9. Netlify should deploy automatically.
+
+CHECK AFTER DEPLOY
+------------------
+First open:
+https://palkin-singla.netlify.app/case-studies/google-ads/
+
+Then verify all 10 cards open their individual case-study pages.
+Also check the Case Studies dropdown from Home/About/Services pages. It should show both Google Ads and Meta Ads collections.
+
+SITEMAP SAFETY
+--------------
+This package intentionally DOES NOT overwrite sitemap.xml because your site already has scheduled blog URLs and other SEO work.
+Use GOOGLE-ADS-CASE-STUDY-SITEMAP-ENTRIES.txt to add the new URLs to your existing sitemap later without removing anything already there.
+
+WILD ROOTS VERIFICATION
+-----------------------
+The supplied Wild Roots case-study page was structurally consistent with the other pages.
+Two unrelated README files (Allo Montessori and Bulldog Crossing) were accidentally included in its ZIP; they are not carried into this final package.
+The final merged page also receives the standard footer and compact Case Studies collection dropdown.

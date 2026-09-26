@@ -1,32 +1,22 @@
-FILES IN THIS UPLOAD PACKAGE
-============================
-CASE-STUDY-SITEMAP-ENTRIES.txt
-UPLOAD-THIS-PACKAGE-INSTRUCTIONS.txt
-assets/css/case-study.css
-assets/images/case-studies/c2-paint/c2-paint-ads.png
-assets/images/case-studies/c2-paint/c2-paint-adsets.png
-assets/images/case-studies/c2-paint/c2-paint-campaigns.png
-assets/images/case-studies/her-smart-choice/her-smart-choice-ads.png
-assets/images/case-studies/her-smart-choice/her-smart-choice-adsets.png
-assets/images/case-studies/her-smart-choice/her-smart-choice-campaigns.png
-assets/images/case-studies/kilogear/kilogear-ads.png
-assets/images/case-studies/kilogear/kilogear-adsets.png
-assets/images/case-studies/kilogear/kilogear-campaigns.png
-assets/images/case-studies/nest-abroad/nest-ads.png
-assets/images/case-studies/nest-abroad/nest-adsets.png
-assets/images/case-studies/nest-abroad/nest-campaigns.png
-assets/images/case-studies/nest-abroad/nis-ads.png
-assets/images/case-studies/nest-abroad/nis-adsets.png
-assets/images/case-studies/nest-abroad/nis-campaigns.png
-assets/images/case-studies/patent-prints/patent-prints-ads.png
-assets/images/case-studies/patent-prints/patent-prints-adsets.png
-assets/images/case-studies/patent-prints/patent-prints-campaigns.png
-assets/js/case-study.js
-assets/js/site.js
-case-studies/c2-paint-meta-ads/index.html
-case-studies/her-smart-choice-meta-ads/index.html
-case-studies/index.html
-case-studies/kilogear-meta-ads/index.html
-case-studies/meta-ads/index.html
-case-studies/nest-abroad-immigration-meta-ads/index.html
-case-studies/patent-prints/index.html
+GOOGLE ADS FINAL PACKAGE MANIFEST
+=================================
+Hub: case-studies/google-ads/index.html
+Main case-studies landing page: case-studies/index.html
+Shared CSS: assets/css/case-study.css
+Shared navigation JS: assets/js/site.js
+Shared case-study JS: assets/js/case-study.js
+
+Individual pages:
+- case-studies/nest-abroad-google-ads/index.html
+- case-studies/the-toby-center-google-ads/index.html
+- case-studies/kilogear-google-ads/index.html
+- case-studies/tinnitus-help-google-ads/index.html
+- case-studies/hope4families-google-ads/index.html
+- case-studies/lucas-e-kadi-google-ads-video-case-study/index.html
+- case-studies/bulldog-crossing-langston-google-ads/index.html
+- case-studies/balloon-decoration-chandigarh-google-ads/index.html
+- case-studies/allo-montessori-google-ads/index.html
+- case-studies/wild-roots-creative-google-ads/index.html
+
+Google proof images are under:
+assets/images/case-studies/<project-slug>/

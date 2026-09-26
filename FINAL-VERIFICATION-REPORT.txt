@@ -1,0 +1,16 @@
+FINAL GOOGLE ADS PACKAGE VERIFICATION
+=====================================
+Pages checked: 12
+Google Ads case-study pages expected: 10
+Google Ads hub expected: 1
+Wild Roots: verified and cleaned of unrelated README carry-over
+Local package references: checked
+Existing base-site references: preserved
+Image integrity: checked
+Canonical/title/meta presence: checked
+Duplicate HTML IDs: checked
+
+RESULT: PASS — no blocking issues found
+No blocking issues detected in the final upload package.
+
+Note: /assets/css/site.css, /assets/js/analytics.js and existing portfolio images are intentionally not duplicated because this is a merge package for the current live website.
