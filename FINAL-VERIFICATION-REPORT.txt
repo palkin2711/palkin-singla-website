@@ -1,16 +1,22 @@
-FINAL GOOGLE ADS PACKAGE VERIFICATION
-=====================================
-Pages checked: 12
-Google Ads case-study pages expected: 10
-Google Ads hub expected: 1
-Wild Roots: verified and cleaned of unrelated README carry-over
-Local package references: checked
-Existing base-site references: preserved
-Image integrity: checked
-Canonical/title/meta presence: checked
-Duplicate HTML IDs: checked
+LINKEDIN ADS FINAL PACKAGE VERIFICATION
+======================================
 
-RESULT: PASS — no blocking issues found
-No blocking issues detected in the final upload package.
+PASS — LinkedIn hub exists
+PASS — Maxwell case study exists
+PASS — KaamSey case study exists
+PASS — Global dropdown contains LinkedIn Ads
+PASS — No project-count text in global dropdown
+PASS — Main case-studies page includes LinkedIn collection
+PASS — Maxwell image copied
+PASS — KaamSey image copied
+PASS — linkedin-ads: site.css linked
+PASS — linkedin-ads: case-study.css linked
+PASS — linkedin-ads: site.js linked
+PASS — maxwell-agency-linkedin-ads: site.css linked
+PASS — maxwell-agency-linkedin-ads: case-study.css linked
+PASS — maxwell-agency-linkedin-ads: site.js linked
+PASS — kaamsey-linkedin-ads: site.css linked
+PASS — kaamsey-linkedin-ads: case-study.css linked
+PASS — kaamsey-linkedin-ads: site.js linked
 
-Note: /assets/css/site.css, /assets/js/analytics.js and existing portfolio images are intentionally not duplicated because this is a merge package for the current live website.
+Blocking failures: 0

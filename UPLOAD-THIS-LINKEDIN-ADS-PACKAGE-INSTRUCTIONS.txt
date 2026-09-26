@@ -1,0 +1,39 @@
+PALKIN SINGLA — LINKEDIN ADS CASE STUDIES FINAL UPLOAD
+======================================================
+
+This package adds:
+1. LinkedIn Ads Case Studies hub
+2. Maxwell Agency LinkedIn Ads case study
+3. KaamSey LinkedIn Ads case study
+4. LinkedIn Ads Case Studies item in the global Case Studies dropdown
+5. LinkedIn Ads collection block on /case-studies/
+
+UPLOAD METHOD
+-------------
+1. Extract this ZIP.
+2. Copy the CONTENTS of the extracted folder into the ROOT of your existing website repository.
+3. Allow Windows/Git to MERGE matching folders.
+4. Replace assets/js/site.js when asked. This is intentional.
+5. Commit and push to main. Netlify should redeploy automatically.
+
+DO NOT upload the outer ZIP folder itself as a nested website folder.
+
+NEW URLS
+--------
+/case-studies/linkedin-ads/
+/case-studies/maxwell-agency-linkedin-ads/
+/case-studies/kaamsey-linkedin-ads/
+
+CASE STUDIES DROPDOWN AFTER UPLOAD
+----------------------------------
+All Case Studies
+Google Ads Case Studies
+Meta Ads Case Studies
+LinkedIn Ads Case Studies
+
+No project-count text is included in the dropdown.
+
+IMPORTANT
+---------
+This patch does NOT replace assets/css/case-study.css or assets/css/site.css.
+It relies on the case-study styles already installed by the current Google/Meta case-study package, avoiding accidental visual regressions.

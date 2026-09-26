@@ -1,0 +1,5 @@
+Add these URLs to sitemap.xml when you next update the sitemap:
+
+https://palkin-singla.netlify.app/case-studies/linkedin-ads/
+https://palkin-singla.netlify.app/case-studies/maxwell-agency-linkedin-ads/
+https://palkin-singla.netlify.app/case-studies/kaamsey-linkedin-ads/

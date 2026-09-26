@@ -67,7 +67,8 @@ const ensureCaseStudiesDropdown = () => {
   const menuMarkup = `
     <a class="nav-section-all" href="/case-studies/"><strong>All Case Studies</strong><small>View the complete section</small></a>
     <a href="/case-studies/google-ads/"><strong>Google Ads Case Studies</strong></a>
-    <a href="/case-studies/meta-ads/"><strong>Meta Ads Case Studies</strong></a>`;
+    <a href="/case-studies/meta-ads/"><strong>Meta Ads Case Studies</strong></a>
+    <a href="/case-studies/linkedin-ads/"><strong>LinkedIn Ads Case Studies</strong></a>`;
   if (dropdown) {
     const menu = dropdown.querySelector('.nav-section-menu');
     if (menu) menu.innerHTML = menuMarkup;
