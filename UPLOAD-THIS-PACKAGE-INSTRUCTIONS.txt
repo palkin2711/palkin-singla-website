@@ -1,0 +1,56 @@
+PALKIN SINGLA — META ADS CASE STUDIES FINAL UPLOAD
+===================================================
+
+THIS ZIP IS THE FINAL CASE-STUDY INTEGRATION PACKAGE.
+It is designed to be copied into the ROOT of your existing GitHub website repository.
+
+WHAT IT ADDS
+------------
+1. /case-studies/meta-ads/            — new Meta Ads Case Studies hub page
+2. /case-studies/patent-prints/       — Patent Prints detailed case study
+3. /case-studies/kilogear-meta-ads/   — Kilogear detailed case study
+4. /case-studies/c2-paint-meta-ads/   — C2 Paint detailed case study
+5. /case-studies/nest-abroad-immigration-meta-ads/ — one combined project page for both ad accounts
+6. /case-studies/her-smart-choice-meta-ads/ — Her Smart Choice detailed case study
+7. Updated /case-studies/ page with a Meta Ads collection callout
+8. Updated assets/js/site.js so the website header Case Studies dropdown shows:
+   - All Case Studies
+   - Meta Ads Case Studies
+9. All account-proof screenshots used by the five case studies
+10. Shared case-study CSS and screenshot lightbox JS
+
+UPLOAD WITH GITHUB DESKTOP
+--------------------------
+1. Extract this ZIP.
+2. Open your local palkin-singla-website repository folder.
+3. COPY THE CONTENTS inside this extracted folder into the repository root.
+   IMPORTANT: copy the contents, not the outer folder itself.
+4. Windows will ask to merge folders such as assets and case-studies. Choose Merge/Replace when asked.
+5. In GitHub Desktop you should see new/changed files.
+6. Commit message suggestion:
+   Add Meta Ads case study hub and client case studies
+7. Push origin.
+8. Netlify should deploy automatically.
+
+IMPORTANT SAFETY NOTE
+---------------------
+This package intentionally does NOT overwrite sitemap.xml because your blog builder/scheduled posts may already have newer sitemap entries. The new pages are internally linked and crawlable immediately.
+A file called CASE-STUDY-SITEMAP-ENTRIES.txt is included with the six URLs you can later add to sitemap.xml outside the BLOG-SITEMAP markers.
+
+TEST THESE URLS AFTER DEPLOYMENT
+--------------------------------
+https://palkin-singla.netlify.app/case-studies/
+https://palkin-singla.netlify.app/case-studies/meta-ads/
+https://palkin-singla.netlify.app/case-studies/patent-prints/
+https://palkin-singla.netlify.app/case-studies/kilogear-meta-ads/
+https://palkin-singla.netlify.app/case-studies/c2-paint-meta-ads/
+https://palkin-singla.netlify.app/case-studies/nest-abroad-immigration-meta-ads/
+https://palkin-singla.netlify.app/case-studies/her-smart-choice-meta-ads/
+
+HEADER EXPECTATION
+------------------
+On every page that loads /assets/js/site.js, Case Studies will become a dropdown containing:
+- All Case Studies
+- Meta Ads Case Studies
+
+Inside the Meta Ads Case Studies page, all five client case-study links are shown as cards.

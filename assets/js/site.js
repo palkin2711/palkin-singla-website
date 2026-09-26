@@ -60,6 +60,32 @@ document.querySelectorAll('.nav-links > a').forEach(a => {
 });
 
 
+// Build/refresh the Case Studies dropdown across every page without replacing page content.
+const ensureCaseStudiesDropdown = () => {
+  if (!links) return null;
+  let dropdown = links.querySelector('.case-studies-dropdown');
+  const menuMarkup = `
+    <a class="nav-section-all" href="/case-studies/"><strong>All Case Studies</strong><small>View the complete section</small></a>
+    <a href="/case-studies/meta-ads/"><strong>Meta Ads Case Studies</strong><small>5 documented client projects</small></a>`;
+  if (dropdown) {
+    const menu = dropdown.querySelector('.nav-section-menu');
+    if (menu) menu.innerHTML = menuMarkup;
+  } else {
+    const anchor = [...links.querySelectorAll(':scope > a')].find(a => a.getAttribute('href') === '/case-studies/');
+    if (anchor) {
+      const wrapper = document.createElement('details');
+      wrapper.className = 'nav-section-dropdown case-studies-dropdown';
+      wrapper.innerHTML = `<summary>Case Studies<span aria-hidden="true">⌄</span></summary><div class="nav-section-menu">${menuMarkup}</div>`;
+      anchor.replaceWith(wrapper);
+      dropdown = wrapper;
+    }
+  }
+  if (window.location.pathname.startsWith('/case-studies/')) dropdown?.classList.add('is-current');
+  return dropdown;
+};
+const caseStudiesDropdown = ensureCaseStudiesDropdown();
+
+
 if (toggle && links) {
   toggle.addEventListener('click', () => {
     const open = links.classList.toggle('open');

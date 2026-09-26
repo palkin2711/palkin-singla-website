@@ -1,0 +1,7 @@
+<!-- Add these entries to sitemap.xml OUTSIDE the BLOG-SITEMAP markers. Internal links already make the pages crawlable. -->
+<url><loc>https://palkin-singla.netlify.app/case-studies/meta-ads/</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://palkin-singla.netlify.app/case-studies/patent-prints/</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://palkin-singla.netlify.app/case-studies/kilogear-meta-ads/</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://palkin-singla.netlify.app/case-studies/c2-paint-meta-ads/</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://palkin-singla.netlify.app/case-studies/nest-abroad-immigration-meta-ads/</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://palkin-singla.netlify.app/case-studies/her-smart-choice-meta-ads/</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
