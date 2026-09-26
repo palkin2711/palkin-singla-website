@@ -9,7 +9,7 @@ const outputDir = path.join(root, 'blog');
 const indexPath = path.join(root, 'index.html');
 const sitemapPath = path.join(root, 'sitemap.xml');
 const siteUrl = 'https://palkin-singla.netlify.app';
-const assetVersion = '20260924-cover2';
+const assetVersion = '20260926-seo-ai-final';
 
 const START = '<!-- BLOG-LATEST-START -->';
 const END = '<!-- BLOG-LATEST-END -->';
@@ -232,11 +232,12 @@ const safeArticleBody = value => String(value)
 const categoryLink = category => `/blog/category/${category.slug}/`;
 
 const categoryBadge = category => `<a class="blog-category-badge" href="${categoryLink(category)}">${escapeHtml(category.name)}</a>`;
+const postImageDimensions = image => image && image.startsWith('/assets/blog-covers/') ? ' width="1600" height="900"' : '';
 
 const cardHtml = (post, compact = false) => `
   <article class="blog-card${compact ? ' blog-card-compact' : ''}" data-category="${escapeHtml(post.categorySlug)}">
     <a class="blog-card-image${post.image ? '' : ' blog-card-image-empty'}" href="${post.url}" aria-label="Read ${escapeHtml(post.title)}">
-      ${post.image ? `<img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}" loading="lazy">` : '<span>PS</span>'}
+      ${post.image ? `<img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}" loading="lazy"${postImageDimensions(post.image)}>` : '<span>PS</span>'}
     </a>
     <div class="blog-card-copy">
       <div class="blog-card-topline">${categoryBadge({ name: post.category, slug: post.categorySlug })}<span class="blog-card-date">${post.date ? `<time datetime="${post.date}">${escapeHtml(formatDate(post.date))}</time>` : 'Insights'}</span></div>
@@ -294,6 +295,7 @@ function pageShell({ title, description, canonical, content, image = '', ogType 
   ${section ? `<meta property="article:section" content="${escapeHtml(section)}">` : ''}
   ${schemaHtml}
   <link rel="stylesheet" href="/assets/css/site.css?v=${assetVersion}">
+  <link rel="stylesheet" href="/assets/css/seo-polish.css?v=${assetVersion}">
 </head>
 <body>
   <header class="site-header"><div class="container nav-wrap">
@@ -308,12 +310,12 @@ function pageShell({ title, description, canonical, content, image = '', ogType 
 </div>
 </div>
 <a href="/pricing/">Pricing</a>
-<details class="nav-section-dropdown case-studies-dropdown"><summary>Case Studies<span aria-hidden="true">⌄</span></summary><div class="nav-section-menu"><a class="nav-section-all" href="/case-studies/"><strong>All Case Studies</strong><small>View the complete section</small></a><a href="/case-studies/#playhaus-tiktok">PLAYHAUS · TikTok/eCommerce</a><a href="/case-studies/#c2-paint-meta">C2 Paint · Meta Ads</a><a href="/case-studies/#linkedin-b2b">B2B LinkedIn Lead Gen</a><a href="/case-studies/#seo-growth">Organic SEO Growth</a></div></details><details class="nav-section-dropdown portfolio-dropdown"><summary>Portfolio<span aria-hidden="true">⌄</span></summary><div class="nav-section-menu"><a class="nav-section-all" href="/portfolio/"><strong>All Portfolios</strong><small>View the complete section</small></a><a href="/google_ads_portfolio.html">Google Ads</a><a href="/meta_ads_portfolio.html">Meta Ads</a><a href="/seo_portfolio.html">SEO</a><a href="/smo_portfolio.html">Social Media</a><a href="/linkedin_ads_portfolio.html">LinkedIn Ads</a><a href="/tiktok_ads_portfolio.html">TikTok Ads</a><a href="/email_portfolio.html">Email Marketing</a><a href="/content_writing_portfolio.html">Content Writing</a><a href="/website_design_portfolio.html">Website Design</a><a href="/website_development_portfolio.html">Website Development</a></div></details><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>
+<details class="nav-section-dropdown case-studies-dropdown"><summary>Case Studies <span aria-hidden="true">⌄</span></summary><div class="nav-section-menu"><a class="nav-section-all" href="/case-studies/"><strong>All Case Studies</strong><small>View all client work</small></a><a href="/case-studies/google-ads/"><strong>Google Ads Case Studies</strong></a><a href="/case-studies/meta-ads/"><strong>Meta Ads Case Studies</strong></a><a href="/case-studies/linkedin-ads/"><strong>LinkedIn Ads Case Studies</strong></a></div></details><details class="nav-section-dropdown portfolio-dropdown"><summary>Portfolio <span aria-hidden="true">⌄</span></summary><div class="nav-section-menu portfolio-menu"><a class="nav-section-all" href="/portfolio/"><strong>All Portfolios</strong><small>Browse work by channel</small></a><a href="/google_ads_portfolio.html">Google Ads</a><a href="/meta_ads_portfolio.html">Meta Ads</a><a href="/seo_portfolio.html">SEO</a><a href="/smo_portfolio.html">Social Media</a><a href="/linkedin_ads_portfolio.html">LinkedIn Ads</a><a href="/tiktok_ads_portfolio.html">TikTok Ads</a><a href="/email_portfolio.html">Email Marketing</a><a href="/content_writing_portfolio.html">Content Marketing</a><a href="/website_design_portfolio.html">Website Design</a><a href="/website_development_portfolio.html">Web Development</a></div></details><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>
 </nav>
-    <a class="nav-cta" href="/contact/">Start a project →</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    <a class="nav-cta" href="/contact/">Start a project →</a><button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
   </div></header>
   ${content}
-  <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Palkin Singla. Built for meaningful growth.</span><nav class="footer-links" aria-label="Footer navigation"><a href="/about/">About</a><a href="/services/">Services</a><a href="/pricing/">Pricing</a><details class="nav-section-dropdown case-studies-dropdown"><summary>Case Studies<span aria-hidden="true">⌄</span></summary><div class="nav-section-menu"><a class="nav-section-all" href="/case-studies/"><strong>All Case Studies</strong><small>View the complete section</small></a><a href="/case-studies/#playhaus-tiktok">PLAYHAUS · TikTok/eCommerce</a><a href="/case-studies/#c2-paint-meta">C2 Paint · Meta Ads</a><a href="/case-studies/#linkedin-b2b">B2B LinkedIn Lead Gen</a><a href="/case-studies/#seo-growth">Organic SEO Growth</a></div></details><details class="nav-section-dropdown portfolio-dropdown"><summary>Portfolio<span aria-hidden="true">⌄</span></summary><div class="nav-section-menu"><a class="nav-section-all" href="/portfolio/"><strong>All Portfolios</strong><small>View the complete section</small></a><a href="/google_ads_portfolio.html">Google Ads</a><a href="/meta_ads_portfolio.html">Meta Ads</a><a href="/seo_portfolio.html">SEO</a><a href="/smo_portfolio.html">Social Media</a><a href="/linkedin_ads_portfolio.html">LinkedIn Ads</a><a href="/tiktok_ads_portfolio.html">TikTok Ads</a><a href="/email_portfolio.html">Email Marketing</a><a href="/content_writing_portfolio.html">Content Writing</a><a href="/website_design_portfolio.html">Website Design</a><a href="/website_development_portfolio.html">Website Development</a></div></details><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a><a href="/assets/docs/palkin_singla_resume_2026.pdf">Résumé</a></nav></div></footer>
+  <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Palkin Singla. Digital marketing strategy, execution &amp; measurable growth.</span><nav class="footer-links" aria-label="Footer navigation"><a href="/about/">About</a><a href="/services/">Services</a><a href="/pricing/">Pricing</a><a href="/case-studies/">Case Studies</a><a href="/portfolio/">Portfolio</a><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a></nav></div></footer>
   <script src="/assets/js/site.js?v=${assetVersion}" defer></script>
   <script src="/assets/js/analytics.js" defer></script>
 </body>
@@ -335,6 +337,7 @@ const posts = files.map(file => {
   const slug = slugify(file);
   const body = getBody(html);
   const title = getTitle(html) || stripTags(body).slice(0, 70) || 'Untitled article';
+  const seoTitle = getMeta(html, 'seo-title') || title;
   const description = getMeta(html, 'description') || stripTags(body).slice(0, 165);
   const customImage = normalizeImage(getMeta(html, 'feature-image'));
   const date = toIsoDate(getMeta(html, 'date') || stat.mtime.toISOString());
@@ -344,7 +347,7 @@ const posts = files.map(file => {
   // Future-dated posts remain in /blog-posts but are not published until their date.
   if (date && date > publishDate) return null;
 
-  const post = { file, slug, title, description, image: customImage, date, modified, category: category.name, categorySlug: category.slug, body, url: `/blog/${slug}/` };
+  const post = { file, slug, title, seoTitle, description, image: customImage, date, modified, category: category.name, categorySlug: category.slug, body, url: `/blog/${slug}/` };
   if (!post.image) post.image = generateAutoCover(post);
   return post;
 }).filter(Boolean).sort((a, b) => (b.date || '').localeCompare(a.date || '') || a.title.localeCompare(b.title));
@@ -388,6 +391,24 @@ const articleSchemaFor = post => ({
   ]
 });
 
+const RELATED_BY_CATEGORY = {
+  'google-ads': [['Google Ads services','/services/google-ads/'],['Google Ads case studies','/case-studies/google-ads/'],['Google Ads portfolio','/google_ads_portfolio.html']],
+  'meta-ads': [['Meta Ads services','/services/meta-ads/'],['Meta Ads case studies','/case-studies/meta-ads/'],['Meta Ads portfolio','/meta_ads_portfolio.html']],
+  'linkedin-ads': [['LinkedIn marketing services','/services/linkedin-marketing/'],['LinkedIn Ads case studies','/case-studies/linkedin-ads/'],['LinkedIn Ads portfolio','/linkedin_ads_portfolio.html']],
+  'seo': [['SEO services','/services/seo/'],['SEO portfolio','/seo_portfolio.html'],['Digital marketing case studies','/case-studies/']],
+  'social-media': [['Social media marketing services','/services/social-media-marketing/'],['Social media portfolio','/smo_portfolio.html'],['Digital marketing case studies','/case-studies/']],
+  'tiktok-ads': [['TikTok marketing services','/services/tiktok-marketing/'],['TikTok Ads portfolio','/tiktok_ads_portfolio.html'],['Digital marketing case studies','/case-studies/']],
+  'email-marketing': [['Email marketing services','/services/email-marketing/'],['Email marketing portfolio','/email_portfolio.html'],['Digital marketing pricing','/pricing/']],
+  'content-writing': [['Content marketing services','/services/content-marketing/'],['Content marketing portfolio','/content_writing_portfolio.html'],['SEO services','/services/seo/']],
+  'website-design': [['Website design services','/services/website-design/'],['Website design portfolio','/website_design_portfolio.html'],['Digital marketing pricing','/pricing/']],
+  'website-development': [['Website development services','/services/website-development/'],['Web development portfolio','/website_development_portfolio.html'],['Digital marketing pricing','/pricing/']],
+  'digital-marketing': [['Digital marketing services','/services/'],['Case studies','/case-studies/'],['Portfolio','/portfolio/']]
+};
+const relatedResources = post => {
+  const items = RELATED_BY_CATEGORY[post.categorySlug] || RELATED_BY_CATEGORY['digital-marketing'];
+  return `<section class="seo-related section"><div class="container"><div class="seo-related-head"><span class="eyebrow">Related resources</span><h2>Continue with the most relevant service and proof.</h2><p>Use these pages to connect the article with the service, campaign evidence and portfolio context.</p></div><div class="seo-related-grid">${items.map(([label,url])=>`<a class="seo-related-card" href="${url}"><small>Internal resource</small><strong>${escapeHtml(label)}</strong><span>Explore the related page →</span></a>`).join('')}</div></div></section>`;
+};
+
 for (const post of posts) {
   const dir = path.join(outputDir, post.slug);
   fs.mkdirSync(dir, { recursive: true });
@@ -401,14 +422,15 @@ for (const post of posts) {
         <div class="blog-meta">${post.date ? `<time datetime="${post.date}">${escapeHtml(formatDate(post.date))}</time> · ` : ''}By Palkin Singla</div>
         ${post.description ? `<p class="blog-article-deck">${escapeHtml(post.description)}</p>` : ''}
       </header>
-      ${post.image ? `<figure class="blog-feature"><img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}"></figure>` : ''}
+      ${post.image ? `<figure class="blog-feature"><img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}"${postImageDimensions(post.image)}></figure>` : ''}
       <div class="blog-content">${safeBody}</div>
+      ${relatedResources(post)}
       <aside class="blog-article-cta"><span class="eyebrow">Need help with ${escapeHtml(post.category)}?</span><h2>Turn the strategy into measurable growth.</h2><p>Share your website, target market and current challenge. I’ll review the brief and suggest the most practical next step.</p><a class="btn btn-primary" href="/contact/">Discuss your project →</a></aside>
       <div class="blog-author-box"><div class="brand-mark">PS</div><div><strong>Palkin Singla</strong><p>Digital marketing specialist focused on paid media, SEO, content and conversion-led growth.</p></div></div>
     </article>
   </main>`;
   fs.writeFileSync(path.join(dir, 'index.html'), pageShell({
-    title: `${post.title} | Palkin Singla`,
+    title: `${post.seoTitle} | Palkin Singla`,
     description: post.description,
     canonical: `${siteUrl}${post.url}`,
     image: post.image,
@@ -449,9 +471,9 @@ for (const category of CATEGORY_DEFS) {
     : `<div class="blog-empty"><strong>${escapeHtml(category.name)} insights coming soon.</strong><p>New practical articles in this category will be published here.</p></div>`;
   const categoryPage = pageShell({
     title: `${category.name} Insights | Palkin Singla`,
-    description: `Articles and practical insights about ${category.name} from Palkin Singla.`,
+    description: `Practical ${category.name} articles, guides and campaign insights from Palkin Singla, focused on strategy, execution, measurement and sustainable growth.`,
     canonical: `${siteUrl}${categoryLink(category)}`,
-    schema: { '@context': 'https://schema.org', '@graph': [ { '@type': 'CollectionPage', '@id': `${siteUrl}${categoryLink(category)}#collection`, url: `${siteUrl}${categoryLink(category)}`, name: `${category.name} Insights | Palkin Singla`, description: `Articles and practical insights about ${category.name} from Palkin Singla.`, inLanguage: 'en-IN' }, { '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog/` }, { '@type': 'ListItem', position: 3, name: category.name, item: `${siteUrl}${categoryLink(category)}` } ] } ] },
+    schema: { '@context': 'https://schema.org', '@graph': [ { '@type': 'CollectionPage', '@id': `${siteUrl}${categoryLink(category)}#collection`, url: `${siteUrl}${categoryLink(category)}`, name: `${category.name} Insights | Palkin Singla`, description: `Practical ${category.name} articles, guides and campaign insights from Palkin Singla, focused on strategy, execution, measurement and sustainable growth.`, inLanguage: 'en-IN' }, { '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog/` }, { '@type': 'ListItem', position: 3, name: category.name, item: `${siteUrl}${categoryLink(category)}` } ] } ] },
     robots: categoryPosts.length ? 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' : 'noindex,follow',
     content: `<main class="blog-main">
       <section class="section blog-hero blog-category-hero"><div class="container"><div class="blog-breadcrumbs"><a href="/blog/">Blog</a><span>›</span><span>${escapeHtml(category.name)}</span></div><span class="eyebrow">Blog category</span><h1 class="section-title">${escapeHtml(category.name)}</h1><p class="section-lead">Articles, tests and practical lessons focused on ${escapeHtml(category.name)}.</p>${categoriesHtml(posts, category.slug)}</div></section>

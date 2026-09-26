@@ -1,11 +1,11 @@
 /*
   Palkin Singla GA4 loader.
-  ONE-TIME SETUP: replace G-PASTE-YOUR-ID-HERE with the GA4 Measurement ID.
+  ONE-TIME SETUP: replace G-DX3QJ5ENC6 with the GA4 Measurement ID.
   Example format: G-ABC123DE45
   Do not add a second GA4 installation through GTM unless this file is disabled.
 */
 (() => {
-  const measurementId = 'G-PASTE-YOUR-ID-HERE';
+  const measurementId = 'G-DX3QJ5ENC6';
   if (!/^G-[A-Z0-9]{6,}$/i.test(measurementId) || measurementId.includes('PASTE')) return;
 
   window.dataLayer = window.dataLayer || [];

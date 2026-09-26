@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /blog-posts/
+Disallow: /netlify/
 
 Sitemap: https://palkin-singla.netlify.app/sitemap.xml

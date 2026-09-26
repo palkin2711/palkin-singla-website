@@ -1,165 +1,54 @@
 document.documentElement.classList.add('js');
 
+const nav = document.querySelector('.nav-links');
 const toggle = document.querySelector('.menu-toggle');
-const links = document.querySelector('.nav-links');
-
 const serviceDropdown = document.querySelector('[data-services-menu]');
-const serviceDropdownToggle = serviceDropdown?.querySelector('.nav-dropdown-toggle');
-
+const serviceToggle = serviceDropdown?.querySelector('.nav-dropdown-toggle');
+const sectionDropdowns = [...document.querySelectorAll('.nav-section-dropdown')];
 let serviceCloseTimer;
 
-const setServiceMenu = open => {
-  if (!serviceDropdown || !serviceDropdownToggle) return;
-  window.clearTimeout(serviceCloseTimer);
-  serviceDropdown.classList.toggle('open', open);
-  serviceDropdownToggle.setAttribute('aria-expanded', String(open));
-};
-
-serviceDropdownToggle?.addEventListener('click', event => {
-  event.preventDefault();
-  event.stopPropagation();
-  setServiceMenu(!serviceDropdown.classList.contains('open'));
-});
-
-serviceDropdownToggle?.addEventListener('keydown', event => {
-  if (event.key === 'ArrowDown') {
-    event.preventDefault();
-    setServiceMenu(true);
-    serviceDropdown?.querySelector('.nav-dropdown-menu a')?.focus();
-  }
-});
-
-serviceDropdown?.addEventListener('mouseenter', () => {
-  if (window.matchMedia('(min-width: 1001px)').matches) setServiceMenu(true);
-});
-
-serviceDropdown?.addEventListener('mouseleave', () => {
-  if (!window.matchMedia('(min-width: 1001px)').matches) return;
-  serviceCloseTimer = window.setTimeout(() => setServiceMenu(false), 260);
-});
-
-serviceDropdown?.addEventListener('focusin', () => setServiceMenu(true));
-
-document.addEventListener('click', event => {
-  if (!serviceDropdown || serviceDropdown.contains(event.target)) return;
-  setServiceMenu(false);
-});
-
-document.addEventListener('keydown', event => {
-  if (event.key !== 'Escape') return;
-  setServiceMenu(false);
-  serviceDropdownToggle?.focus();
-});
-
-const currentPath = window.location.pathname;
-if (currentPath.startsWith('/services/')) serviceDropdown?.classList.add('is-current');
-document.querySelectorAll('.nav-links > a').forEach(a => {
-  const href = a.getAttribute('href');
-  if (!href || href === '/') return;
-  if (currentPath === href || (href !== '/blog/' && currentPath.startsWith(href) && href.length > 1)) a.setAttribute('aria-current','page');
-});
-
-
-// Build/refresh the Case Studies dropdown across every page without replacing page content.
-const ensureCaseStudiesDropdown = () => {
-  if (!links) return null;
-  let dropdown = links.querySelector('.case-studies-dropdown');
-  const menuMarkup = `
-    <a class="nav-section-all" href="/case-studies/"><strong>All Case Studies</strong><small>View the complete section</small></a>
-    <a href="/case-studies/google-ads/"><strong>Google Ads Case Studies</strong></a>
-    <a href="/case-studies/meta-ads/"><strong>Meta Ads Case Studies</strong></a>
-    <a href="/case-studies/linkedin-ads/"><strong>LinkedIn Ads Case Studies</strong></a>`;
-  if (dropdown) {
-    const menu = dropdown.querySelector('.nav-section-menu');
-    if (menu) menu.innerHTML = menuMarkup;
-  } else {
-    const anchor = [...links.querySelectorAll(':scope > a')].find(a => a.getAttribute('href') === '/case-studies/');
-    if (anchor) {
-      const wrapper = document.createElement('details');
-      wrapper.className = 'nav-section-dropdown case-studies-dropdown';
-      wrapper.innerHTML = `<summary>Case Studies<span aria-hidden="true">⌄</span></summary><div class="nav-section-menu">${menuMarkup}</div>`;
-      anchor.replaceWith(wrapper);
-      dropdown = wrapper;
-    }
-  }
-  if (window.location.pathname.startsWith('/case-studies/')) dropdown?.classList.add('is-current');
-  return dropdown;
-};
-const caseStudiesDropdown = ensureCaseStudiesDropdown();
-
-
-if (toggle && links) {
-  toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
-    document.body.classList.toggle('nav-open', open);
-  });
-  links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    links.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('nav-open');
-  }));
+function closeServices(){
+  if(!serviceDropdown || !serviceToggle) return;
+  serviceDropdown.classList.remove('open');
+  serviceToggle.setAttribute('aria-expanded','false');
 }
+function openServices(){
+  if(!serviceDropdown || !serviceToggle) return;
+  clearTimeout(serviceCloseTimer);
+  serviceDropdown.classList.add('open');
+  serviceToggle.setAttribute('aria-expanded','true');
+}
+function closeSections(except=null){ sectionDropdowns.forEach(d=>{ if(d!==except) d.open=false; }); }
 
-document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+serviceToggle?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();serviceDropdown.classList.contains('open')?closeServices():openServices();});
+serviceToggle?.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();openServices();serviceDropdown?.querySelector('.nav-dropdown-menu a')?.focus();}});
+serviceDropdown?.addEventListener('mouseenter',()=>{if(matchMedia('(min-width:1001px)').matches)openServices();});
+serviceDropdown?.addEventListener('mouseleave',()=>{if(matchMedia('(min-width:1001px)').matches)serviceCloseTimer=setTimeout(closeServices,220);});
+serviceDropdown?.addEventListener('focusin',openServices);
 
-const dialog = document.querySelector('#proofModal');
-const proofImage = dialog?.querySelector('img');
-const proofTitle = dialog?.querySelector('[data-modal-title]');
+sectionDropdowns.forEach(d=>d.addEventListener('toggle',()=>{if(d.open){closeServices();closeSections(d);}}));
+document.addEventListener('click',e=>{if(serviceDropdown && !serviceDropdown.contains(e.target))closeServices();sectionDropdowns.forEach(d=>{if(d.open&&!d.contains(e.target))d.open=false;});});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeServices();closeSections();nav?.classList.remove('open');document.body.classList.remove('nav-open');toggle?.setAttribute('aria-expanded','false');}});
 
-document.querySelectorAll('[data-proof]').forEach(button => {
-  button.addEventListener('click', () => {
-    if (!dialog || !proofImage) return;
-    proofImage.src = button.dataset.proof;
-    proofImage.alt = `${button.dataset.name || 'Client'} testimonial proof`;
-    if (proofTitle) proofTitle.textContent = `${button.dataset.name || 'Client'} — verified feedback`;
-    dialog.showModal();
-  });
-});
+if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));document.body.classList.toggle('nav-open',open);if(!open){closeServices();closeSections();}});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');document.body.classList.remove('nav-open');toggle.setAttribute('aria-expanded','false');closeServices();closeSections();}));}
 
-dialog?.querySelector('[data-close-modal]')?.addEventListener('click', () => dialog.close());
-dialog?.addEventListener('click', event => {
-  const box = dialog.getBoundingClientRect();
-  if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
-});
+const currentPath=location.pathname;
+const normalize=p=>p.endsWith('/index.html')?p.replace(/index\.html$/,''):p;
+const path=normalize(currentPath);
+if(path.startsWith('/services/'))serviceDropdown?.classList.add('is-current');
+sectionDropdowns.forEach(d=>{if(d.classList.contains('case-studies-dropdown')&&path.startsWith('/case-studies/'))d.classList.add('is-current');if(d.classList.contains('portfolio-dropdown')&&(path==='/portfolio/'||/_portfolio\.html$/.test(path)))d.classList.add('is-current');});
+document.querySelectorAll('.nav-links>a').forEach(a=>{const href=a.getAttribute('href');if(!href||href==='/')return;if(path===href||(href!=='/blog/'&&path.startsWith(href)&&href.length>1))a.setAttribute('aria-current','page');});
 
-const reviewsGrid = document.querySelector('[data-review-grid]');
-const reviewsToggle = document.querySelector('[data-reviews-toggle]');
-
-reviewsToggle?.addEventListener('click', () => {
-  if (!reviewsGrid) return;
-  const expanded = reviewsGrid.classList.toggle('show-all');
-  reviewsToggle.setAttribute('aria-expanded', String(expanded));
-  reviewsToggle.textContent = expanded ? 'Show fewer reviews ↑' : 'View all reviews ↓';
-});
-
-const contactForm = document.querySelector('[data-contact-form]');
-contactForm?.addEventListener('submit', event => {
-  if (!contactForm.checkValidity()) {
-    event.preventDefault();
-    contactForm.reportValidity();
-    return;
-  }
-  const button = contactForm.querySelector('button[type="submit"]');
-  if (button) {
-    button.disabled = true;
-    button.textContent = 'Sending…';
-  }
-});
-
-
-// Keep Case Studies / Portfolio dropdowns easy to use.
-const sectionDropdowns = [...document.querySelectorAll('.nav-section-dropdown')];
-sectionDropdowns.forEach(dropdown => {
-  dropdown.addEventListener('toggle', () => {
-    if (!dropdown.open) return;
-    sectionDropdowns.forEach(other => {
-      if (other !== dropdown) other.open = false;
-    });
-  });
-});
-document.addEventListener('click', event => {
-  sectionDropdowns.forEach(dropdown => {
-    if (dropdown.open && !dropdown.contains(event.target)) dropdown.open = false;
-  });
-});
+// Small site-wide utilities.
+document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
+const dialog=document.querySelector('#proofModal');
+const proofImage=dialog?.querySelector('img');
+const proofTitle=dialog?.querySelector('[data-modal-title]');
+document.querySelectorAll('[data-proof]').forEach(button=>button.addEventListener('click',()=>{if(!dialog||!proofImage)return;proofImage.src=button.dataset.proof;proofImage.alt=`${button.dataset.name||'Client'} testimonial proof`;if(proofTitle)proofTitle.textContent=`${button.dataset.name||'Client'} — verified feedback`;dialog.showModal();}));
+dialog?.querySelector('[data-close-modal]')?.addEventListener('click',()=>dialog.close());
+dialog?.addEventListener('click',e=>{const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();});
+const reviewsGrid=document.querySelector('[data-review-grid]');
+const reviewsToggle=document.querySelector('[data-reviews-toggle]');
+reviewsToggle?.addEventListener('click',()=>{if(!reviewsGrid)return;const expanded=reviewsGrid.classList.toggle('show-all');reviewsToggle.setAttribute('aria-expanded',String(expanded));reviewsToggle.textContent=expanded?'Show fewer reviews ↑':'View all reviews ↓';});
+const contactForm=document.querySelector('[data-contact-form]');
+contactForm?.addEventListener('submit',e=>{if(!contactForm.checkValidity()){e.preventDefault();contactForm.reportValidity();return;}const b=contactForm.querySelector('button[type="submit"]');if(b){b.disabled=true;b.textContent='Sending…';}});

@@ -1,0 +1,55 @@
+# Palkin Singla — Digital Growth Strategist
+
+> Official website content index for human readers and AI retrieval systems. This file is a discovery aid; it does not replace the HTML pages or XML sitemap.
+
+## Primary profile
+- Name: Palkin Singla
+- Role: Digital Marketing Specialist / Digital Growth Strategist
+- Location: Ambala, Haryana, India
+- Works with: service businesses, eCommerce brands, founders and agencies; remote projects worldwide
+- Website: https://palkin-singla.netlify.app/
+- About: https://palkin-singla.netlify.app/about/
+- Contact: https://palkin-singla.netlify.app/contact/
+- Reviews: https://palkin-singla.netlify.app/reviews/
+
+## Services
+- Google Ads: https://palkin-singla.netlify.app/services/google-ads/
+- Meta Ads: https://palkin-singla.netlify.app/services/meta-ads/
+- SEO: https://palkin-singla.netlify.app/services/seo/
+- Social Media Marketing: https://palkin-singla.netlify.app/services/social-media-marketing/
+- LinkedIn Marketing: https://palkin-singla.netlify.app/services/linkedin-marketing/
+- TikTok Marketing: https://palkin-singla.netlify.app/services/tiktok-marketing/
+- Email Marketing: https://palkin-singla.netlify.app/services/email-marketing/
+- Content Marketing: https://palkin-singla.netlify.app/services/content-marketing/
+- Website Design: https://palkin-singla.netlify.app/services/website-design/
+- Website Development: https://palkin-singla.netlify.app/services/website-development/
+- Pricing: https://palkin-singla.netlify.app/pricing/
+
+## Case studies
+- All case studies: https://palkin-singla.netlify.app/case-studies/
+- Google Ads case studies: https://palkin-singla.netlify.app/case-studies/google-ads/
+- Meta Ads case studies: https://palkin-singla.netlify.app/case-studies/meta-ads/
+- LinkedIn Ads case studies: https://palkin-singla.netlify.app/case-studies/linkedin-ads/
+
+## Portfolio
+- All portfolios: https://palkin-singla.netlify.app/portfolio/
+- Google Ads: https://palkin-singla.netlify.app/google_ads_portfolio.html
+- Meta Ads: https://palkin-singla.netlify.app/meta_ads_portfolio.html
+- SEO: https://palkin-singla.netlify.app/seo_portfolio.html
+- Social Media: https://palkin-singla.netlify.app/smo_portfolio.html
+- LinkedIn Ads: https://palkin-singla.netlify.app/linkedin_ads_portfolio.html
+- TikTok Ads: https://palkin-singla.netlify.app/tiktok_ads_portfolio.html
+- Email Marketing: https://palkin-singla.netlify.app/email_portfolio.html
+- Content Marketing: https://palkin-singla.netlify.app/content_writing_portfolio.html
+- Website Design: https://palkin-singla.netlify.app/website_design_portfolio.html
+- Website Development: https://palkin-singla.netlify.app/website_development_portfolio.html
+
+## Insights
+- Blog: https://palkin-singla.netlify.app/blog/
+- Google Ads guides: https://palkin-singla.netlify.app/blog/category/google-ads/
+- Meta Ads guides: https://palkin-singla.netlify.app/blog/category/meta-ads/
+- SEO guides: https://palkin-singla.netlify.app/blog/category/seo/
+- LinkedIn Ads guides: https://palkin-singla.netlify.app/blog/category/linkedin-ads/
+
+## Citation guidance
+Case-study metrics are project-specific and should be quoted with the relevant case-study URL. Do not combine account-level screenshots with campaign-level results unless the page explicitly states that relationship.

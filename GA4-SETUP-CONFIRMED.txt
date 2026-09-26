@@ -1,0 +1,18 @@
+GA4 SETUP CONFIRMED
+===================
+
+Measurement ID installed:
+G-DX3QJ5ENC6
+
+File:
+assets/js/analytics.js
+
+The supplied final website package did not contain a GTM container script,
+so this direct GA4 installation does not create a duplicate GTM+gtag setup
+inside this package.
+
+After deployment:
+1. Open the live website.
+2. In GA4 > Reports > Realtime, open the website in another tab.
+3. Confirm your visit appears.
+4. Test contact / phone / email / outbound-link events where applicable.
