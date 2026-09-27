@@ -1,0 +1,26 @@
+PALKIN SINGLA — FINAL SEO / GEO CASE STUDY WEBSITE PACKAGE
+
+Upload the contents of this ZIP to the root of the existing Netlify/GitHub website and allow files with the same names to replace the previous versions.
+
+ADDED
+- /case-studies/seo/ — new SEO Case Studies hub
+- /case-studies/dls-seo/
+- /case-studies/nile-cruisen-geo-seo/
+- /case-studies/ristorazione-refrigerazione-ecommerce-seo/
+- /case-studies/dealrated-affiliate-seo/
+- /case-studies/vego-garden-ecommerce-seo/
+- /case-studies/vinod-gazal-bansal-local-seo/
+- /case-studies/tinnitus-companion-google-ads/
+
+UPDATED
+- Case Studies dropdown now includes SEO Case Studies across the site.
+- Main Case Studies hub now includes SEO collection.
+- Google Ads hub now includes Tinnitus Companion and reports 11 Google Ads case studies.
+- New pages use the current site header, footer, mobile navigation and internal linking.
+- sitemap.xml and llms.txt include all new pages.
+- Canonicals, meta descriptions, Open Graph, Twitter metadata, Article/CollectionPage schema and breadcrumbs are included.
+
+IMPORTANT DATA NOTE
+- Historical claims are limited to the evidence supplied in the project files.
+- Vinod/Gazal Bansal does not claim unverified historic traffic/ranking growth because GA/GSC proof was not available.
+- The two uploaded files named as thesmokingvibes contained DealRated screenshots, so the evidence is correctly presented as DealRated instead of being mislabelled.

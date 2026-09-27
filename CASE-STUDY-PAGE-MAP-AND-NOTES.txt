@@ -1,0 +1,50 @@
+PALKIN SINGLA — 7 CASE STUDY PAGES (STAGING)
+============================================
+
+This package creates the seven UNIQUE case-study pages requested.
+It intentionally does NOT update the live global Case Studies hub/dropdown yet.
+That integration can be done in the final upload package after you approve these pages.
+
+1. SEO — DLS Internet Services
+   /case-studies/dls-seo/
+
+2. GEO / AI SEO — Nile Cruisen
+   /case-studies/nile-cruisen-geo-seo/
+
+3. eCommerce SEO — Ristorazione Refrigerazione
+   /case-studies/ristorazione-refrigerazione-ecommerce-seo/
+
+4. Affiliate / Coupon SEO — DealRated
+   /case-studies/dealrated-affiliate-seo/
+   IMPORTANT: both uploaded “thesmokingvibes” PDFs are exact duplicates and the screenshots actually document dealrated.com. No false Smoking Vibes case study was created.
+
+5. eCommerce SEO — Vego Garden
+   /case-studies/vego-garden-ecommerce-seo/
+
+6. Google Ads — Tinnitus Companion App Installs
+   /case-studies/tinnitus-companion-google-ads/
+
+7. Local SEO / Multi-site SEO — Vinod Bansal + Gazal Bansal
+   /case-studies/vinod-gazal-bansal-local-seo/
+   Historical analytics were not supplied, so this page uses a current indexed-footprint approach and does not invent traffic/ranking growth.
+
+FUTURE HUB ORGANIZATION
+-----------------------
+SEO Case Studies:
+- DLS Internet Services
+- Nile Cruisen (GEO / AI SEO)
+- Ristorazione Refrigerazione (eCommerce SEO)
+- DealRated (Affiliate/Coupon SEO)
+- Vego Garden (eCommerce SEO)
+- Vinod & Gazal Bansal (Local SEO / Multi-site)
+
+Google Ads Case Studies:
+- Tinnitus Companion App Install
+
+DATA-INTEGRITY RULES APPLIED
+----------------------------
+- Original PDF screenshots preserved as proof images.
+- Different-tool/date snapshots are not merged into fake growth percentages.
+- Speculative benchmark claims were removed from website copy where unsupported.
+- No historical numbers were invented for Vinod/Gazal.
+- Duplicate Smoking Vibes uploads were consolidated into the single project actually shown in the files: DealRated.

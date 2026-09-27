@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://palkin-singla.netlify.app/</loc><lastmod>2026-09-26</lastmod></url>
   <url><loc>https://palkin-singla.netlify.app/about/</loc><lastmod>2026-09-26</lastmod></url>
@@ -49,9 +49,9 @@
   <url><loc>https://palkin-singla.netlify.app/tiktok_ads_portfolio.html</loc><lastmod>2026-09-26</lastmod></url>
   <url><loc>https://palkin-singla.netlify.app/website_design_portfolio.html</loc><lastmod>2026-09-26</lastmod></url>
   <url><loc>https://palkin-singla.netlify.app/website_development_portfolio.html</loc><lastmod>2026-09-26</lastmod></url>
-  <!-- BLOG-SITEMAP-START -->
+  
   <url><loc>https://palkin-singla.netlify.app/blog/</loc><lastmod>2026-09-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://palkin-singla.netlify.app/blog/category/google-ads/</loc><lastmod>2026-09-26</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://palkin-singla.netlify.app/blog/google-ads-lead-generation-guide/</loc><lastmod>2026-09-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <!-- BLOG-SITEMAP-END -->
-</urlset>
+  
+<url><loc>https://palkin-singla.netlify.app/case-studies/seo/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url><url><loc>https://palkin-singla.netlify.app/case-studies/dls-seo/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url><url><loc>https://palkin-singla.netlify.app/case-studies/nile-cruisen-geo-seo/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url><url><loc>https://palkin-singla.netlify.app/case-studies/ristorazione-refrigerazione-ecommerce-seo/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url><url><loc>https://palkin-singla.netlify.app/case-studies/dealrated-affiliate-seo/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url><url><loc>https://palkin-singla.netlify.app/case-studies/vego-garden-ecommerce-seo/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url><url><loc>https://palkin-singla.netlify.app/case-studies/vinod-gazal-bansal-local-seo/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url><url><loc>https://palkin-singla.netlify.app/case-studies/tinnitus-companion-google-ads/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url></urlset>

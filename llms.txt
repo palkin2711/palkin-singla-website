@@ -27,9 +27,17 @@
 
 ## Case studies
 - All case studies: https://palkin-singla.netlify.app/case-studies/
+- SEO case studies: https://palkin-singla.netlify.app/case-studies/seo/
 - Google Ads case studies: https://palkin-singla.netlify.app/case-studies/google-ads/
 - Meta Ads case studies: https://palkin-singla.netlify.app/case-studies/meta-ads/
 - LinkedIn Ads case studies: https://palkin-singla.netlify.app/case-studies/linkedin-ads/
+- DLS Internet Services SEO: https://palkin-singla.netlify.app/case-studies/dls-seo/
+- Nile Cruisen GEO / AI Search: https://palkin-singla.netlify.app/case-studies/nile-cruisen-geo-seo/
+- Ristorazione Refrigerazione eCommerce SEO: https://palkin-singla.netlify.app/case-studies/ristorazione-refrigerazione-ecommerce-seo/
+- DealRated Affiliate SEO: https://palkin-singla.netlify.app/case-studies/dealrated-affiliate-seo/
+- Vego Garden eCommerce SEO: https://palkin-singla.netlify.app/case-studies/vego-garden-ecommerce-seo/
+- Vinod & Gazal Bansal Local SEO: https://palkin-singla.netlify.app/case-studies/vinod-gazal-bansal-local-seo/
+- Tinnitus Companion Google Ads: https://palkin-singla.netlify.app/case-studies/tinnitus-companion-google-ads/
 
 ## Portfolio
 - All portfolios: https://palkin-singla.netlify.app/portfolio/
