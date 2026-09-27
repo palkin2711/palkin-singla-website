@@ -1,0 +1,17 @@
+SEMRUSH SITE AUDIT FIX PACKAGE — 27 Sep 2026
+
+Corrections applied:
+- Replaced 4 unstable/broken external project links with durable internal case-study links.
+- Removed the external subdomain most likely responsible for certificate-name/SNI warnings.
+- Migrated 10 underscore portfolio URLs to clean hyphenated /portfolio/.../ URLs.
+- Added 301 redirects from every legacy underscore portfolio URL.
+- Updated internal links, canonicals, schema URLs, llms.txt and sitemap to the clean portfolio URLs.
+- Normalized Article/BlogPosting structured data with description, dates, image, publisher and WebPage mainEntityOfPage.
+- Changed unpublished/noindex blog draft canonicals so they do not reference missing public /blog/.../ URLs.
+- Added more useful copy to 404 and thank-you utility pages to address thin-content warnings.
+- Minified site CSS and JavaScript assets.
+- Added Netlify security/cache headers.
+- Regenerated sitemap from current indexable canonical pages.
+
+Important hosting note:
+If SEMrush still reports an SSL certificate-name or SNI warning after a fresh crawl, it is not coming from an internal page link in this package. It is then a Netlify-hostname/crawler-level issue. A custom domain such as palkinsingla.com with Netlify-managed HTTPS is the clean long-term fix.

@@ -310,7 +310,7 @@ function pageShell({ title, description, canonical, content, image = '', ogType 
 </div>
 </div>
 <a href="/pricing/">Pricing</a>
-<details class="nav-section-dropdown case-studies-dropdown"><summary>Case Studies <span aria-hidden="true">⌄</span></summary><div class="nav-section-menu"><a class="nav-section-all" href="/case-studies/"><strong>All Case Studies</strong><small>View all client work</small></a><a href="/case-studies/google-ads/"><strong>Google Ads Case Studies</strong></a><a href="/case-studies/meta-ads/"><strong>Meta Ads Case Studies</strong></a><a href="/case-studies/linkedin-ads/"><strong>LinkedIn Ads Case Studies</strong></a></div></details><details class="nav-section-dropdown portfolio-dropdown"><summary>Portfolio <span aria-hidden="true">⌄</span></summary><div class="nav-section-menu portfolio-menu"><a class="nav-section-all" href="/portfolio/"><strong>All Portfolios</strong><small>Browse work by channel</small></a><a href="/google_ads_portfolio.html">Google Ads</a><a href="/meta_ads_portfolio.html">Meta Ads</a><a href="/seo_portfolio.html">SEO</a><a href="/smo_portfolio.html">Social Media</a><a href="/linkedin_ads_portfolio.html">LinkedIn Ads</a><a href="/tiktok_ads_portfolio.html">TikTok Ads</a><a href="/email_portfolio.html">Email Marketing</a><a href="/content_writing_portfolio.html">Content Marketing</a><a href="/website_design_portfolio.html">Website Design</a><a href="/website_development_portfolio.html">Web Development</a></div></details><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>
+<details class="nav-section-dropdown case-studies-dropdown"><summary>Case Studies <span aria-hidden="true">⌄</span></summary><div class="nav-section-menu"><a class="nav-section-all" href="/case-studies/"><strong>All Case Studies</strong><small>View all client work</small></a><a href="/case-studies/google-ads/"><strong>Google Ads Case Studies</strong></a><a href="/case-studies/meta-ads/"><strong>Meta Ads Case Studies</strong></a><a href="/case-studies/linkedin-ads/"><strong>LinkedIn Ads Case Studies</strong></a></div></details><details class="nav-section-dropdown portfolio-dropdown"><summary>Portfolio <span aria-hidden="true">⌄</span></summary><div class="nav-section-menu portfolio-menu"><a class="nav-section-all" href="/portfolio/"><strong>All Portfolios</strong><small>Browse work by channel</small></a><a href="/portfolio/google-ads/">Google Ads</a><a href="/portfolio/meta-ads/">Meta Ads</a><a href="/portfolio/seo/">SEO</a><a href="/portfolio/social-media/">Social Media</a><a href="/portfolio/linkedin-ads/">LinkedIn Ads</a><a href="/portfolio/tiktok-ads/">TikTok Ads</a><a href="/portfolio/email-marketing/">Email Marketing</a><a href="/portfolio/content-writing/">Content Marketing</a><a href="/portfolio/website-design/">Website Design</a><a href="/portfolio/website-development/">Web Development</a></div></details><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a>
 </nav>
     <a class="nav-cta" href="/contact/">Start a project →</a><button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
   </div></header>
@@ -392,16 +392,16 @@ const articleSchemaFor = post => ({
 });
 
 const RELATED_BY_CATEGORY = {
-  'google-ads': [['Google Ads services','/services/google-ads/'],['Google Ads case studies','/case-studies/google-ads/'],['Google Ads portfolio','/google_ads_portfolio.html']],
-  'meta-ads': [['Meta Ads services','/services/meta-ads/'],['Meta Ads case studies','/case-studies/meta-ads/'],['Meta Ads portfolio','/meta_ads_portfolio.html']],
-  'linkedin-ads': [['LinkedIn marketing services','/services/linkedin-marketing/'],['LinkedIn Ads case studies','/case-studies/linkedin-ads/'],['LinkedIn Ads portfolio','/linkedin_ads_portfolio.html']],
-  'seo': [['SEO services','/services/seo/'],['SEO portfolio','/seo_portfolio.html'],['Digital marketing case studies','/case-studies/']],
-  'social-media': [['Social media marketing services','/services/social-media-marketing/'],['Social media portfolio','/smo_portfolio.html'],['Digital marketing case studies','/case-studies/']],
-  'tiktok-ads': [['TikTok marketing services','/services/tiktok-marketing/'],['TikTok Ads portfolio','/tiktok_ads_portfolio.html'],['Digital marketing case studies','/case-studies/']],
-  'email-marketing': [['Email marketing services','/services/email-marketing/'],['Email marketing portfolio','/email_portfolio.html'],['Digital marketing pricing','/pricing/']],
-  'content-writing': [['Content marketing services','/services/content-marketing/'],['Content marketing portfolio','/content_writing_portfolio.html'],['SEO services','/services/seo/']],
-  'website-design': [['Website design services','/services/website-design/'],['Website design portfolio','/website_design_portfolio.html'],['Digital marketing pricing','/pricing/']],
-  'website-development': [['Website development services','/services/website-development/'],['Web development portfolio','/website_development_portfolio.html'],['Digital marketing pricing','/pricing/']],
+  'google-ads': [['Google Ads services','/services/google-ads/'],['Google Ads case studies','/case-studies/google-ads/'],['Google Ads portfolio','/portfolio/google-ads/']],
+  'meta-ads': [['Meta Ads services','/services/meta-ads/'],['Meta Ads case studies','/case-studies/meta-ads/'],['Meta Ads portfolio','/portfolio/meta-ads/']],
+  'linkedin-ads': [['LinkedIn marketing services','/services/linkedin-marketing/'],['LinkedIn Ads case studies','/case-studies/linkedin-ads/'],['LinkedIn Ads portfolio','/portfolio/linkedin-ads/']],
+  'seo': [['SEO services','/services/seo/'],['SEO portfolio','/portfolio/seo/'],['Digital marketing case studies','/case-studies/']],
+  'social-media': [['Social media marketing services','/services/social-media-marketing/'],['Social media portfolio','/portfolio/social-media/'],['Digital marketing case studies','/case-studies/']],
+  'tiktok-ads': [['TikTok marketing services','/services/tiktok-marketing/'],['TikTok Ads portfolio','/portfolio/tiktok-ads/'],['Digital marketing case studies','/case-studies/']],
+  'email-marketing': [['Email marketing services','/services/email-marketing/'],['Email marketing portfolio','/portfolio/email-marketing/'],['Digital marketing pricing','/pricing/']],
+  'content-writing': [['Content marketing services','/services/content-marketing/'],['Content marketing portfolio','/portfolio/content-writing/'],['SEO services','/services/seo/']],
+  'website-design': [['Website design services','/services/website-design/'],['Website design portfolio','/portfolio/website-design/'],['Digital marketing pricing','/pricing/']],
+  'website-development': [['Website development services','/services/website-development/'],['Web development portfolio','/portfolio/website-development/'],['Digital marketing pricing','/pricing/']],
   'digital-marketing': [['Digital marketing services','/services/'],['Case studies','/case-studies/'],['Portfolio','/portfolio/']]
 };
 const relatedResources = post => {

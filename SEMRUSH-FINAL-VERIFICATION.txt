@@ -1,0 +1,27 @@
+SEMRUSH FINAL VERIFICATION — PALKIN SINGLA WEBSITE
+Date: 27 Sep 2026
+
+Audit issues addressed from the supplied SEMrush screenshots:
+
+ERRORS
+1. 4XX page risk: internal link scan now reports 0 missing local references. Unpublished/noindex blog draft canonicals were also changed so they no longer point to missing clean URLs.
+2. Incorrect certificate/SNI risk: the unstable external subdomain links were removed/replaced. Netlify security headers were added. If the certificate/SNI warning remains after a fresh crawl, it is host/crawler-level rather than a page-code link issue; connecting palkinsingla.com with Netlify-managed HTTPS is the long-term resolution.
+3. Invalid structured data: Article/BlogPosting schema was normalized and all JSON-LD blocks parse successfully.
+
+WARNINGS
+1. Unminified JavaScript/CSS: all local CSS and JS assets were minified; JavaScript syntax checks pass.
+2. Underscores in URLs: 10 portfolio URLs migrated to clean /portfolio/.../ slugs with 301 redirects from legacy URLs. Internal links, canonicals, sitemap and build script updated.
+3. Broken external links: 4 unstable links removed/replaced with durable internal case-study links.
+4. Low text-to-HTML ratio / low word count: 404 and thank-you utility pages were expanded with useful copy; site assets were also minified.
+5. Subdomain SNI warning: likely tied to the same unstable subdomain/hosting check. Re-run SEMrush after deployment.
+
+LOCAL VERIFICATION
+- Missing internal references: 0
+- JSON-LD syntax errors: 0
+- Legacy underscore portfolio URLs in sitemap: 0
+- Legacy underscore portfolio links in HTML: 0
+- Suspect broken external domains remaining: 0
+- Sitemap URLs: 60
+- JS syntax checks: PASS
+
+Deployment: upload/replace this full package at repository root, commit and push. Then rerun SEMrush Site Audit with a fresh crawl.

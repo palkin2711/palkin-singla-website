@@ -37,3 +37,16 @@
 /privacy-policy/ /privacy/ 301!
 /privacy-policy  /privacy/ 301!
 /privacy.html    /privacy/ 301!
+
+
+# Legacy portfolio URLs -> clean, hyphenated portfolio URLs
+/google_ads_portfolio.html /portfolio/google-ads/ 301!
+/meta_ads_portfolio.html /portfolio/meta-ads/ 301!
+/seo_portfolio.html /portfolio/seo/ 301!
+/smo_portfolio.html /portfolio/social-media/ 301!
+/linkedin_ads_portfolio.html /portfolio/linkedin-ads/ 301!
+/tiktok_ads_portfolio.html /portfolio/tiktok-ads/ 301!
+/email_portfolio.html /portfolio/email-marketing/ 301!
+/content_writing_portfolio.html /portfolio/content-writing/ 301!
+/website_design_portfolio.html /portfolio/website-design/ 301!
+/website_development_portfolio.html /portfolio/website-development/ 301!

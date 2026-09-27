@@ -64,16 +64,16 @@
 
 ## Portfolio
 - All portfolios: https://palkin-singla.netlify.app/portfolio/
-- Google Ads: https://palkin-singla.netlify.app/google_ads_portfolio.html
-- Meta Ads: https://palkin-singla.netlify.app/meta_ads_portfolio.html
-- SEO: https://palkin-singla.netlify.app/seo_portfolio.html
-- Social Media: https://palkin-singla.netlify.app/smo_portfolio.html
-- LinkedIn Ads: https://palkin-singla.netlify.app/linkedin_ads_portfolio.html
-- TikTok Ads: https://palkin-singla.netlify.app/tiktok_ads_portfolio.html
-- Email Marketing: https://palkin-singla.netlify.app/email_portfolio.html
-- Content Marketing: https://palkin-singla.netlify.app/content_writing_portfolio.html
-- Website Design: https://palkin-singla.netlify.app/website_design_portfolio.html
-- Website Development: https://palkin-singla.netlify.app/website_development_portfolio.html
+- Google Ads: https://palkin-singla.netlify.app/portfolio/google-ads/
+- Meta Ads: https://palkin-singla.netlify.app/portfolio/meta-ads/
+- SEO: https://palkin-singla.netlify.app/portfolio/seo/
+- Social Media: https://palkin-singla.netlify.app/portfolio/social-media/
+- LinkedIn Ads: https://palkin-singla.netlify.app/portfolio/linkedin-ads/
+- TikTok Ads: https://palkin-singla.netlify.app/portfolio/tiktok-ads/
+- Email Marketing: https://palkin-singla.netlify.app/portfolio/email-marketing/
+- Content Marketing: https://palkin-singla.netlify.app/portfolio/content-writing/
+- Website Design: https://palkin-singla.netlify.app/portfolio/website-design/
+- Website Development: https://palkin-singla.netlify.app/portfolio/website-development/
 
 ## Insights
 - Blog: https://palkin-singla.netlify.app/blog/
