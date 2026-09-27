@@ -1,0 +1,47 @@
+PALKIN SINGLA WEBSITE — FINAL POLISHED AUDIT
+Date: 27 September 2026
+
+WHAT WAS UPDATED
+- Homepage fully redesigned with cleaner hierarchy, correct service links and direct case-study links.
+- Old homepage anchor links such as /case-studies/#seo-growth and /case-studies/#c2-paint-meta removed.
+- Homepage featured proof now links to actual individual case-study pages.
+- Global footer redesigned across all site pages.
+- Google Business Profile + Ambala local signals added to footer and strengthened in structured data.
+- Global first-visit project popup added.
+- During configured festive windows the popup automatically changes to a 20% OFF festive service-fee offer.
+- Pricing page uses the same festive-offer detector as the global popup.
+- llms.txt expanded for AI / LLM discovery.
+- XML sitemap regenerated from every indexable canonical page.
+- Cache-busting versions updated for site.css and site.js.
+- External target=_blank links include noopener/noreferrer.
+
+FINAL TECHNICAL AUDIT
+Indexable public pages checked: 60
+Internal broken links found: 0
+Metadata/H1 issues found: 0
+JSON-LD syntax errors found: 0
+Duplicate SEO titles found: 0
+Duplicate meta descriptions found: 0
+Sitemap URLs: 60
+
+FESTIVE POPUP BEHAVIOR
+- Normal visit: shows a compact “Free first review” project popup once per browser session.
+- Active festival window: changes automatically to a 20% OFF service-fee offer.
+- Media/ad spend is explicitly excluded from the discount wording.
+- Exact movable-festival windows are configured for 2026 and 2027.
+- Future years use broad festive-season windows with generic “Festive Season Offer” wording, avoiding an incorrect named festival date.
+- Test anytime with: ?showOffer=1
+
+LOCAL SEO
+- Primary location: Ambala, Haryana, India.
+- Google Business Profile remains linked from Contact and is now also present in the global footer.
+- Homepage Person / ProfessionalService schema includes Ambala, phone, service areas and Google Business Profile.
+- Contact schema includes a ProfessionalService entity with address and areaServed.
+
+AI / GEO READINESS
+- llms.txt includes services, portfolios, case-study hubs, selected case studies and citation guidance.
+- Canonical pages retain structured data and descriptive headings.
+- Case-study limitations are preserved rather than turning contextual metrics into unsupported claims.
+
+NOTE
+The site currently uses the Netlify subdomain in canonical URLs. When palkinsingla.com is purchased and connected, canonicals, sitemap, schema URLs and llms.txt should be migrated once to the custom domain.

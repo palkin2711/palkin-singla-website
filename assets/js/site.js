@@ -52,3 +52,89 @@ const reviewsToggle=document.querySelector('[data-reviews-toggle]');
 reviewsToggle?.addEventListener('click',()=>{if(!reviewsGrid)return;const expanded=reviewsGrid.classList.toggle('show-all');reviewsToggle.setAttribute('aria-expanded',String(expanded));reviewsToggle.textContent=expanded?'Show fewer reviews ↑':'View all reviews ↓';});
 const contactForm=document.querySelector('[data-contact-form]');
 contactForm?.addEventListener('submit',e=>{if(!contactForm.checkValidity()){e.preventDefault();contactForm.reportValidity();return;}const b=contactForm.querySelector('button[type="submit"]');if(b){b.disabled=true;b.textContent='Sending…';}});
+
+
+// Global seasonal offer + first-visit project popup.
+// Festive windows stay exact for configured years; future years fall back to broad
+// seasonal windows so the site never displays an incorrect movable-festival date.
+function getPalkinFestiveOffer(now=new Date()){
+  const today=new Date(now); today.setHours(12,0,0,0);
+  const parse=v=>{const [y,m,d]=v.split('-').map(Number);return new Date(y,m-1,d,12,0,0,0);};
+  const dated=[
+    {name:'Holi Offer',start:'2026-03-01',end:'2026-03-05'},
+    {name:'Raksha Bandhan Offer',start:'2026-08-26',end:'2026-08-29'},
+    {name:'Janmashtami Offer',start:'2026-09-02',end:'2026-09-05'},
+    {name:'Ganesh Chaturthi Offer',start:'2026-09-12',end:'2026-09-15'},
+    {name:'Navratri & Dussehra Offer',start:'2026-10-09',end:'2026-10-21'},
+    {name:'Karwa Chauth & Diwali Offer',start:'2026-10-27',end:'2026-11-11'},
+    {name:'Holi Offer',start:'2027-03-19',end:'2027-03-23'},
+    {name:'Raksha Bandhan Offer',start:'2027-08-15',end:'2027-08-18'},
+    {name:'Janmashtami & Ganesh Chaturthi Offer',start:'2027-08-23',end:'2027-09-05'},
+    {name:'Navratri & Dussehra Offer',start:'2027-09-28',end:'2027-10-10'},
+    {name:'Karwa Chauth & Diwali Offer',start:'2027-10-17',end:'2027-10-31'}
+  ];
+  const exact=dated.find(w=>today>=parse(w.start)&&today<=parse(w.end));
+  if(exact)return {...exact,discount:20};
+
+  const month=today.getMonth()+1, day=today.getDate();
+  const md=month*100+day;
+  const fixed=[
+    {name:'New Year Offer',match:md>=1228||md<=103},
+    {name:'Republic Day Offer',match:md>=123&&md<=127},
+    {name:'Independence Day Offer',match:md>=812&&md<=816},
+    {name:'Gandhi Jayanti Offer',match:md>=1001&&md<=1003},
+    {name:'Christmas Offer',match:md>=1222&&md<=1227}
+  ].find(x=>x.match);
+  if(fixed)return {name:fixed.name,discount:20};
+
+  // Future-proof broad seasonal windows for movable Indian festivals.
+  // The content intentionally says "Festive Season" instead of naming an exact festival.
+  if((md>=225&&md<=325)||(md>=801&&md<=915)||(md>=1001&&md<=1120)){
+    return {name:'Festive Season Offer',discount:20};
+  }
+  return null;
+}
+window.getPalkinFestiveOffer=getPalkinFestiveOffer;
+
+(function initProjectPopup(){
+  if(document.querySelector('[data-site-popup]')) return;
+  const params=new URLSearchParams(location.search);
+  const force=params.get('showOffer')==='1';
+  if(!force && sessionStorage.getItem('palkinPopupSeen')==='1') return;
+
+  const offer=getPalkinFestiveOffer();
+  const festive=Boolean(offer);
+  const wrap=document.createElement('div');
+  wrap.className='site-popup-backdrop';
+  wrap.dataset.sitePopup='';
+  wrap.hidden=true;
+  wrap.innerHTML=`
+    <section class="site-popup" role="dialog" aria-modal="true" aria-labelledby="site-popup-title">
+      <button class="site-popup-close" type="button" aria-label="Close popup">×</button>
+      <div class="site-popup-accent">${festive?'Limited-time festive offer':'Digital growth support'}</div>
+      <div class="site-popup-badge">${festive?`${offer.discount}% OFF`:'Free first review'}</div>
+      <h2 id="site-popup-title">${festive?offer.name:'Planning your next growth project?'}</h2>
+      <p>${festive
+        ?'Book a listed digital marketing service or bundle during the active offer window and receive 20% off the service fee. Media spend is separate.'
+        :'Share your website, target market and biggest challenge. I’ll review the brief and suggest the most practical next step before you commit to a larger scope.'}</p>
+      <div class="site-popup-actions">
+        <a class="btn btn-primary" href="${festive?'/pricing/':'/contact/'}">${festive?'View festive pricing →':'Start a project →'}</a>
+        <a class="btn btn-secondary" href="${festive?'/contact/?offer=festive':'/case-studies/'}">${festive?'Claim the offer':'See case studies'}</a>
+      </div>
+      <small>${festive?'Offer applies to listed service fees booked during the active window.':'No long brief required—website, goal and target market are enough to start.'}</small>
+    </section>`;
+  document.body.appendChild(wrap);
+  const close=()=>{
+    wrap.classList.remove('is-open');
+    document.body.classList.remove('popup-open');
+    setTimeout(()=>wrap.hidden=true,180);
+    if(!force)sessionStorage.setItem('palkinPopupSeen','1');
+  };
+  wrap.querySelector('.site-popup-close')?.addEventListener('click',close);
+  wrap.addEventListener('click',e=>{if(e.target===wrap)close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!wrap.hidden)close();});
+  setTimeout(()=>{
+    wrap.hidden=false;
+    requestAnimationFrame(()=>{wrap.classList.add('is-open');document.body.classList.add('popup-open');});
+  },900);
+})();

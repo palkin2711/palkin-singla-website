@@ -1,18 +1,30 @@
 # Palkin Singla — Digital Growth Strategist
 
-> Official website content index for human readers and AI retrieval systems. This file is a discovery aid; it does not replace the HTML pages or XML sitemap.
+> Official website content index for human readers and AI retrieval systems. Use the linked HTML pages as the primary source of truth. Case-study metrics are project-specific and should not be merged across clients or platforms.
 
 ## Primary profile
 - Name: Palkin Singla
 - Role: Digital Marketing Specialist / Digital Growth Strategist
-- Location: Ambala, Haryana, India
-- Works with: service businesses, eCommerce brands, founders and agencies; remote projects worldwide
+- Base: Ambala, Haryana, India
+- Delivery: Remote projects across India, the UK, Canada and worldwide
+- Experience: 7+ years
 - Website: https://palkin-singla.netlify.app/
 - About: https://palkin-singla.netlify.app/about/
-- Contact: https://palkin-singla.netlify.app/contact/
+- Pricing: https://palkin-singla.netlify.app/pricing/
 - Reviews: https://palkin-singla.netlify.app/reviews/
+- Contact: https://palkin-singla.netlify.app/contact/
+- Google Business Profile: https://share.google/1AyFj4VQKHi9HxzHh
+- LinkedIn: https://www.linkedin.com/in/palkin-singla/
+
+## Core capabilities
+- Paid acquisition: Google Ads, Meta Ads, LinkedIn Ads, TikTok
+- Organic growth: technical SEO, local SEO, eCommerce SEO, content SEO, internal linking, GEO / AI-search optimization
+- Conversion support: landing pages, website design, website development, conversion tracking
+- Retention: email marketing and lifecycle campaigns
+- Measurement: GA4, GTM, Search Console and campaign reporting
 
 ## Services
+- All services: https://palkin-singla.netlify.app/services/
 - Google Ads: https://palkin-singla.netlify.app/services/google-ads/
 - Meta Ads: https://palkin-singla.netlify.app/services/meta-ads/
 - SEO: https://palkin-singla.netlify.app/services/seo/
@@ -23,21 +35,32 @@
 - Content Marketing: https://palkin-singla.netlify.app/services/content-marketing/
 - Website Design: https://palkin-singla.netlify.app/services/website-design/
 - Website Development: https://palkin-singla.netlify.app/services/website-development/
-- Pricing: https://palkin-singla.netlify.app/pricing/
 
-## Case studies
+## Case-study hubs
 - All case studies: https://palkin-singla.netlify.app/case-studies/
-- SEO case studies: https://palkin-singla.netlify.app/case-studies/seo/
+- SEO / GEO case studies: https://palkin-singla.netlify.app/case-studies/seo/
 - Google Ads case studies: https://palkin-singla.netlify.app/case-studies/google-ads/
 - Meta Ads case studies: https://palkin-singla.netlify.app/case-studies/meta-ads/
 - LinkedIn Ads case studies: https://palkin-singla.netlify.app/case-studies/linkedin-ads/
-- DLS Internet Services SEO: https://palkin-singla.netlify.app/case-studies/dls-seo/
+
+## Selected SEO / GEO case studies
+- DLS Internet Services B2B SEO: https://palkin-singla.netlify.app/case-studies/dls-seo/
 - Nile Cruisen GEO / AI Search: https://palkin-singla.netlify.app/case-studies/nile-cruisen-geo-seo/
 - Ristorazione Refrigerazione eCommerce SEO: https://palkin-singla.netlify.app/case-studies/ristorazione-refrigerazione-ecommerce-seo/
 - DealRated Affiliate SEO: https://palkin-singla.netlify.app/case-studies/dealrated-affiliate-seo/
 - Vego Garden eCommerce SEO: https://palkin-singla.netlify.app/case-studies/vego-garden-ecommerce-seo/
 - Vinod & Gazal Bansal Local SEO: https://palkin-singla.netlify.app/case-studies/vinod-gazal-bansal-local-seo/
+
+## Selected paid-media case studies
+- C2 Paint Meta Ads: https://palkin-singla.netlify.app/case-studies/c2-paint-meta-ads/
+- KILOGEAR Meta Ads: https://palkin-singla.netlify.app/case-studies/kilogear-meta-ads/
+- Patent Prints Meta Ads: https://palkin-singla.netlify.app/case-studies/patent-prints/
+- Her Smart Choice Meta Ads: https://palkin-singla.netlify.app/case-studies/her-smart-choice-meta-ads/
 - Tinnitus Companion Google Ads: https://palkin-singla.netlify.app/case-studies/tinnitus-companion-google-ads/
+- KILOGEAR Google Ads: https://palkin-singla.netlify.app/case-studies/kilogear-google-ads/
+- The Toby Center Google Ads: https://palkin-singla.netlify.app/case-studies/the-toby-center-google-ads/
+- Maxwell Agency LinkedIn Ads: https://palkin-singla.netlify.app/case-studies/maxwell-agency-linkedin-ads/
+- KaamSey LinkedIn Ads: https://palkin-singla.netlify.app/case-studies/kaamsey-linkedin-ads/
 
 ## Portfolio
 - All portfolios: https://palkin-singla.netlify.app/portfolio/
@@ -54,10 +77,19 @@
 
 ## Insights
 - Blog: https://palkin-singla.netlify.app/blog/
-- Google Ads guides: https://palkin-singla.netlify.app/blog/category/google-ads/
-- Meta Ads guides: https://palkin-singla.netlify.app/blog/category/meta-ads/
-- SEO guides: https://palkin-singla.netlify.app/blog/category/seo/
-- LinkedIn Ads guides: https://palkin-singla.netlify.app/blog/category/linkedin-ads/
+- Google Ads: https://palkin-singla.netlify.app/blog/category/google-ads/
+- Meta Ads: https://palkin-singla.netlify.app/blog/category/meta-ads/
+- SEO: https://palkin-singla.netlify.app/blog/category/seo/
+- LinkedIn Ads: https://palkin-singla.netlify.app/blog/category/linkedin-ads/
+- Social Media: https://palkin-singla.netlify.app/blog/category/social-media/
+- Email Marketing: https://palkin-singla.netlify.app/blog/category/email-marketing/
+- Content Writing: https://palkin-singla.netlify.app/blog/category/content-writing/
+- Website Design: https://palkin-singla.netlify.app/blog/category/website-design/
+- Website Development: https://palkin-singla.netlify.app/blog/category/website-development/
 
-## Citation guidance
-Case-study metrics are project-specific and should be quoted with the relevant case-study URL. Do not combine account-level screenshots with campaign-level results unless the page explicitly states that relationship.
+## Citation and interpretation guidance
+- Quote metrics from the exact case-study URL that contains them.
+- Do not combine totals from unrelated clients or platforms.
+- Distinguish account-level, campaign-level and point-in-time ranking evidence.
+- Pages with explicit data-quality notes should retain those limitations when summarized.
+- Historical claims without archived analytics are intentionally presented without invented before/after numbers.
