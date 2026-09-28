@@ -428,6 +428,26 @@ footer strong { color: rgba(255,255,255,.6); }
   .creation-grid { grid-template-columns: 1fr; }
   .platform-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* 2026-09-28 · Facebook portfolio live previews */
+.facebook-live-wrap{margin-top:18px}
+.facebook-live-note{margin:0 0 22px;color:var(--muted);font-size:12px;line-height:1.65;max-width:760px}
+.facebook-live-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.facebook-live-card{background:#fff;border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 14px 38px rgba(25,34,68,.07);transition:transform .22s ease,box-shadow .22s ease}
+.facebook-live-card:hover{transform:translateY(-3px);box-shadow:0 22px 48px rgba(25,34,68,.11)}
+.facebook-live-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,#fff,#f5f8ff)}
+.facebook-live-id{display:flex;align-items:center;gap:11px;min-width:0}
+.facebook-live-icon{width:39px;height:39px;display:grid;place-items:center;flex:0 0 auto;border-radius:12px;background:#1877f2;color:#fff;font-weight:900;font-family:Arial,sans-serif}
+.facebook-live-name{font-size:13px;font-weight:800;color:var(--text);line-height:1.25}
+.facebook-live-meta{margin-top:3px;color:var(--muted);font-size:10px;line-height:1.3}
+.facebook-live-link{flex:0 0 auto;padding:7px 10px;border-radius:999px;background:rgba(24,119,242,.09);color:#1667d8;text-decoration:none;font-size:10px;font-weight:800}
+.facebook-live-frame{padding:12px;background:#f2f5fb;min-height:520px}
+.facebook-live-frame iframe{display:block;width:100%;height:500px;border:0;border-radius:14px;background:#fff}
+.facebook-live-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;color:var(--muted);font-size:10px;border-top:1px solid var(--border)}
+.facebook-live-footer b{color:#1877f2}
+@media(max-width:900px){.facebook-live-grid{grid-template-columns:1fr}.facebook-live-frame{min-height:500px}.facebook-live-frame iframe{height:480px}}
+@media(max-width:600px){.facebook-live-head{align-items:flex-start}.facebook-live-frame{padding:8px;min-height:470px}.facebook-live-frame iframe{height:450px}.facebook-live-link{padding:6px 8px}}
+
 </style>
 <link href="/assets/css/legacy-bridge.css" rel="stylesheet"/>
 <link href="/assets/css/legacy-polish.css" rel="stylesheet"/>
@@ -451,7 +471,7 @@ footer strong { color: rgba(255,255,255,.6); }
 <script data-seo-webpage="true" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://palkin-singla.netlify.app/portfolio/social-media/#webpage","url":"https://palkin-singla.netlify.app/portfolio/social-media/","name":"Social Media Marketing Portfolio | Palkin Singla","description":"Explore social media marketing work by Palkin Singla, including content strategy, reels, community management and growth campaigns across major platforms.","inLanguage":"en-IN","isPartOf":{"@id":"https://palkin-singla.netlify.app/#website"},"about":{"@id":"https://palkin-singla.netlify.app/#person"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://palkin-singla.netlify.app/assets/images/portfolio/image3.png"}},{"@type":"BreadcrumbList","@id":"https://palkin-singla.netlify.app/portfolio/social-media/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://palkin-singla.netlify.app/"},{"@type":"ListItem","position":2,"name":"Social Media Marketing Portfolio","item":"https://palkin-singla.netlify.app/portfolio/social-media/"}]}]}</script>
 <link href="/assets/css/site.css?v=20260927-polished" rel="stylesheet"/><link href="/assets/css/portfolio-unified.css?v=20260925-repair2" rel="stylesheet"/><script data-portfolio-schema="true" type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Social Media Portfolio", "url": "https://palkin-singla.netlify.app/portfolio/social-media/", "about": "Social Media", "author": {"@type": "Person", "name": "Palkin Singla", "url": "https://palkin-singla.netlify.app/about/"}, "isPartOf": {"@type": "WebSite", "name": "Palkin Singla | Digital Marketing Specialist", "url": "https://palkin-singla.netlify.app/"}}</script><link href="/assets/css/seo-polish.css?v=20260926-final" rel="stylesheet"/><meta content="#0d0d18" name="theme-color"/><meta content="Social Media Marketing Portfolio" property="og:image:alt"/></head>
 <body class="portfolio-unified-page portfolio-social-media" id="top">
-<!-- unified-portfolio-navigation --><header class="site-header"><div class="container nav-wrap"><a aria-label="Palkin Singla home" class="brand" href="/"><span class="brand-mark">PS</span><span>Palkin Singla<small>Digital Marketing Specialist</small></span></a><nav aria-label="Primary navigation" class="nav-links"><a href="/about/">About</a><div class="nav-dropdown" data-services-menu=""><button aria-expanded="false" class="nav-dropdown-toggle" type="button">Services <span aria-hidden="true">⌄</span></button><div class="nav-dropdown-menu"><a class="nav-all-services" href="/services/"><span class="nav-service-icon">✦</span><span><strong>All Services</strong><small>Explore every service</small></span></a><a href="/services/google-ads/"><span class="nav-service-icon">G</span><span>Google Ads</span></a><a href="/services/meta-ads/"><span class="nav-service-icon">M</span><span>Meta Ads</span></a><a href="/services/seo/"><span class="nav-service-icon">S</span><span>SEO</span></a><a href="/services/social-media-marketing/"><span class="nav-service-icon">↗</span><span>Social Media</span></a><a href="/services/linkedin-marketing/"><span class="nav-service-icon">Li</span><span>LinkedIn</span></a><a href="/services/tiktok-marketing/"><span class="nav-service-icon">T</span><span>TikTok</span></a><a href="/services/email-marketing/"><span class="nav-service-icon">@</span><span>Email Marketing</span></a><a href="/services/content-marketing/"><span class="nav-service-icon">✎</span><span>Content</span></a><a href="/services/website-design/"><span class="nav-service-icon">✦</span><span>Website Design</span></a><a href="/services/website-development/"><span class="nav-service-icon">&lt;/&gt;</span><span>Web Development</span></a></div></div><a href="/pricing/">Pricing</a><details class="nav-section-dropdown case-studies-dropdown"><summary>Case Studies <span aria-hidden="true">⌄</span></summary><div class="nav-section-menu"><a class="nav-section-all" href="/case-studies/"><strong>All Case Studies</strong><small>View all client work</small></a><a href="/case-studies/seo/"><strong>SEO Case Studies</strong></a><a href="/case-studies/google-ads/"><strong>Google Ads Case Studies</strong></a><a href="/case-studies/meta-ads/"><strong>Meta Ads Case Studies</strong></a><a href="/case-studies/linkedin-ads/"><strong>LinkedIn Ads Case Studies</strong></a></div></details><details class="nav-section-dropdown portfolio-dropdown"><summary>Portfolio <span aria-hidden="true">⌄</span></summary><div class="nav-section-menu portfolio-menu"><a class="nav-section-all" href="/portfolio/"><strong>All Portfolios</strong><small>Browse work by channel</small></a><a href="/portfolio/google-ads/">Google Ads</a><a href="/portfolio/meta-ads/">Meta Ads</a><a href="/portfolio/seo/">SEO</a><a href="/portfolio/social-media/">Social Media</a><a href="/portfolio/linkedin-ads/">LinkedIn Ads</a><a href="/portfolio/tiktok-ads/">TikTok Ads</a><a href="/portfolio/email-marketing/">Email Marketing</a><a href="/portfolio/content-writing/">Content Marketing</a><a href="/portfolio/website-design/">Website Design</a><a href="/portfolio/website-development/">Web Development</a></div></details><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></nav><a class="nav-cta" href="/contact/">Start a project →</a><button aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle" type="button">☰</button></div></header>
+<!-- unified-portfolio-navigation --><header class="site-header"><div class="container nav-wrap"><a aria-label="Palkin Singla home" class="brand" href="/"><span class="brand-mark">PS</span><span>Palkin Singla<small>Digital growth strategist</small></span></a><nav aria-label="Primary navigation" class="nav-links"><a href="/about/">About</a><div class="nav-dropdown" data-services-menu=""><button aria-expanded="false" class="nav-dropdown-toggle" type="button">Services <span aria-hidden="true">⌄</span></button><div class="nav-dropdown-menu"><a class="nav-all-services" href="/services/"><span class="nav-service-icon">✦</span><span><strong>All Services</strong><small>Explore every service</small></span></a><a href="/services/google-ads/"><span class="nav-service-icon">G</span><span>Google Ads</span></a><a href="/services/meta-ads/"><span class="nav-service-icon">M</span><span>Meta Ads</span></a><a href="/services/seo/"><span class="nav-service-icon">S</span><span>SEO</span></a><a href="/services/social-media-marketing/"><span class="nav-service-icon">↗</span><span>Social Media</span></a><a href="/services/linkedin-marketing/"><span class="nav-service-icon">Li</span><span>LinkedIn</span></a><a href="/services/tiktok-marketing/"><span class="nav-service-icon">T</span><span>TikTok</span></a><a href="/services/email-marketing/"><span class="nav-service-icon">@</span><span>Email Marketing</span></a><a href="/services/content-marketing/"><span class="nav-service-icon">✎</span><span>Content</span></a><a href="/services/website-design/"><span class="nav-service-icon">✦</span><span>Website Design</span></a><a href="/services/website-development/"><span class="nav-service-icon">&lt;/&gt;</span><span>Web Development</span></a></div></div><a href="/pricing/">Pricing</a><details class="nav-section-dropdown case-studies-dropdown"><summary>Case Studies <span aria-hidden="true">⌄</span></summary><div class="nav-section-menu"><a class="nav-section-all" href="/case-studies/"><strong>All Case Studies</strong><small>View all client work</small></a><a href="/case-studies/seo/"><strong>SEO Case Studies</strong></a><a href="/case-studies/google-ads/"><strong>Google Ads Case Studies</strong></a><a href="/case-studies/meta-ads/"><strong>Meta Ads Case Studies</strong></a><a href="/case-studies/linkedin-ads/"><strong>LinkedIn Ads Case Studies</strong></a></div></details><details class="nav-section-dropdown portfolio-dropdown"><summary>Portfolio <span aria-hidden="true">⌄</span></summary><div class="nav-section-menu portfolio-menu"><a class="nav-section-all" href="/portfolio/"><strong>All Portfolios</strong><small>Browse work by channel</small></a><a href="/portfolio/google-ads/">Google Ads</a><a href="/portfolio/meta-ads/">Meta Ads</a><a href="/portfolio/seo/">SEO</a><a href="/portfolio/social-media/">Social Media</a><a href="/portfolio/linkedin-ads/">LinkedIn Ads</a><a href="/portfolio/tiktok-ads/">TikTok Ads</a><a href="/portfolio/email-marketing/">Email Marketing</a><a href="/portfolio/content-writing/">Content Marketing</a><a href="/portfolio/website-design/">Website Design</a><a href="/portfolio/website-development/">Web Development</a></div></details><a href="/reviews/">Reviews</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></nav><a class="nav-cta" href="/contact/">Start a project →</a><button aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle" type="button">☰</button></div></header>
 <script defer="" src="/assets/js/analytics.js?v=20260926-final"></script>
 <section class="portfolio-switcher-section"><div class="container"><div class="portfolio-switcher"><span>Explore portfolio</span><div><a href="/portfolio/google-ads/">Google Ads</a><a href="/portfolio/meta-ads/">Meta Ads</a><a href="/portfolio/seo/">SEO</a><a aria-current="page" href="/portfolio/social-media/">Social Media</a><a href="/portfolio/linkedin-ads/">LinkedIn Ads</a><a href="/portfolio/tiktok-ads/">TikTok Ads</a><a href="/portfolio/email-marketing/">Email Marketing</a><a href="/portfolio/content-writing/">Content Marketing</a><a href="/portfolio/website-design/">Website Design</a><a href="/portfolio/website-development/">Web Development</a></div></div></div></section><main class="portfolio-page-content"><section class="portfolio-v2-hero">
 <div class="container portfolio-v2-hero-grid">
@@ -870,108 +890,59 @@ footer strong { color: rgba(255,255,255,.6); }
 </a>
 </div>
 <!-- FACEBOOK OG CARDS -->
-<div class="og-section-title">👍 Facebook Pages</div>
-<div class="og-grid">
-<!-- Techlife Mohali -->
-<a class="og-card" href="https://www.facebook.com/techlivemohali/" rel="noreferrer noopener" style="--og-accent:#1877f2; --og-grad:linear-gradient(135deg,#1877f2 0%,#0d55c4 60%,#0a3d8f 100%);" target="_blank">
-<div class="og-cover">
-<span class="og-platform-badge badge-fb">👍 Facebook</span>
-<div class="og-avatar">💻</div>
+<div class="og-section-title">👍 Facebook SMO Projects</div>
+<div class="facebook-live-wrap">
+<p class="facebook-live-note">Selected Facebook pages I have worked on for social media optimization, content presence and page management. The previews below are loaded directly from the public Facebook pages; if a browser blocks third-party previews, use “Open page” to view the profile.</p>
+<div class="facebook-live-grid">
+<article class="facebook-live-card">
+<div class="facebook-live-head">
+  <div class="facebook-live-id"><span class="facebook-live-icon">f</span><div><div class="facebook-live-name">Eggrovila</div><div class="facebook-live-meta">Food & Restaurant · Facebook SMO</div></div></div>
+  <a class="facebook-live-link" href="https://www.facebook.com/eggrovila/" target="_blank" rel="noreferrer noopener">Open page ↗</a>
 </div>
-<div class="og-body">
-<div class="og-handle">facebook.com/techlivemohali</div>
-<div class="og-name">Techlife Mohali</div>
-<div class="og-category">Technology · IT Hub · Mohali, India</div>
-<div class="og-bio">Connecting the tech community of Mohali — events, jobs, startups and everything technology.</div>
-<div class="og-stats">
-<div class="og-stat"><div class="og-stat-val">👍</div><div class="og-stat-label">Facebook</div></div>
-<div class="og-stat"><div class="og-stat-val">💻</div><div class="og-stat-label">Tech</div></div>
-<div class="og-stat"><div class="og-stat-val">IN</div><div class="og-stat-label">India</div></div>
+<div class="facebook-live-frame"><iframe title="Eggrovila Facebook page preview" loading="lazy" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Feggrovila%2F&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+<div class="facebook-live-footer"><span>Live Facebook profile preview</span><b>facebook.com/eggrovila</b></div>
+</article>
+<article class="facebook-live-card">
+<div class="facebook-live-head">
+  <div class="facebook-live-id"><span class="facebook-live-icon">f</span><div><div class="facebook-live-name">Tech Live Mohali</div><div class="facebook-live-meta">Technology / Community · Facebook SMO</div></div></div>
+  <a class="facebook-live-link" href="https://www.facebook.com/techlivemohali/" target="_blank" rel="noreferrer noopener">Open page ↗</a>
 </div>
-<div class="og-cta">View on Facebook →</div>
+<div class="facebook-live-frame"><iframe title="Tech Live Mohali Facebook page preview" loading="lazy" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftechlivemohali%2F&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+<div class="facebook-live-footer"><span>Live Facebook profile preview</span><b>facebook.com/techlivemohali</b></div>
+</article>
+<article class="facebook-live-card">
+<div class="facebook-live-head">
+  <div class="facebook-live-id"><span class="facebook-live-icon">f</span><div><div class="facebook-live-name">Amaze Classes</div><div class="facebook-live-meta">Education · Facebook SMO</div></div></div>
+  <a class="facebook-live-link" href="https://www.facebook.com/AmazeClasseschd/" target="_blank" rel="noreferrer noopener">Open page ↗</a>
 </div>
-<div class="og-domain">facebook.com/techlivemohali</div>
-</a>
-<!-- My Health Centre Point -->
-<a class="og-card" href="https://www.facebook.com/myhealthcentrepointaustralia/" rel="noreferrer noopener" style="--og-accent:#1877f2; --og-grad:linear-gradient(135deg,#00b4d8 0%,#0077b6 50%,#03045e 100%);" target="_blank">
-<div class="og-cover">
-<span class="og-platform-badge badge-fb">👍 Facebook</span>
-<div class="og-avatar">🏥</div>
+<div class="facebook-live-frame"><iframe title="Amaze Classes Facebook page preview" loading="lazy" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FAmazeClasseschd%2F&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+<div class="facebook-live-footer"><span>Live Facebook profile preview</span><b>facebook.com/AmazeClasseschd</b></div>
+</article>
+<article class="facebook-live-card">
+<div class="facebook-live-head">
+  <div class="facebook-live-id"><span class="facebook-live-icon">f</span><div><div class="facebook-live-name">Fortec Web Solutions</div><div class="facebook-live-meta">Web & Digital Services · Facebook SMO</div></div></div>
+  <a class="facebook-live-link" href="https://www.facebook.com/fortecwebsolutions" target="_blank" rel="noreferrer noopener">Open page ↗</a>
 </div>
-<div class="og-body">
-<div class="og-handle">facebook.com/myhealthcentrepointaustralia</div>
-<div class="og-name">My Health Centre Point</div>
-<div class="og-category">Healthcare · Medical Centre · Australia</div>
-<div class="og-bio">Your trusted healthcare partner in Australia. Comprehensive medical services for the whole family.</div>
-<div class="og-stats">
-<div class="og-stat"><div class="og-stat-val">👍</div><div class="og-stat-label">Facebook</div></div>
-<div class="og-stat"><div class="og-stat-val">🏥</div><div class="og-stat-label">Healthcare</div></div>
-<div class="og-stat"><div class="og-stat-val">AU</div><div class="og-stat-label">Australia</div></div>
+<div class="facebook-live-frame"><iframe title="Fortec Web Solutions Facebook page preview" loading="lazy" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffortecwebsolutions&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+<div class="facebook-live-footer"><span>Live Facebook profile preview</span><b>facebook.com/fortecwebsolutions</b></div>
+</article>
+<article class="facebook-live-card">
+<div class="facebook-live-head">
+  <div class="facebook-live-id"><span class="facebook-live-icon">f</span><div><div class="facebook-live-name">My Health Centre Point Australia</div><div class="facebook-live-meta">Healthcare · Facebook SMO</div></div></div>
+  <a class="facebook-live-link" href="https://www.facebook.com/myhealthcentrepointaustralia/" target="_blank" rel="noreferrer noopener">Open page ↗</a>
 </div>
-<div class="og-cta">View on Facebook →</div>
+<div class="facebook-live-frame"><iframe title="My Health Centre Point Australia Facebook page preview" loading="lazy" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmyhealthcentrepointaustralia%2F&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+<div class="facebook-live-footer"><span>Live Facebook profile preview</span><b>facebook.com/myhealthcentrepointaustralia</b></div>
+</article>
+<article class="facebook-live-card">
+<div class="facebook-live-head">
+  <div class="facebook-live-id"><span class="facebook-live-icon">f</span><div><div class="facebook-live-name">Benton Dental</div><div class="facebook-live-meta">Dental / Healthcare · Facebook SMO</div></div></div>
+  <a class="facebook-live-link" href="https://www.facebook.com/Bentondental" target="_blank" rel="noreferrer noopener">Open page ↗</a>
 </div>
-<div class="og-domain">facebook.com/myhealthcentrepointaustralia</div>
-</a>
-<!-- Fortec Web Solutions -->
-<a class="og-card" href="https://www.facebook.com/fortecwebsolutions" rel="noreferrer noopener" style="--og-accent:#1877f2; --og-grad:linear-gradient(135deg,#7b2ff7 0%,#4a1fa8 50%,#1a0a5e 100%);" target="_blank">
-<div class="og-cover">
-<span class="og-platform-badge badge-fb">👍 Facebook</span>
-<div class="og-avatar">🌐</div>
+<div class="facebook-live-frame"><iframe title="Benton Dental Facebook page preview" loading="lazy" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBentondental&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
+<div class="facebook-live-footer"><span>Live Facebook profile preview</span><b>facebook.com/Bentondental</b></div>
+</article>
 </div>
-<div class="og-body">
-<div class="og-handle">facebook.com/fortecwebsolutions</div>
-<div class="og-name">Fortec Web Solutions</div>
-<div class="og-category">Web Design &amp; Development Agency</div>
-<div class="og-bio">Crafting powerful digital experiences — web design, development and digital marketing solutions.</div>
-<div class="og-stats">
-<div class="og-stat"><div class="og-stat-val">👍</div><div class="og-stat-label">Facebook</div></div>
-<div class="og-stat"><div class="og-stat-val">🌐</div><div class="og-stat-label">Web Agency</div></div>
-<div class="og-stat"><div class="og-stat-val">💻</div><div class="og-stat-label">Dev</div></div>
-</div>
-<div class="og-cta">View on Facebook →</div>
-</div>
-<div class="og-domain">facebook.com/fortecwebsolutions</div>
-</a>
-<!-- Benton Dental -->
-<a class="og-card" href="https://www.facebook.com/Bentondental" rel="noreferrer noopener" style="--og-accent:#1877f2; --og-grad:linear-gradient(135deg,#48cae4 0%,#0096c7 50%,#023e8a 100%);" target="_blank">
-<div class="og-cover">
-<span class="og-platform-badge badge-fb">👍 Facebook</span>
-<div class="og-avatar">🦷</div>
-</div>
-<div class="og-body">
-<div class="og-handle">facebook.com/Bentondental</div>
-<div class="og-name">Benton Dental</div>
-<div class="og-category">Dental Clinic · Healthcare</div>
-<div class="og-bio">Gentle, modern dental care for the whole family. Your smile is our priority — book your appointment today.</div>
-<div class="og-stats">
-<div class="og-stat"><div class="og-stat-val">👍</div><div class="og-stat-label">Facebook</div></div>
-<div class="og-stat"><div class="og-stat-val">🦷</div><div class="og-stat-label">Dental</div></div>
-<div class="og-stat"><div class="og-stat-val">❤️</div><div class="og-stat-label">Healthcare</div></div>
-</div>
-<div class="og-cta">View on Facebook →</div>
-</div>
-<div class="og-domain">facebook.com/Bentondental</div>
-</a>
-<!-- Eggrovila -->
-<a class="og-card" href="https://www.facebook.com/eggrovila/" rel="noreferrer noopener" style="--og-accent:#1877f2; --og-grad:linear-gradient(135deg,#f4a261 0%,#e76f51 50%,#c1440e 100%);" target="_blank">
-<div class="og-cover">
-<span class="og-platform-badge badge-fb">👍 Facebook</span>
-<div class="og-avatar">🍳</div>
-</div>
-<div class="og-body">
-<div class="og-handle">facebook.com/eggrovila</div>
-<div class="og-name">Eggrovila</div>
-<div class="og-category">Food &amp; Restaurant · Egg Specialists</div>
-<div class="og-bio">Egg-cellent food experiences! Serving creative egg-based dishes that make every meal memorable.</div>
-<div class="og-stats">
-<div class="og-stat"><div class="og-stat-val">👍</div><div class="og-stat-label">Facebook</div></div>
-<div class="og-stat"><div class="og-stat-val">🍳</div><div class="og-stat-label">Food</div></div>
-<div class="og-stat"><div class="og-stat-val">🥚</div><div class="og-stat-label">F&amp;B</div></div>
-</div>
-<div class="og-cta">View on Facebook →</div>
-</div>
-<div class="og-domain">facebook.com/eggrovila</div>
-</a>
 </div>
 <!-- CASE STUDY CLIENT OG CARDS -->
 <div class="og-section-title">🏆 Featured Case Study Clients</div>
@@ -1161,7 +1132,7 @@ footer strong { color: rgba(255,255,255,.6); }
 <div class="footer-brand-block">
 <a aria-label="Palkin Singla home" class="footer-brand" href="/">
 <span class="brand-mark">PS</span>
-<span><strong>Palkin Singla</strong><small>Digital Marketing Specialist</small></span>
+<span><strong>Palkin Singla</strong><small>Digital Growth Strategist</small></span>
 </a>
 <p>Performance marketing, SEO and conversion-focused digital support for service businesses, eCommerce brands, founders and agencies.</p>
 <div class="footer-badges">
@@ -1198,7 +1169,7 @@ footer strong { color: rgba(255,255,255,.6); }
 </div>
 </div>
 <div class="container footer-bottom">
-<span>© <span data-year=""></span> Palkin Singla — Digital Marketing Specialist. Strategy, execution &amp; measurable growth.</span>
+<span>© <span data-year=""></span> Palkin Singla. Digital marketing strategy, execution &amp; measurable growth.</span>
 <nav aria-label="Footer legal navigation">
 <a href="/privacy/">Privacy</a>
 <a href="/sitemap.xml">Sitemap</a>

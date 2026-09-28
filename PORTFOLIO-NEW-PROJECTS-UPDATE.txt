@@ -1,0 +1,24 @@
+PALKIN SINGLA PORTFOLIO-ONLY UPDATE
+===================================
+
+Modified pages only:
+1. /portfolio/social-media/
+2. /portfolio/seo/
+
+SOCIAL MEDIA PORTFOLIO ADDED
+- Eggrovila — Facebook live profile preview
+- Tech Live Mohali — Facebook live profile preview
+- Amaze Classes — Facebook live profile preview
+- Fortec Web Solutions — Facebook live profile preview
+- My Health Centre Point Australia — Facebook live profile preview
+- Benton Dental — Facebook live profile preview
+
+The Facebook previews use Meta's public Page Plugin. Each card also contains a direct Facebook link in case browser privacy settings block the embedded preview.
+
+SEO PORTFOLIO ADDED
+- Good Bond Cleaning — https://goodbondcleaning.com.au/
+- Reliable Bond Cleaning — https://reliablebondcleaning.com.au/
+- Get Security Austin — https://getsecurityaustin.com/
+
+No unverified traffic, ranking, revenue or conversion figures were added.
+No homepage, services page, case-study page, pricing page, blog page, sitemap or navigation URL was changed for this update.
