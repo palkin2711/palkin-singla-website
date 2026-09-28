@@ -1,0 +1,74 @@
+PALKIN SINGLA — TARGET KEYWORD SEO UPDATE
+=========================================
+Date: 28 September 2026
+Domain retained: https://palkin-singla.netlify.app/
+
+PRIMARY TARGETS
+---------------
+1. digital marketing specialist
+2. Palkin
+
+SEARCH-INTENT MAPPING
+---------------------
+Homepage
+Primary: digital marketing specialist
+Supporting: Palkin, Palkin Singla, digital marketing specialist in India, performance marketing consultant
+Intent: find / evaluate / hire a specialist
+
+About page
+Primary: Palkin Singla
+Supporting: Palkin, digital marketing specialist
+Intent: person / brand / entity lookup
+
+New guide
+Primary: what does a digital marketing specialist do
+Supporting: digital marketing specialist role, skills, services, hiring guide
+Intent: informational / hiring research
+
+CHANGES COMPLETED
+-----------------
+- Homepage SEO title changed to: Digital Marketing Specialist | Palkin Singla
+- Homepage meta description rewritten around the exact role and brand.
+- Homepage H1 changed to: Palkin Singla — Digital Marketing Specialist for measurable growth.
+- Added a dedicated "About Palkin" entity section to the homepage.
+- Added visible homepage FAQ content matching FAQ structured data.
+- Added "Palkin" as alternateName in the Person schema.
+- Added Digital Marketing Specialist occupation/entity detail to Person schema.
+- Website schema now also uses Palkin as alternateName.
+- About page H1 and copy strengthened around Palkin Singla + Digital Marketing Specialist.
+- About ProfilePage schema now includes alternateName: Palkin and expanded knowsAbout data.
+- Header identity across public HTML pages changed from Digital Growth Strategist to Digital Marketing Specialist for consistency.
+- Footer identity aligned to Digital Marketing Specialist.
+- Added a new 2,000+ word supporting article:
+  /blog/digital-marketing-specialist-guide/
+- New article includes role definition, responsibilities, skills, measurement, hiring comparison, red flags, FAQ and internal links.
+- New article automatically has BlogPosting + Breadcrumb structured data.
+- Added a new Digital Marketing category page with a unique SEO title.
+- Homepage now features the new Digital Marketing Specialist guide.
+- Updated llms.txt with Palkin as the short-name reference and the new guide.
+- Updated seo_keyword_map.csv to reduce keyword cannibalization and clarify page intent.
+- Updated sitemap.xml and lastmod values for changed primary pages.
+
+FINAL VALIDATION
+----------------
+Public HTML files checked: 73
+Sitemap URLs checked: 62
+Broken internal links: 0
+JSON-LD syntax errors: 0
+Missing indexable titles: 0
+Missing indexable meta descriptions: 0
+Missing indexable H1s: 0
+Missing indexable canonicals: 0
+Missing sitemap targets: 0
+Duplicate indexable titles: 0
+Duplicate indexable meta descriptions: 0
+
+IMPORTANT AFTER DEPLOYMENT
+--------------------------
+Do not repeatedly change the homepage title/H1 every few days. Let Google recrawl and evaluate the new signals.
+After deployment, prioritize Google Search Console URL inspection for:
+1. https://palkin-singla.netlify.app/
+2. https://palkin-singla.netlify.app/about/
+3. https://palkin-singla.netlify.app/blog/digital-marketing-specialist-guide/
+
+Ranking position cannot be guaranteed. The website is now more clearly mapped so the generic keyword is concentrated on the homepage, the Palkin/Palkin Singla entity is concentrated on the About page, and the informational long-tail topic supports the commercial homepage instead of competing with it.
