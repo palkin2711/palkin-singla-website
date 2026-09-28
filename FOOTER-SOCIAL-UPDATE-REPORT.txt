@@ -1,0 +1,41 @@
+PALKIN SINGLA WEBSITE — FOOTER / SOCIAL / PROFILE UPDATE
+========================================================
+Updated: 28 September 2026
+
+WHAT WAS UPDATED
+----------------
+1. Rebuilt the global footer and applied it consistently across all deployed HTML pages.
+2. Fixed footer consistency on the Blog index, blog category pages and published blog article pages.
+3. Added social icon links for:
+   - Facebook: https://www.facebook.com/palkinsingla2711
+   - LinkedIn: https://www.linkedin.com/in/palkin-singla/
+   - X: https://x.com/PalkinSingla
+   - GitHub: https://github.com/palkin2711
+4. Added professional/trust profile links for:
+   - GoodFirms
+   - Crunchbase
+   - Google Business Profile
+5. Added the same profile URLs to the homepage/About Person schema where appropriate.
+6. Added public profile references to llms.txt for AI/entity context.
+7. Added a reusable footer-social.css so page-specific CSS cannot break the footer layout.
+8. Updated the blog build script so future generated blog pages keep the same footer and social/profile links.
+9. Retained the Digital Marketing Specialist / Palkin keyword homepage changes.
+10. Added the supporting article:
+    /blog/digital-marketing-specialist-guide/
+    Title: What Does a Digital Marketing Specialist Do? Role, Skills & Growth Strategy
+11. Added the article to the Blog index, Digital Marketing category, posts.json and sitemap.xml.
+
+VALIDATION
+----------
+- 73 deployed HTML pages checked
+- 0 pages missing the standardized footer
+- 0 pages missing footer-social.css
+- 0 pages missing the requested social/profile links
+- 0 JSON-LD syntax errors
+- 0 broken internal links detected in deployed HTML
+- New supporting blog is included in sitemap.xml
+- Future blog builder syntax check: PASS
+
+NOTE
+----
+Raw files under /blog-posts/ are source files used by the blog build system. They are not public canonical article URLs. The new supporting blog also has a source copy so it will be preserved by future builds.

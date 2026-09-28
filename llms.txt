@@ -93,3 +93,12 @@
 - Distinguish account-level, campaign-level and point-in-time ranking evidence.
 - Pages with explicit data-quality notes should retain those limitations when summarized.
 - Historical claims without archived analytics are intentionally presented without invented before/after numbers.
+## Verified / public profiles
+- Facebook: https://www.facebook.com/palkinsingla2711
+- LinkedIn: https://www.linkedin.com/in/palkin-singla/
+- X: https://x.com/PalkinSingla
+- GitHub: https://github.com/palkin2711
+- GoodFirms: https://www.goodfirms.co/company/palkin-singla-digital-marketing-specialist
+- Crunchbase: https://www.crunchbase.com/organization/palkin-singla-digital-marketing-specialist
+- Google Business Profile: https://share.google/1AyFj4VQKHi9HxzHh
+
