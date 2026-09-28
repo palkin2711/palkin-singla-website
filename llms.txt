@@ -4,7 +4,6 @@
 
 ## Primary profile
 - Name: Palkin Singla
-- Short name used on this portfolio: Palkin
 - Role: Digital Marketing Specialist / Digital Growth Strategist
 - Base: Ambala, Haryana, India
 - Delivery: Remote projects across India, the UK, Canada and worldwide
@@ -77,7 +76,6 @@
 - Website Development: https://palkin-singla.netlify.app/portfolio/website-development/
 
 ## Insights
-- Digital Marketing Specialist guide: https://palkin-singla.netlify.app/blog/digital-marketing-specialist-guide/
 - Blog: https://palkin-singla.netlify.app/blog/
 - Google Ads: https://palkin-singla.netlify.app/blog/category/google-ads/
 - Meta Ads: https://palkin-singla.netlify.app/blog/category/meta-ads/

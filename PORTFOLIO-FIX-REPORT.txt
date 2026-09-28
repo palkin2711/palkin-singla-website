@@ -1,0 +1,4 @@
+portfolio/seo/index.html: data-image previews remaining = 0; clean CSS linked = True
+portfolio/social-media/index.html: data-image previews remaining = 0; clean CSS linked = True
+SEO additional cards added: Good Bond Cleaning, Reliable Bond Cleaning, Get Security Austin
+Supporting blog added: /blog/digital-marketing-specialist-guide/
