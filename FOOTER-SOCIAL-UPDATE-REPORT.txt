@@ -7,7 +7,7 @@ WHAT WAS UPDATED
 1. Rebuilt the global footer and applied it consistently across all deployed HTML pages.
 2. Fixed footer consistency on the Blog index, blog category pages and published blog article pages.
 3. Added social icon links for:
-   - Facebook: https://www.facebook.com/palkinsingla2711
+   - Facebook: https://www.facebook.com/palkingrowthlab
    - LinkedIn: https://www.linkedin.com/in/palkin-singla/
    - X: https://x.com/PalkinSingla
    - GitHub: https://github.com/palkin2711

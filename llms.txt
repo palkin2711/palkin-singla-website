@@ -94,7 +94,7 @@
 - Pages with explicit data-quality notes should retain those limitations when summarized.
 - Historical claims without archived analytics are intentionally presented without invented before/after numbers.
 ## Verified / public profiles
-- Facebook: https://www.facebook.com/palkinsingla2711
+- Facebook: https://www.facebook.com/palkingrowthlab
 - LinkedIn: https://www.linkedin.com/in/palkin-singla/
 - X: https://x.com/PalkinSingla
 - GitHub: https://github.com/palkin2711

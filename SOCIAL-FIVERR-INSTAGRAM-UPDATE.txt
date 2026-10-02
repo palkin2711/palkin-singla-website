@@ -1,0 +1,14 @@
+WEBSITE SOCIAL + FIVERR UPDATE
+
+Added across site footer:
+- Facebook: https://www.facebook.com/palkingrowthlab
+- Instagram: https://www.instagram.com/palkingrowthlab/
+- Fiverr profile: https://www.fiverr.com/sellers/palkinsingla/
+
+Homepage additions:
+1. Fiverr section with 3 supplied gig links.
+2. Instagram section using Instagram public profile embed at https://www.instagram.com/palkingrowthlab/embed/
+3. Instagram and Facebook direct CTA buttons.
+
+Important Instagram note:
+The official public profile embed is dynamic and is the no-login/no-token way to show current profile content. Instagram controls the exact number/layout of posts inside its embed, so a guaranteed custom 5-card carousel cannot be forced from the official embed alone. A true custom latest-5 slider requires an Instagram API access token or a third-party feed widget. The current implementation avoids paid widgets and private credentials while remaining automatically tied to the public profile.
