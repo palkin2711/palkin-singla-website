@@ -1,0 +1,9 @@
+Updated 2026-10-08
+
+1. Added /case-studies/smiling-pets-seo/ with supplied GSC and GA4 evidence screenshots.
+2. Added Smiling Pets to /case-studies/seo/ and the main Case Studies SEO collection.
+3. Added the dedicated case-study URL to sitemap.xml.
+4. Added nine English long-form SEO blog source files dated 11-18 Oct 2026.
+5. Each article includes contextual internal links and authoritative external links using target=_blank + rel=noopener noreferrer.
+6. Existing site CSS/design and blog build system are retained.
+7. Existing scheduled blogs were not deleted.

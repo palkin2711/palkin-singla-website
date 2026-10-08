@@ -24,3 +24,17 @@ How scheduling works:
 5. The due blog becomes visible, gets its automatic feature cover, category page entry, homepage card, and sitemap entry.
 
 If GitHub Actions is disabled for the repository, enable Actions in the repository settings.
+
+## Navratri Week Expansion (11–18 Oct 2026)
+
+- 11 Oct — Google Ads Bidding Playbook for the Festive Season
+- 12 Oct — Navratri Meta Ads: 9 Colors Creative Guide
+- 13 Oct — Festive Local SEO for Small Businesses
+- 14 Oct — Festive Ad Budget Planning + Enhanced Conversions
+- 15 Oct — Navratri Instagram Reels & Carousel Strategy
+- 16 Oct — Post-Navratri Ad Data Clean-Up
+- 17 Oct — B2B Festive Marketing: LinkedIn & Meta Ads
+- 17 Oct — 9 Festive Ad Hook Formulas
+- 18 Oct — Festive Landing Page CRO
+
+All nine posts are future-dated source files. The existing build-blog.mjs workflow keeps them out of the published /blog/ output until the matching publication date. External references open in a new tab, and each post contains contextual internal links to relevant service/category or existing blog pages.
