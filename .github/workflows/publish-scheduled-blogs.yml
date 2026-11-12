@@ -2,8 +2,8 @@ name: Publish scheduled blogs
 
 on:
   schedule:
-    # 08:05 IST on planned October publishing dates (02:35 UTC)
-    - cron: "35 2 2,5,7,9,12,14,16,19,21,23,26,28,30 10 *"
+    # 08:05 IST (02:35 UTC) on the eight November 2026 release dates.
+    - cron: "35 2 13,16,18,20,23,25,27,30 11 *"
   workflow_dispatch:
 
 permissions:

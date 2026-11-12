@@ -413,7 +413,14 @@ const relatedResources = post => {
 for (const post of posts) {
   const dir = path.join(outputDir, post.slug);
   fs.mkdirSync(dir, { recursive: true });
-  const safeBody = safeArticleBody(post.body);
+  // Scheduled cross-links are plain text until the target article is published.
+  // Prevents broken /blog/ links on earlier dates.
+  const datedBody = post.body.replace(/<a href="\/blog\/([a-z0-9-]+)\/">([\s\S]*?)<\/a>/g,
+    (whole, slug, anchor) => {
+      const target = posts.find(item => item.slug === slug);
+      return target ? whole : anchor;
+    });
+  const safeBody = safeArticleBody(datedBody);
   const article = `<main class="blog-post-main">
     <article class="container blog-article">
       <div class="blog-breadcrumbs"><a href="/blog/">Blog</a><span>›</span><a href="${categoryLink({ slug: post.categorySlug })}">${escapeHtml(post.category)}</a></div>
